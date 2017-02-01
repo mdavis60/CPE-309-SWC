@@ -22,7 +22,6 @@ public class MainApp extends Application {
 
     public void start(Stage stage) throws Exception {
 
-        log.info("Starting Hello JavaFX and Maven demonstration application");
 
         //initialize the application at the LogIn page
         String fxmlFile = "/fxml/LogIn.fxml";
