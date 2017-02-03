@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="361.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Rectangle>
+      <Label layoutX="104.0" layoutY="42.0" text="Create a new Room" textFill="#606060" />
+      <TextField layoutX="69.0" layoutY="82.0" prefHeight="27.0" prefWidth="84.0" promptText="Building Number">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="174.0" layoutY="82.0" prefHeight="27.0" prefWidth="84.0" promptText="Room Number">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="70.0" layoutY="127.0" prefHeight="27.0" prefWidth="188.0" promptText="Attributes">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="70.0" layoutY="167.0" prefHeight="27.0" prefWidth="188.0" promptText="Room Type">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="70.0" layoutY="233.0" prefHeight="27.0" prefWidth="188.0" promptText="Maximum Capacity">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </TextField>
+      <Label layoutX="132.0" layoutY="208.0" text="Max Capacity" textFill="#606060">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="125.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="106.0" />
+      <Label layoutX="147.0" layoutY="300.0" text="Create Room" textFill="#606060">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
