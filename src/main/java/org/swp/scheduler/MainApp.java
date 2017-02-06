@@ -27,7 +27,6 @@ public class MainApp extends Application {
         String fxmlFile = "/fxml/LogIn.fxml";
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
-        Group group = new Group();
         Parent parent = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
         
         log.debug("Showing JFX scene");
@@ -38,5 +37,6 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.setResizable(true);
         stage.show();
+       
     }
 }
