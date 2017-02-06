@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
+=======
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
+>>>>>>> f2d6587f42efcbda383e591386a446577e8853fa
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="377.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="310.0" />
       <Label layoutX="91.0" layoutY="55.0" text="Create a new Course" textFill="#606060" />
@@ -42,7 +44,7 @@
             <Font size="9.0" />
          </font>
       </TextField>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="102.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="106.0" />
+      <Rectangle fx:id="createButton" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="102.0" layoutY="317.0" onMouseClicked="#CreateCourse" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="106.0" />
       <Label layoutX="121.0" layoutY="324.0" text="Create Course" textFill="#606060">
          <font>
             <Font size="10.0" />
