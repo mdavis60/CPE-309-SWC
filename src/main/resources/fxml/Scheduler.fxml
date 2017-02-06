@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -56,44 +57,48 @@
             </Text>
          </children>
       </Group>
-      <Group fx:id="calendar">
+      <Group fx:id="calendar" layoutX="97.0" layoutY="-2.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="634.0" layoutX="244.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="655.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="60.0" layoutX="245.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="654.0" />
-            <Text fill="WHITE" layoutX="488.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
-               <font>
-                  <Font name="Avenir Roman" size="32.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="271.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="398.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="530.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="681.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="814.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Line endX="800.0" endY="200.0" startX="300.0" startY="200.0" stroke="#79879a" />
+            <AnchorPane fx:id="calendarAnchor" layoutX="202.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="634.0" layoutX="-49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="655.0" AnchorPane.leftAnchor="-49.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="60.0" layoutX="-47.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="654.0" />
+                  <Text fill="WHITE" layoutX="212.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
+                     <font>
+                        <Font name="Avenir Roman" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="146.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="262.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="382.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="531.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Line endX="800.0" endY="200.0" startX="300.0" startY="200.0" stroke="#79879a" />
+               </children>
+            </AnchorPane>
          </children>
       </Group>
-      <Group fx:id="studentFeedback">
+      <Group fx:id="studentFeedback" opacity="0.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="632.0" layoutX="35.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="224.0" x="900.0" />
             <Text fill="#eeecec" layoutX="969.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Feedback">
@@ -106,8 +111,8 @@
       </Group>
       <Group layoutX="1050.0" layoutY="40.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-11.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="116.0" />
-            <Text fill="WHITE" layoutX="-2.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Term">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-11.0" onMouseClicked="#onMouseClicked" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="116.0" />
+            <Text fill="WHITE" layoutX="-2.0" layoutY="21.0" onMouseClicked="#onMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Term">
                <font>
                   <Font name="Avenir Roman" size="17.0" />
                </font>
