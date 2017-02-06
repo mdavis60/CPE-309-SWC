@@ -10,9 +10,8 @@ import java.awt.Button;
 
 import org.apache.commons.lang.StringUtils;
 
-
-public class LogInController {
-
+public class CreateCourseController {
+	
     @FXML private TextField usernameField;
     @FXML private TextField passwordField;
 

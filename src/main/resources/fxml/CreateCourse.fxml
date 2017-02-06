@@ -8,37 +8,36 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateCourseController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="377.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="310.0" />
       <Label layoutX="91.0" layoutY="55.0" text="Create a new Course" textFill="#606060" />
-      <TextField layoutX="61.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course name">
+      <TextField fx:id="courseName" layoutX="61.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course name">
          <font>
             <Font size="9.0" />
          </font>
       </TextField>
-      <TextField layoutX="166.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course Number">
+      <TextField fx:id="courseNumber" layoutX="166.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course Number">
          <font>
             <Font size="9.0" />
          </font>
       </TextField>
-      <TextField layoutX="61.0" layoutY="143.0" prefHeight="27.0" prefWidth="190.0" promptText="Course Type">
+      <TextField fx:id="courseType" layoutX="61.0" layoutY="143.0" prefHeight="27.0" prefWidth="190.0" promptText="Course Type">
          <font>
             <Font size="9.0" />
          </font>
       </TextField>
-      <TextField layoutX="61.0" layoutY="185.0" prefHeight="27.0" prefWidth="190.0" promptText="Prerequisites">
+      <TextField fx:id="prereqs" layoutX="61.0" layoutY="185.0" prefHeight="27.0" prefWidth="190.0" promptText="Prerequisites">
          <font>
             <Font size="9.0" />
          </font>
       </TextField>
-      <TextField layoutX="60.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Work Units">
+      <TextField fx:id="workUnits" layoutX="60.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Work Units">
          <font>
             <Font size="9.0" />
          </font>
       </TextField>
-      <TextField layoutX="166.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Student Units">
+      <TextField fx:id="studentUnits" layoutX="166.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Student Units">
          <font>
             <Font size="9.0" />
          </font>
