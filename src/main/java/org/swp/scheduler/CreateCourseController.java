@@ -1,31 +1,35 @@
 package org.swp.scheduler;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-//import javafx.scene.control.Alert;
-//import javafx.scene.control.Alert.AlertType;
-
-import java.awt.Button;
-
-import org.apache.commons.lang.StringUtils;
+import javafx.scene.shape.Rectangle;
 
 public class CreateCourseController {
-	
-    @FXML private TextField usernameField;
-    @FXML private TextField passwordField;
 
-    //function to process user credentials
-    public void validateInfo() {
-    	
-        String username = usernameField.getText();
+    @FXML
+    private TextField courseName;
 
-        usernameField.setText("test");
-//        Alert alert = new Alert(AlertType.INFORMATION);
-//        alert.setTitle("Sign-In");
-//        alert.setHeaderText("Credentials Validated");
-//        String s ="Thanks for signing in! You will now be redirected.";
-//        alert.setContentText(s);
-//        alert.show();
+    @FXML
+    private TextField courseNumber;
+
+    @FXML
+    private TextField courseType;
+
+    @FXML
+    private TextField prereqs;
+
+    @FXML
+    private TextField workUnits;
+
+    @FXML
+    private TextField studentUnits;
+
+    @FXML
+    private Rectangle createButton;
+
+    @FXML
+    void CreateCourse() {
+      System.out.println("Create Course");
     }
+
 }
