@@ -13,8 +13,13 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="org.hibernate.type">trace</property>
 
-        <mapping class="org.swp.scheduler.database.StudentPlanData"/>
-
+        <mapping class="org.swp.scheduler.database.models.StudentPlanData"/>
+        <mapping class="org.swp.scheduler.database.models.Course"/>
+        <mapping class="org.swp.scheduler.database.models.CourseComponent"/>
+        <mapping class="org.swp.scheduler.database.models.Room"/>
+        <mapping class="org.swp.scheduler.database.models.StudentFeedback"/>
+        <mapping class="org.swp.scheduler.database.models.Teacher"/>
+        <mapping class="org.swp.scheduler.database.models.LoginData"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,16 +1,14 @@
 package org.swp.scheduler.database;
 
 import au.com.bytecode.opencsv.CSVReader;
-import javafx.scene.chart.PieChart;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.swp.scheduler.database.models.StudentPlanData;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by jackson on 2/2/2017.

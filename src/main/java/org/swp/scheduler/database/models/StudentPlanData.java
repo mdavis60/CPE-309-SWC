@@ -1,4 +1,4 @@
-package org.swp.scheduler.database;
+package org.swp.scheduler.database.models;
 
 import javax.persistence.*;
 
@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "StudentPlanData")
-public class StudentPlanData {
+public class StudentPlanData extends Model {
     @Id
     public int courseId;
 
