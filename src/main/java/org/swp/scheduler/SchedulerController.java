@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.*;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -77,12 +78,15 @@ public class SchedulerController {
     void launchNewCourse() {
     	System.out.println("New Course");
     	   try{
-               FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/CreateCourse.fxml"));
-               Parent root1 = (Parent) fxmlLoader.load();
-               Stage stage = new Stage();
-               stage.setTitle("ABC");
-               stage.setScene(new Scene(root1));  
-               stage.show();
+    		    String fxmlFile = "/fxml/CreateCourse.fxml";
+    	        Stage stage = new Stage();
+    	        stage.setTitle("Shop Management");
+    	        Pane myPane = null;
+    	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+    	        Scene scene = new Scene(myPane);
+    	        stage.setScene(scene);
+    	      //  prevStage.close();
+    	        stage.show();
              } catch(Exception e) {
             	 e.printStackTrace();
             	 System.out.println("Could not instantiate stage");
@@ -94,24 +98,76 @@ public class SchedulerController {
     @FXML
     void launchNewSection() {
     	System.out.println("New Section");
-
+    	try{
+ 		   String fxmlFile = "/fxml/CreateSection.fxml";
+ 	        Stage stage = new Stage();
+ 	        stage.setTitle("Shop Management");
+ 	        Pane myPane = null;
+ 	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+ 	        Scene scene = new Scene(myPane);
+ 	        stage.setScene(scene);
+ 	      //  prevStage.close();
+ 	        stage.show();
+          } catch(Exception e) {
+         	 e.printStackTrace();
+         	 System.out.println("Could not instantiate stage");
+          }
     }
 
     @FXML
     void launchNewRoom() {
     	System.out.println("New Room");
-
+    	try{
+  		   String fxmlFile = "/fxml/CreateRoom.fxml";
+  	        Stage stage = new Stage();
+  	        stage.setTitle("Shop Management");
+  	        Pane myPane = null;
+  	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+  	        Scene scene = new Scene(myPane);
+  	        stage.setScene(scene);
+  	      //  prevStage.close();
+  	        stage.show();
+           } catch(Exception e) {
+          	 e.printStackTrace();
+          	 System.out.println("Could not instantiate stage");
+           }
     }
     @FXML
     void launchStudentFeedback() {
     	System.out.println("Student Feedback");
-
+    	try{
+   		   String fxmlFile = "/fxml/StudentFeedback.fxml";
+   	        Stage stage = new Stage();
+   	        stage.setTitle("Shop Management");
+   	        Pane myPane = null;
+   	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+   	        Scene scene = new Scene(myPane);
+   	        stage.setScene(scene);
+   	      //  prevStage.close();
+   	        stage.show();
+            } catch(Exception e) {
+           	 e.printStackTrace();
+           	 System.out.println("Could not instantiate stage");
+            }
     }
 
     @FXML
     void launchTimePreferences() {
     	System.out.println("TimePreferences");
-
+    	try{
+   		   String fxmlFile = "/fxml/TimePreferences.fxml";
+   	        Stage stage = new Stage();
+   	        stage.setTitle("Shop Management");
+   	        Pane myPane = null;
+   	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+   	        Scene scene = new Scene(myPane);
+   	        stage.setScene(scene);
+   	      //  prevStage.close();
+   	        stage.show();
+            } catch(Exception e) {
+           	 e.printStackTrace();
+           	 System.out.println("Could not instantiate stage");
+            }
     }
 
 }
