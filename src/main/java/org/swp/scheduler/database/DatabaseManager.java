@@ -8,6 +8,8 @@ import org.hibernate.cfg.Configuration;
 import org.swp.scheduler.database.models.Model;
 
 import java.io.Serializable;
+import java.util.List;
+
 /**
  * Created by jackson on 2/2/2017.
  */
@@ -26,13 +28,14 @@ public class DatabaseManager {
     }
 
     // surfaces everything you need to interact with the database
-    public Object executeTransaction(DatabaseTransaction tx) throws Exception {
+    @SuppressWarnings("unchecked")
+    public <T> T executeTransaction(DatabaseTransaction tx) throws Exception {
         Session session = factory.openSession();
         Transaction transaction = null;
-        Object toReturn;
+        T toReturn;
         try {
             transaction = session.beginTransaction();
-            toReturn = tx.execute(session);
+            toReturn = (T)tx.execute(session);
             transaction.commit();
         }
         catch (Exception e) {
@@ -55,7 +58,19 @@ public class DatabaseManager {
         executeTransaction((Session session) -> session.save(toStore));
     }
 
-    public Object getSingleById(Class entityClass, Serializable id) throws Exception {
-        return executeTransaction((Session session) -> session.byId(entityClass).getReference(id));
+    public Object getSingle(Class entityClass, Serializable id) throws Exception {
+        return executeTransaction((Session session) -> session.get(entityClass, id));
+    }
+
+    public void deleteSingle(Model toDelete) throws Exception {
+        executeTransaction((Session session) -> {
+            session.delete(toDelete);
+            return null;
+        });
+    }
+
+    public List<Model> getAll(Class type) throws Exception {
+        return executeTransaction((Session session) -> session.createCriteria(type).list());
+
     }
 }

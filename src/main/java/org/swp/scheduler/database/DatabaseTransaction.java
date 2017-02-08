@@ -6,6 +6,6 @@ import org.hibernate.Session;
  * Created by jackson on 2/8/17.
  */
 @FunctionalInterface
-public interface DatabaseTransaction {
-    Object execute(Session session);
+public interface DatabaseTransaction <T> {
+    T execute(Session session);
 }

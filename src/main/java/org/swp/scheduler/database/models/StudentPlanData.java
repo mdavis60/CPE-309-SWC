@@ -25,7 +25,6 @@ public class StudentPlanData extends Model {
     public int unmetSeatDemand;
     public double percentUnmetDemand;
 
-
     public StudentPlanData() {
 
     }
