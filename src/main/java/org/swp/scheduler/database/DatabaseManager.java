@@ -71,6 +71,6 @@ public class DatabaseManager {
 
     public List<Model> getAll(Class type) throws Exception {
         return executeTransaction((Session session) -> session.createCriteria(type).list());
-
     }
+
 }
