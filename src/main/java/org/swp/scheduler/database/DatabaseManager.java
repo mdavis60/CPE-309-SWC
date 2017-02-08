@@ -1,47 +1,61 @@
 package org.swp.scheduler.database;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.swp.scheduler.database.models.LoginData;
+import org.swp.scheduler.database.models.Model;
 
-import java.util.List;
+import java.io.Serializable;
 /**
  * Created by jackson on 2/2/2017.
  */
 public class DatabaseManager {
-    private static SessionFactory factory;
+    private static DatabaseManager INSTANCE = new DatabaseManager();
+    private SessionFactory factory;
 
-    public static synchronized Session getSession() {
-        if (factory == null) {
-            Configuration configuration = new Configuration().configure();
-            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-            factory = configuration.buildSessionFactory(builder.build());
+    private DatabaseManager() {
+        Configuration configuration = new Configuration().configure();
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+        factory = configuration.buildSessionFactory(builder.build());
+    }
+
+    public static DatabaseManager getInstance() {
+        return INSTANCE;
+    }
+
+    // surfaces everything you need to interact with the database
+    public Object executeTransaction(DatabaseTransaction tx) throws Exception {
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        Object toReturn;
+        try {
+            transaction = session.beginTransaction();
+            toReturn = tx.execute(session);
+            transaction.commit();
         }
-
-        return factory.openSession();
+        catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+        return toReturn;
     }
 
-    public void storeSingle(Object toStore) {
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
+    // hibernate session docs
+    // https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/Session.html
 
-        session.save(toStore);
-
-        session.flush();
-        transaction.commit();
+    // METHODS FOR CONVENIENCE
+    public void storeSingle(Model toStore) throws Exception {
+        executeTransaction((Session session) -> session.save(toStore));
     }
 
-    // make this general later, this is a temporary method
-    public static boolean userExists(String username) {
-        return true;
-    }
-
-    public static LoginData getUser(String username) {
-        return null;
-
+    public Object getSingleById(Class entityClass, Serializable id) throws Exception {
+        return executeTransaction((Session session) -> session.byId(entityClass).getReference(id));
     }
 }
