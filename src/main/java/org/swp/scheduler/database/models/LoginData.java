@@ -14,9 +14,9 @@ public class LoginData extends Model {
     String username;
     String email;
     String password;
-    String type;
+    int type;
 
-    public LoginData(String username, String email, String password, String type) {
+    public LoginData(String username, String email, String password, int type) {
         this.username = username;
         this.email = email;
         this.password = password;
