@@ -10,13 +10,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "LoginData")
 public class LoginData extends Model {
-    @Id
-    String username;
-    String email;
-    String password;
-    int type;
+    public enum AuthType {
+        ADIMIN, DSA, STUDENT;
+    }
 
-    public LoginData(String username, String email, String password, int type) {
+    @Id
+    public String username;
+    public String email;
+    public String password;
+    public AuthType type;
+
+    public LoginData() {
+
+    }
+
+    public LoginData(String username, String email, String password, AuthType type) {
         this.username = username;
         this.email = email;
         this.password = password;
