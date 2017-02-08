@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="758.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1202.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0" />
+      <Group fx:id="sidePanel">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="758.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="202.0" />
+            <Accordion layoutX="-1.0" layoutY="66.0" prefHeight="616.0" prefWidth="202.0">
+              <panes>
+                <TitledPane animated="false" prefHeight="631.0" prefWidth="202.0" style="-fx-background-color: blue;" text="Courses">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                </TitledPane>
+                <TitledPane animated="false" text="Professors">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="640.0" prefWidth="211.0" text="Rooms">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="582.0" prefWidth="200.0" />
+                  </content>
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="66.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="202.0" />
+            <Text layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduler">
+               <font>
+                  <Font name="Avenir Roman" size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group fx:id="calendar" layoutY="20.0">
+         <children>
+            <AnchorPane fx:id="calendarAnchor" layoutX="581.0" layoutY="383.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="1.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="616.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" x="-330.0" y="-320.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="60.0" layoutX="-330.0" layoutY="-319.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" />
+                  <Line endX="300.0" endY="-200.0" startX="-300.0" startY="-200.0" stroke="#79879a" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="250.0" layoutY="400.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="15.0">
+               <children>
+                  <Text fill="WHITE" layoutX="275.0" layoutY="-295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
+                     <font>
+                        <Font name="Avenir Roman" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" x="50.0" y="-240.0" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="150.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="250.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="400.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="525.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+      <Group fx:id="studentFeedback">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="611.0" layoutX="35.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="224.0" x="900.0" />
+            <Text fill="#eeecec" layoutX="969.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Feedback">
+               <font>
+                  <Font name="Avenir Roman" size="19.0" />
+               </font>
+            </Text>
+            <Line endX="100.0" layoutX="1050.0" layoutY="150.0" startX="-100.0" stroke="#79879a" strokeWidth="2.0" />
+         </children>
+      </Group>
+      <Group layoutX="1050.0" layoutY="40.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-11.0" onMouseClicked="#onCalendarScale" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="116.0" />
+            <Text fill="WHITE" layoutX="-2.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Term">
+               <font>
+                  <Font name="Avenir Roman" size="17.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-180.0" onMouseClicked="#onCalendarScale" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-176.0" layoutY="23.0" onMouseClicked="#onCalendarScale" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
+               <font>
+                  <Font name="Avenir Roman" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutX="266.0" layoutY="709.0" onMouseClicked="#launchNewCourse">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Course" />
+         </children>
+      </Group>
+      <Group layoutX="441.0" layoutY="709.0" onMouseClicked="#launchNewSection">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Section" />
+         </children>
+      </Group>
+      <Group layoutX="615.0" layoutY="709.0" onMouseClicked="#launchNewRoom">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Room" />
+         </children>
+      </Group>
+      <Group layoutX="786.0" layoutY="709.0" onMouseClicked="#launchStudentFeedback">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="183.0" />
+            <Text fill="WHITE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Student Feedback" />
+         </children>
+      </Group>
+      <Group layoutX="986.0" layoutY="709.0" onMouseClicked="#launchTimePreferences">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="183.0" />
+            <Text fill="WHITE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Time Preferences" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
