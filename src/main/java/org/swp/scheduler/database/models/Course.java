@@ -20,4 +20,7 @@ public class Course extends Model {
     @JoinColumn(name="ID_TEAM")
     List<CourseComponent> componentList;
 
+    public Course() {
+
+    }
 }

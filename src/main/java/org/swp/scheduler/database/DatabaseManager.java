@@ -29,7 +29,7 @@ public class DatabaseManager {
 
     // surfaces everything you need to interact with the database
     @SuppressWarnings("unchecked")
-    public <T> T executeTransaction(DatabaseTransaction tx) throws Exception {
+    public <T> T executeTransaction(DatabaseTransaction tx) throws DatabaseException {
         Session session = factory.openSession();
         Transaction transaction = null;
         T toReturn;
@@ -42,7 +42,7 @@ public class DatabaseManager {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw e;
+            throw new DatabaseException(e);
         }
         finally {
             session.close();
@@ -54,22 +54,22 @@ public class DatabaseManager {
     // https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/Session.html
 
     // METHODS FOR CONVENIENCE
-    public void storeSingle(Model toStore) throws Exception {
+    public void storeSingle(Model toStore) throws DatabaseException {
         executeTransaction((Session session) -> session.save(toStore));
     }
 
-    public Object getSingle(Class entityClass, Serializable id) throws Exception {
+    public Object getSingle(Class entityClass, Serializable id) throws DatabaseException {
         return executeTransaction((Session session) -> session.get(entityClass, id));
     }
 
-    public void deleteSingle(Model toDelete) throws Exception {
+    public void deleteSingle(Model toDelete) throws DatabaseException {
         executeTransaction((Session session) -> {
             session.delete(toDelete);
             return null;
         });
     }
 
-    public List<Model> getAll(Class type) throws Exception {
+    public List<Model> getAll(Class type) throws DatabaseException {
         return executeTransaction((Session session) -> session.createCriteria(type).list());
     }
 

@@ -14,5 +14,7 @@ public class StudentFeedback extends Model {
     @Id
     String feedbackId;
 
+    public StudentFeedback() {
 
+    }
 }

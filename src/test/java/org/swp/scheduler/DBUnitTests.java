@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.DatabaseTransaction;
 import org.swp.scheduler.database.InputReader;
+import org.swp.scheduler.database.models.LoginData;
 import org.swp.scheduler.database.models.Model;
 import org.swp.scheduler.database.models.StudentPlanData;
 import org.testng.annotations.AfterClass;
@@ -48,4 +49,18 @@ public class DBUnitTests {
         List<Model> list = DatabaseManager.getInstance().getAll(StudentPlanData.class);
         assert list.size() > 1;
     }
+
+    @Test
+    public void loginDataTest() throws Exception {
+        LoginData data = new LoginData("username", "email", "password", LoginData.AuthType.ADIMIN);
+
+        DatabaseManager.getInstance().storeSingle(data);
+
+        LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, "username");
+
+        assert retrievedData.type == LoginData.AuthType.ADIMIN;
+
+        DatabaseManager.getInstance().deleteSingle(retrievedData);
+    }
 }
+

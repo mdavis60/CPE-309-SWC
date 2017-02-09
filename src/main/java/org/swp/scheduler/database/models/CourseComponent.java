@@ -17,4 +17,8 @@ public class CourseComponent extends Model {
     int workUnits;
     int classHours;
     int courseId;
+
+    public CourseComponent() {
+
+    }
 }

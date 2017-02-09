@@ -19,4 +19,8 @@ public class Room extends Model {
     String attributes;
     String type;
 
+    public Room() {
+
+    }
+
 }
