@@ -55,6 +55,54 @@ public class SchedulerController {
     	System.out.println("Started");
     }
 
+    @FXML
+    void launchNewCourse() {
+    	System.out.println("New Course");
+    	launchNewStage("/fxml/CreateCourse.fxml");
+    }
+
+    
+
+    @FXML
+    void launchNewSection() {
+    	System.out.println("New Section");
+    	launchNewStage("/fxml/CreateSection.fxml");
+    }
+
+    @FXML
+    void launchNewRoom() {
+    	System.out.println("New Room");
+    	launchNewStage("/fxml/CreateRoom.fxml");
+    }
+    @FXML
+    void launchStudentFeedback() {
+    	System.out.println("Student Feedback");
+    	launchNewStage("/fxml/StudentFeedback.fxml");
+    }
+
+    @FXML
+    void launchTimePreferences() {
+    	System.out.println("TimePreferences");
+    	launchNewStage("/fxml/TimePreferences.fxml");
+    }
+    
+    void launchNewStage(String file) {
+    	try{
+    		   String fxmlFile = "/fxml/TimePreferences.fxml";
+    	        Stage stage = new Stage();
+    	        stage.setTitle("Shop Management");
+    	        Pane myPane = null;
+    	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
+    	        Scene scene = new Scene(myPane);
+    	        stage.setScene(scene);
+    	      //  prevStage.close();
+    	        stage.show();
+             } catch(Exception e) {
+            	 e.printStackTrace();
+            	 System.out.println("Could not instantiate stage");
+             }
+    }
+    
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onCalendarScale() throws Exception {
 		System.out.println("SCale");
@@ -73,101 +121,5 @@ public class SchedulerController {
 		}
 
 	}
-
-    @FXML
-    void launchNewCourse() {
-    	System.out.println("New Course");
-    	   try{
-    		    String fxmlFile = "/fxml/CreateCourse.fxml";
-    	        Stage stage = new Stage();
-    	        stage.setTitle("Shop Management");
-    	        Pane myPane = null;
-    	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-    	        Scene scene = new Scene(myPane);
-    	        stage.setScene(scene);
-    	      //  prevStage.close();
-    	        stage.show();
-             } catch(Exception e) {
-            	 e.printStackTrace();
-            	 System.out.println("Could not instantiate stage");
-             }
-    }
-
-    
-
-    @FXML
-    void launchNewSection() {
-    	System.out.println("New Section");
-    	try{
- 		   String fxmlFile = "/fxml/CreateSection.fxml";
- 	        Stage stage = new Stage();
- 	        stage.setTitle("Shop Management");
- 	        Pane myPane = null;
- 	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
- 	        Scene scene = new Scene(myPane);
- 	        stage.setScene(scene);
- 	      //  prevStage.close();
- 	        stage.show();
-          } catch(Exception e) {
-         	 e.printStackTrace();
-         	 System.out.println("Could not instantiate stage");
-          }
-    }
-
-    @FXML
-    void launchNewRoom() {
-    	System.out.println("New Room");
-    	try{
-  		   String fxmlFile = "/fxml/CreateRoom.fxml";
-  	        Stage stage = new Stage();
-  	        stage.setTitle("Shop Management");
-  	        Pane myPane = null;
-  	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-  	        Scene scene = new Scene(myPane);
-  	        stage.setScene(scene);
-  	      //  prevStage.close();
-  	        stage.show();
-           } catch(Exception e) {
-          	 e.printStackTrace();
-          	 System.out.println("Could not instantiate stage");
-           }
-    }
-    @FXML
-    void launchStudentFeedback() {
-    	System.out.println("Student Feedback");
-    	try{
-   		   String fxmlFile = "/fxml/StudentFeedback.fxml";
-   	        Stage stage = new Stage();
-   	        stage.setTitle("Shop Management");
-   	        Pane myPane = null;
-   	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-   	        Scene scene = new Scene(myPane);
-   	        stage.setScene(scene);
-   	      //  prevStage.close();
-   	        stage.show();
-            } catch(Exception e) {
-           	 e.printStackTrace();
-           	 System.out.println("Could not instantiate stage");
-            }
-    }
-
-    @FXML
-    void launchTimePreferences() {
-    	System.out.println("TimePreferences");
-    	try{
-   		   String fxmlFile = "/fxml/TimePreferences.fxml";
-   	        Stage stage = new Stage();
-   	        stage.setTitle("Shop Management");
-   	        Pane myPane = null;
-   	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-   	        Scene scene = new Scene(myPane);
-   	        stage.setScene(scene);
-   	      //  prevStage.close();
-   	        stage.show();
-            } catch(Exception e) {
-           	 e.printStackTrace();
-           	 System.out.println("Could not instantiate stage");
-            }
-    }
 
 }
