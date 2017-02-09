@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -98,41 +99,53 @@
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="616.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" x="-330.0" y="-320.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="60.0" layoutX="-330.0" layoutY="-319.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" />
-                  <Line endX="300.0" endY="-200.0" startX="-300.0" startY="-200.0" stroke="#79879a" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="250.0" layoutY="400.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="15.0">
-               <children>
-                  <Text fill="WHITE" layoutX="275.0" layoutY="-295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
+                  <Line endX="655.0" layoutX="-325.0" layoutY="-200.0" stroke="#79879a" />
+                  <Text fill="WHITE" layoutX="-89.0" layoutY="-279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
                      <font>
                         <Font name="Avenir Roman" size="32.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" x="50.0" y="-240.0" AnchorPane.leftAnchor="50.0">
+                  <Text fill="WHITE" layoutX="-332.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon" x="50.0" y="-240.0" AnchorPane.leftAnchor="-282.0">
                      <font>
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="150.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday">
+                  <Text fill="WHITE" layoutX="-159.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tues">
                      <font>
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="250.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday">
+                  <Text fill="WHITE" layoutX="-45.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weds">
                      <font>
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="400.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday">
+                  <Text fill="WHITE" layoutX="235.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fri">
                      <font>
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="525.0" layoutY="-240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday">
+                  <Text fill="WHITE" layoutX="100.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thurs">
                      <font>
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Text>
+                  <Line endX="100.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="100.0" startY="1.0" stroke="#79879a" />
+                  <Line endX="225.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="225.0" startY="1.0" stroke="#79879a" />
+                  <Line endX="350.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="350.0" startY="1.0" stroke="#79879a" />
+                  <Line endX="475.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="475.0" startY="1.0" stroke="#79879a" />
+                  <ScrollPane hbarPolicy="NEVER" layoutX="-329.0" layoutY="-199.0" prefHeight="493.0" prefWidth="659.0" vbarPolicy="ALWAYS" vmax="100.0" vvalue="1.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="494.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="641.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ScrollPane>
                </children>
             </AnchorPane>
          </children>
