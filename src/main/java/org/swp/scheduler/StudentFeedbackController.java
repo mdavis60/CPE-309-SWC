@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class StudentFeedbackController {
+public class StudentFeedbackController extends WindowController {
 
     @FXML private TextArea messageField;
     @FXML private TextField subjectField;
@@ -25,10 +25,12 @@ public class StudentFeedbackController {
     @FXML
     void submitPressed() {
     	System.out.println("Submit button was pressed!");
+    	closeWindow(submitButton);
     }
     
     @FXML
     void cancelPressed() {
     	System.out.println("Cancel button was pressed!");
+    	closeWindow(cancelButton);
     }
 }

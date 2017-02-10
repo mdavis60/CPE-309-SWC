@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import javafx.*;
 
-public class SchedulerController {
+public class SchedulerController extends WindowController {
 
 
 	@FXML
@@ -58,7 +58,7 @@ public class SchedulerController {
     @FXML
     void launchNewCourse() {
     	System.out.println("New Course");
-    	launchNewStage("/fxml/CreateCourse.fxml");
+    	openWindow("CreateCourse");
     }
 
     
@@ -66,41 +66,22 @@ public class SchedulerController {
     @FXML
     void launchNewSection() {
     	System.out.println("New Section");
-    	launchNewStage("/fxml/CreateSection.fxml");
+    	openWindow("CreateSection");
     }
 
     @FXML
     void launchNewRoom() {
     	System.out.println("New Room");
-    	launchNewStage("/fxml/CreateRoom.fxml");
-    }
+    	openWindow("CreateRoom");    }
     @FXML
     void launchStudentFeedback() {
     	System.out.println("Student Feedback");
-    	launchNewStage("/fxml/StudentFeedback.fxml");
-    }
+    	openWindow("StudentFeedback");    }
 
     @FXML
     void launchTimePreferences() {
     	System.out.println("TimePreferences");
-    	launchNewStage("/fxml/TimePreferences.fxml");
-    }
-    
-    void launchNewStage(String file) {
-    	try{
-    		   String fxmlFile = "/fxml/TimePreferences.fxml";
-    	        Stage stage = new Stage();
-    	        stage.setTitle("Shop Management");
-    	        Pane myPane = null;
-    	        myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-    	        Scene scene = new Scene(myPane);
-    	        stage.setScene(scene);
-    	      //  prevStage.close();
-    	        stage.show();
-             } catch(Exception e) {
-            	 e.printStackTrace();
-            	 System.out.println("Could not instantiate stage");
-             }
+    	openWindow("TimePreferences");
     }
     
 	// Hides or shows the Student Feedback panel depending on the current state

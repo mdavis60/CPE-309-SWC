@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
 
-public class CreateCourseController {
+public class CreateCourseController extends WindowController {
 
     @FXML
     private TextField courseName;
@@ -30,6 +30,7 @@ public class CreateCourseController {
     @FXML
     void CreateCourse() {
       System.out.println("Create Course");
+      closeWindow(createButton);
     }
 
 }

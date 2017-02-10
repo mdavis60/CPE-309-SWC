@@ -31,7 +31,7 @@
             </Text>
          </children>
       </Group>
-      <Button fx:id="createButton" layoutX="251.0" layoutY="339.0" mnemonicParsing="false" text="Create Section" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="256.0" AnchorPane.topAnchor="339.0" />
+      <Button fx:id="createButton" layoutX="251.0" layoutY="339.0" mnemonicParsing="false" onAction="#CreateSection" text="Create Section" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="256.0" AnchorPane.topAnchor="339.0" />
       <Group layoutX="307.0" layoutY="273.0">
          <children>
             <Label text="Enter End Time" textFill="WHITE">
