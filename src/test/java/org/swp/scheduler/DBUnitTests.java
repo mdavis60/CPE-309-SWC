@@ -1,11 +1,11 @@
 package org.swp.scheduler;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.swp.scheduler.database.DatabaseManager;
-import org.swp.scheduler.database.DatabaseTransaction;
-import org.swp.scheduler.database.InputReader;
 import org.swp.scheduler.database.models.LoginData;
 import org.swp.scheduler.database.models.Model;
+import org.swp.scheduler.database.models.StudentFeedback;
 import org.swp.scheduler.database.models.StudentPlanData;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -32,13 +32,11 @@ public class DBUnitTests {
                 "title", "component", 1, 1, 1, 1, 1);
 
         DatabaseManager.getInstance().storeSingle(data);
-
         StudentPlanData dbData = (StudentPlanData) DatabaseManager.getInstance().getSingle(StudentPlanData.class, -1);
 
         assert dbData.term.equals("term");
 
         DatabaseManager.getInstance().deleteSingle(dbData);
-
         StudentPlanData deletedDbData = (StudentPlanData) DatabaseManager.getInstance().getSingle(StudentPlanData.class, -1);
 
         assert deletedDbData == null;
@@ -53,14 +51,41 @@ public class DBUnitTests {
     @Test
     public void loginDataTest() throws Exception {
         LoginData data = new LoginData("username", "email", "password", LoginData.AuthType.ADIMIN);
-
         DatabaseManager.getInstance().storeSingle(data);
-
         LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, "username");
 
         assert retrievedData.type == LoginData.AuthType.ADIMIN;
 
         DatabaseManager.getInstance().deleteSingle(retrievedData);
+    }
+
+    @Test
+    public void testStudentFeedback() throws Exception {
+        String message = "this was a great class schedule great job";
+        String fallMessage = "this was a great class schedule great job WHICH HAPPENED IN FALL";
+        String fall = Constants.getTerm("fall", 2016);
+        String winter = Constants.getTerm("winter", 2016);
+
+        StudentFeedback fallFeedback = new StudentFeedback(fallMessage, fall);
+        StudentFeedback winterFeedback = new StudentFeedback(message, winter);
+
+        DatabaseManager.getInstance().storeSingle(fallFeedback);
+        DatabaseManager.getInstance().storeSingle(winterFeedback);
+
+        List<Model> fallList = DatabaseManager.getInstance().executeTransaction((Session session) -> {
+            Query query = session.createQuery("from StudentFeedback where term = :term");
+            query.setParameter("term", fall);
+            List<Model> list = query.list();
+
+            return list;
+        });
+
+        StudentFeedback latestFallFeedback = (StudentFeedback) fallList.get(fallList.size() - 1);
+
+        assert latestFallFeedback.feedback.equals(fallMessage);
+
+        DatabaseManager.getInstance().deleteSingle(fallFeedback);
+        DatabaseManager.getInstance().deleteSingle(winterFeedback);
     }
 }
 
