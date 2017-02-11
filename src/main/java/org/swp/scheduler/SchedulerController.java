@@ -47,6 +47,12 @@ public class SchedulerController {
 	
 	@FXML
 	private Text closeFeedback; 
+	
+	@FXML 
+	private Group calendarGroup; 
+	
+	@FXML
+	private Group listGroup; 
 
 	private boolean feedbackIsShown = true; 
 
@@ -104,7 +110,7 @@ public class SchedulerController {
     }
     
 	// Hides or shows the Student Feedback panel depending on the current state
-	public void onCalendarScale() throws Exception {
+	public void onExpandFeedback() throws Exception {
 		System.out.println("SCale");
 		if (feedbackIsShown) {
 			calendarAnchor.setScaleX(1.4);
@@ -120,6 +126,16 @@ public class SchedulerController {
 			feedbackIsShown = true; 
 		}
 
+	}
+	
+	public void onCalendarView() throws Exception {
+		calendarGroup.setVisible(true);
+		listGroup.setVisible(false);
+	}
+	
+	public void onListView() throws Exception {
+		calendarGroup.setVisible(false);
+		listGroup.setVisible(true);
 	}
 
 }

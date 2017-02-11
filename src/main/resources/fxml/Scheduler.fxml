@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
@@ -19,9 +20,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="758.0" layoutX="-1.0" layoutY="-32.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1202.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-32.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="727.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1202.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
       <Group fx:id="sidePanel">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="726.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="202.0" />
@@ -61,7 +62,7 @@
                                                 </AnchorPane>
                                           </content>
                                         </TitledPane>
-                                        <TitledPane fx:id="previousTerms" animated="false" prefHeight="493.0" prefWidth="244.0" text="Previous Terms">
+                                        <TitledPane fx:id="previousTerms" animated="false" prefHeight="493.0" prefWidth="244.0" text="Terms">
                                           <content>
                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
@@ -152,59 +153,151 @@
             </Text>
          </children>
       </Group>
-      <Group fx:id="calendar" layoutY="20.0">
+      <Group fx:id="calendar1" layoutY="19.0">
          <children>
-            <AnchorPane fx:id="calendarAnchor" layoutX="581.0" layoutY="383.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="1.0">
+            <AnchorPane fx:id="calendarAnchor1" layoutX="232.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="634.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="616.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" x="-330.0" y="-320.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="60.0" layoutX="-330.0" layoutY="-319.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0" />
-                  <Line endX="655.0" layoutX="-325.0" layoutY="-200.0" stroke="#79879a" />
-                  <Text fill="WHITE" layoutX="-89.0" layoutY="-279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
-                     <font>
-                        <Font name="Avenir Roman" size="32.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="-332.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon" x="50.0" y="-240.0" AnchorPane.leftAnchor="-282.0">
-                     <font>
-                        <Font name="Avenir Roman" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="-159.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tues">
-                     <font>
-                        <Font name="Avenir Roman" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="-45.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weds">
-                     <font>
-                        <Font name="Avenir Roman" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="235.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fri">
-                     <font>
-                        <Font name="Avenir Roman" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="100.0" layoutY="-223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thurs">
-                     <font>
-                        <Font name="Avenir Roman" size="17.0" />
-                     </font>
-                  </Text>
-                  <Line endX="100.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="100.0" startY="1.0" stroke="#79879a" />
-                  <Line endX="225.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="225.0" startY="1.0" stroke="#79879a" />
-                  <Line endX="350.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="350.0" startY="1.0" stroke="#79879a" />
-                  <Line endX="475.0" endY="490.0" layoutX="-300.0" layoutY="-200.0" startX="475.0" startY="1.0" stroke="#79879a" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="-329.0" layoutY="-199.0" prefHeight="493.0" prefWidth="659.0" vbarPolicy="ALWAYS" vmax="100.0" vvalue="1.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                  <Group layoutX="351.0" layoutY="353.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="629.0" layoutX="-22.0" layoutY="-33.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="682.0" x="-330.0" y="-320.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="94.0" layoutX="-352.0" layoutY="-354.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="682.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffe0" height="32.0" layoutX="-341.0" layoutY="-288.0" onMouseClicked="#onListView" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0" />
+                        <Text fill="#4a4343" layoutX="-308.0" layoutY="-268.0" onMouseClicked="#onListView" strokeType="OUTSIDE" strokeWidth="0.0" text="List">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="-102.0" layoutY="-296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
+                           <font>
+                              <Font name="Avenir Roman" size="32.0" />
+                           </font>
+                        </Text>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffe0" height="32.0" layoutX="-245.0" layoutY="-288.0" onMouseClicked="#onCalendarView" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0" />
+                        <Text fill="#4a4343" layoutX="-229.0" layoutY="-268.0" onMouseClicked="#onCalendarView" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font>
+                        </Text>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" rotate="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                     </children>
+                  </Group>
+                  <Group fx:id="calendarGroup" layoutX="-256.0" layoutY="-43.0">
+                     <children>
+                        <AnchorPane fx:id="calendarAnchor" layoutX="581.0" layoutY="383.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="1.0">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="494.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="641.0" />
+                              <Line endX="682.0" layoutX="-325.0" layoutY="-200.0" stroke="#79879a" />
+                              <Line endY="490.0" layoutX="-189.0" layoutY="-200.0" stroke="#79879a" />
+                              <Line endY="490.0" layoutX="-53.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
+                              <Line endY="490.0" layoutX="83.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
+                              <Line endY="490.0" layoutX="219.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
                            </children>
                         </AnchorPane>
-                    </content>
-                     <effect>
-                        <Blend />
-                     </effect>
-                  </ScrollPane>
+                        <Text fill="#36465d" layoutX="248.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" x="50.0" y="-240.0">
+                           <font>
+                              <Font name="Avenir Roman" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#36465d" layoutX="382.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" x="50.0" y="-240.0">
+                           <font>
+                              <Font name="Avenir Roman" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#36465d" layoutX="512.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" x="50.0" y="-240.0">
+                           <font>
+                              <Font name="Avenir Roman" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#36465d" layoutX="650.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" x="50.0" y="-240.0">
+                           <font>
+                              <Font name="Avenir Roman" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#36465d" layoutX="798.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" x="50.0" y="-240.0">
+                           <font>
+                              <Font name="Avenir Roman" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Group fx:id="listGroup" visible="false">
+                     <children>
+                        <HBox layoutX="-1.0" layoutY="93.0" prefHeight="536.0" prefWidth="680.0">
+                           <children>
+                              <VBox prefHeight="536.0" prefWidth="137.0">
+                                 <children>
+                                    <Group />
+                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                       <children>
+                                          <Text layoutX="47.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="536.0" prefWidth="137.0">
+                                 <children>
+                                    <Group />
+                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                       <children>
+                                          <Text layoutX="52.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="536.0" prefWidth="137.0">
+                                 <children>
+                                    <Group />
+                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                       <children>
+                                          <Text layoutX="57.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prof.">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="536.0" prefWidth="137.0">
+                                 <children>
+                                    <Group />
+                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                       <children>
+                                          <Text layoutX="54.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="536.0" prefWidth="137.0">
+                                 <children>
+                                    <Group />
+                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                       <children>
+                                          <Text layoutX="56.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Group>
                </children>
             </AnchorPane>
          </children>
@@ -220,16 +313,10 @@
             <Line endX="100.0" layoutX="1050.0" layoutY="150.0" startX="-100.0" stroke="#79879a" strokeWidth="2.0" />
          </children>
       </Group>
-      <Group layoutX="1050.0" layoutY="40.0">
+      <Group layoutX="1039.0" layoutY="27.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-11.0" onMouseClicked="#onCalendarScale" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="116.0" />
-            <Text fill="WHITE" layoutX="-2.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ New Term">
-               <font>
-                  <Font name="Avenir Roman" size="17.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-180.0" onMouseClicked="#onCalendarScale" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-176.0" layoutY="23.0" onMouseClicked="#onCalendarScale" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-100.0" layoutY="9.0" onMouseClicked="#onExpandFeedback" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-97.0" layoutY="32.0" onMouseClicked="#onExpandFeedback" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
                <font>
                   <Font name="Avenir Roman" size="17.0" />
                </font>
