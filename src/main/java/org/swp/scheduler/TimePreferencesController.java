@@ -3,7 +3,7 @@ package org.swp.scheduler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class TimePreferencesController {
+public class TimePreferencesController extends WindowController {
 
     @FXML private Button nextButton;
     @FXML private Button backButton;
@@ -17,6 +17,7 @@ public class TimePreferencesController {
     @FXML
     void cancelPressed() {
     	System.out.println("Cancel button was pressed!");
+    	closeWindow(cancelButton);
     }
 
     @FXML

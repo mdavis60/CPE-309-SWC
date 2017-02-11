@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
 
-public class CreateRoomController {
+public class CreateRoomController extends WindowController {
 
     @FXML
     private TextField buildNum;
@@ -27,6 +27,7 @@ public class CreateRoomController {
     @FXML
     void CreateRoom() {
       System.out.println("Room Created");
+      closeWindow(createButton);
     }
 
 }

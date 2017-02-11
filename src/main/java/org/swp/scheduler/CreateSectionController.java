@@ -6,7 +6,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-public class CreateSectionController {
+public class CreateSectionController extends WindowController {
 
     @FXML
     private TextField courseType;
@@ -40,4 +40,9 @@ public class CreateSectionController {
       courseTypeList.setVisible(false);
     }
 
+    @FXML
+    void CreateSection() {
+      System.out.println("Section Created");
+      closeWindow(createButton);
+    }
 }
