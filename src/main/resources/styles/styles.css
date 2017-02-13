@@ -25,6 +25,29 @@
 .main-panel {
     -fx-background-image: url("../images/background.jpg");
 }
+/* scheduler styles */
+
+.background-panel {
+    -fx-background-color: #36465d;
+}
+.side-panel, .tab-pane-side {
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 210;
+    -fx-pref-height: 725;
+}
+.tab-pane-side {
+    -fx-pref-height: 660;
+}
+.sp-lable {
+    -fx-pref-width: 210;
+    -fx-pref-height:65;
+    -fx-background-color: #ffffff;
+}
+.sp-action {
+    -fx-pref-width: 210;
+    -fx-background-color: light-grey;
+}
+
 
 .hello-message {
     -fx-text-fill: #AA0000;
