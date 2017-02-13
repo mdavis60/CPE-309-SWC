@@ -1,5 +1,8 @@
 package org.swp.scheduler;
 
+import org.swp.scheduler.database.DatabaseManager;
+import org.swp.scheduler.database.models.LoginData;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,11 +24,20 @@ public class LogInController extends WindowController{
     public void validateInfo() throws Exception {
     	
         String username = usernameField.getText();
+        String password = passwordField.getText();
 
-        usernameField.setText("test");
-
-        openWindow("Scheduler");
-
-        closeWindow(signInButton);
+        try {
+          LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, username);
+          
+          if(retrievedData.password.equals(password)){
+            openWindow("Scheduler");
+            closeWindow(signInButton);
+          } else {
+            System.out.println("Incorrect password");
+          }
+          
+        } catch (Exception e) {
+          System.out.println("No username in database");
+        }
     }
 }
