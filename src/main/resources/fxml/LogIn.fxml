@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.LogInController">
+<AnchorPane stylesheets="@../styles/styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.LogInController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#233e57" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Text fill="WHITE" layoutX="237.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">

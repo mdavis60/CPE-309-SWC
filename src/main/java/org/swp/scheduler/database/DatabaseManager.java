@@ -53,7 +53,6 @@ public class DatabaseManager {
     // hibernate session docs
     // https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/Session.html
 
-    // METHODS FOR CONVENIENCE
     public void storeSingle(Model toStore) throws DatabaseException {
         executeTransaction((Session session) -> session.save(toStore));
     }
@@ -72,5 +71,4 @@ public class DatabaseManager {
     public List<Model> getAll(Class type) throws DatabaseException {
         return executeTransaction((Session session) -> session.createCriteria(type).list());
     }
-
 }
