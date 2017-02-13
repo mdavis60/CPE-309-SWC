@@ -1,5 +1,8 @@
 package org.swp.scheduler;
 
+import org.swp.scheduler.database.DatabaseManager;
+import org.swp.scheduler.database.models.LoginData;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
@@ -29,8 +32,10 @@ public class CreateCourseController extends WindowController {
 
     @FXML
     void CreateCourse() {
-      System.out.println("Create Course");
+
+      //Course data = new Course(courseName, courseNumber, "password", LoginData.AuthType.ADIMIN);
+      //DatabaseManager.getInstance().storeSingle(data);
+      
       closeWindow(createButton);
     }
-
 }

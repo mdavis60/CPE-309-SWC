@@ -15,6 +15,7 @@ public class StudentFeedback extends Model {
     public String term;
     public String feedback;
 
+    //Subject, Message, StudentID
     public StudentFeedback() {
     }
 
