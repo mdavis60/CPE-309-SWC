@@ -11,8 +11,8 @@ import java.util.List;
 @Table(name = "Course")
 public class Course extends Model {
     @Id
-    int courseId;
-    String courseName;
+    public int courseId;
+    public String courseName;
 
     //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
     //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)

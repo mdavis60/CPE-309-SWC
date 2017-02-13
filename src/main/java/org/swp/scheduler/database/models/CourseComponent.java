@@ -12,13 +12,13 @@ import javax.persistence.Table;
 @Table(name = "CourseComponent")
 public class CourseComponent extends Model {
     @Id
-    int componentId;
-    String type;
-    int workUnits;
-    int classHours;
-    int courseId;
+    public int componentId;
+    public String type;
+    public int workUnits;
+    public int classHours;
+    public int courseId;
 
     public CourseComponent() {
-
+    	
     }
 }

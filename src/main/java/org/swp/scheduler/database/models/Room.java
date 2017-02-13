@@ -12,15 +12,19 @@ import javax.persistence.Table;
 @Table(name = "room")
 public class Room extends Model {
     @Id
-    int roomId;
-    int roomNumber;
-    String building;
-    int capacity;
-    String attributes;
-    String type;
+    public int roomId;
+    public int roomNumber;
+    public String building;
+    public int capacity;
+    public String attributes;
+    public String type;
 
     public Room() {
 
     }
 
+    public String getRoom() {
+    	return building + " " + String.valueOf(roomNumber);
+    }
+    
 }
