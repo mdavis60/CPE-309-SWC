@@ -11,7 +11,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class LogInController extends WindowController{
 
@@ -33,11 +34,21 @@ public class LogInController extends WindowController{
             openWindow("Scheduler");
             closeWindow(signInButton);
           } else {
-            System.out.println("Incorrect password");
+              Alert alert = new Alert(AlertType.INFORMATION);
+              alert.setTitle("Error");
+              alert.setHeaderText("Bad Password");
+              String s ="Please re-enter your password.";
+              alert.setContentText(s);
+              alert.show();
           }
           
         } catch (Exception e) {
-          System.out.println("No username in database");
+          Alert alert = new Alert(AlertType.INFORMATION);
+          alert.setTitle("Error");
+          alert.setHeaderText("Invalid Credentials");
+          String s ="There is no account associated with this user.";
+          alert.setContentText(s);
+          alert.show();
         }
     }
 }
