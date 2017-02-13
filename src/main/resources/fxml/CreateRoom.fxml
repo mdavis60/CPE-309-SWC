@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../styles/styles.css" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateRoomController">
+<AnchorPane prefHeight="345.0" prefWidth="331.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateRoomController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="361.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Rectangle>
       <Label layoutX="104.0" layoutY="42.0" text="Create a new Room" textFill="#606060" />
       <TextField fx:id="buildNum" layoutX="69.0" layoutY="82.0" prefHeight="27.0" prefWidth="84.0" promptText="Building Number">
          <font>
@@ -45,8 +39,8 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Rectangle fx:id="createButton" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="125.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="106.0" />
-      <Label layoutX="147.0" layoutY="300.0" onMouseClicked="#CreateRoom" text="Create Room" textFill="#606060">
+      <Rectangle fx:id="createButton" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="110.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="132.0" />
+      <Label layoutX="135.0" layoutY="300.0" onMouseClicked="#CreateRoom" styleClass="lable-dark" text="Create Room" textFill="#606060">
          <font>
             <Font size="10.0" />
          </font>

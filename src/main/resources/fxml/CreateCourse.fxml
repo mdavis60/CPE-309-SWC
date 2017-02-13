@@ -1,60 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane stylesheets="@../styles/styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="377.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="310.0" />
-      <Label layoutX="91.0" layoutY="55.0" text="Create a new Course" textFill="#606060" />
-      <TextField fx:id="courseName" layoutX="61.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course name">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="courseNumber" layoutX="166.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course Number">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="courseType" layoutX="61.0" layoutY="143.0" prefHeight="27.0" prefWidth="190.0" promptText="Course Type">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="prereqs" layoutX="61.0" layoutY="185.0" prefHeight="27.0" prefWidth="190.0" promptText="Prerequisites">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="workUnits" layoutX="60.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Work Units">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="studentUnits" layoutX="166.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Student Units">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <Rectangle fx:id="createButton" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="102.0" layoutY="317.0" onMouseClicked="#CreateCourse" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="106.0" />
-      <Label layoutX="121.0" layoutY="324.0" text="Create Course" textFill="#606060">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label layoutX="77.0" layoutY="226.0" text="Work Units" textFill="#606060">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label layoutX="175.0" layoutY="228.0" text="Student Units" textFill="#606060">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
+            <Label layoutX="61.0" layoutY="55.0" styleClass="label-large" text="Create a new Course" textFill="#606060" />
+            <TextField fx:id="courseName" layoutX="61.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course name">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="courseNumber" layoutX="166.0" layoutY="102.0" prefHeight="27.0" prefWidth="84.0" promptText="Course Number">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="courseType" layoutX="61.0" layoutY="143.0" prefHeight="27.0" prefWidth="190.0" promptText="Course Type">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="prereqs" layoutX="61.0" layoutY="185.0" prefHeight="27.0" prefWidth="190.0" promptText="Prerequisites">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="workUnits" layoutX="60.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Work Units">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="studentUnits" layoutX="166.0" layoutY="248.0" prefHeight="27.0" prefWidth="84.0" promptText="Student Units">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <Label layoutX="60.0" layoutY="226.0" text="Work Units" textFill="#606060">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="228.0" text="Student Units" textFill="#606060">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button fx:id="createButton" layoutX="79.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#CreateCourse" prefHeight="31.0" prefWidth="157.0" text="Create Course" />
    </children>
-</Pane>
+</AnchorPane>

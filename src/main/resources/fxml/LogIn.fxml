@@ -3,13 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane stylesheets="@../styles/styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.LogInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.LogInController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#233e57" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Text fill="WHITE" layoutX="237.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
          <font>
             <Font name="System Bold" size="48.0" />
@@ -17,7 +15,7 @@
       </Text>
       <TextField fx:id="usernameField" layoutX="169.0" layoutY="152.0" prefHeight="25.0" prefWidth="262.0" promptText="E-mail" />
       <TextField fx:id="passwordField" layoutX="169.0" layoutY="194.0" prefHeight="25.0" prefWidth="262.0" promptText="Password" />
-      <Button fx:id="signInButton" layoutX="237.0" layoutY="253.0" mnemonicParsing="false" onAction="#validateInfo" prefHeight="25.0" prefWidth="126.0" text="Sign In" />
-      <Button layoutX="238.0" layoutY="299.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Forgot Password?" />
+      <Button fx:id="signInButton" layoutX="152.0" layoutY="253.0" mnemonicParsing="false" onAction="#validateInfo" prefHeight="25.0" prefWidth="126.0" text="Sign In" />
+      <Button layoutX="295.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Forgot Password?" />
    </children>
 </AnchorPane>

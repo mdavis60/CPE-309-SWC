@@ -4,21 +4,19 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.StudentFeedbackController">
+<AnchorPane prefHeight="470.0" prefWidth="552.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.StudentFeedbackController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36465d" height="529.0" stroke="BLACK" strokeType="INSIDE" width="550.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="0.0" />
       <Text fill="WHITE" layoutX="90.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Feedback Form" textAlignment="CENTER" wrappingWidth="356.93603515625" AnchorPane.rightAnchor="89.06396484375">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Text>
-      <TextArea fx:id="messageField" layoutX="64.0" layoutY="150.0" prefHeight="250.0" prefWidth="423.0" promptText="Message" />
+      <TextArea fx:id="messageField" layoutX="64.0" layoutY="150.0" prefWidth="423.0" promptText="Message" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="155.0" />
       <TextField fx:id="subjectField" layoutX="64.0" layoutY="104.0" prefHeight="31.0" prefWidth="423.0" promptText="Subject" />
-      <Button fx:id="cancelButton" layoutX="106.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#cancelPressed" prefHeight="31.0" prefWidth="149.0" text="Cancel" />
-      <Button fx:id="submitButton" layoutX="298.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#submitPressed" prefHeight="31.0" prefWidth="149.0" text="Submit" />
+      <Button fx:id="cancelButton" layoutX="106.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#cancelPressed" prefHeight="31.0" prefWidth="149.0" text="Cancel" AnchorPane.bottomAnchor="20.0" />
+      <Button fx:id="submitButton" layoutX="298.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#submitPressed" prefHeight="31.0" prefWidth="149.0" text="Submit" AnchorPane.bottomAnchor="20.0" />
    </children>
 </AnchorPane>
