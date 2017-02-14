@@ -11,8 +11,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
 public class LogInController extends WindowController{
 
@@ -27,8 +25,12 @@ public class LogInController extends WindowController{
         String username = usernameField.getText();
         String password = passwordField.getText();
 
+        openWindow("Scheduler");
+        
+        /*
         try {
           LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, username);
+          
           
           if(retrievedData.password.equals(password)){
             openWindow("Scheduler");
@@ -49,6 +51,6 @@ public class LogInController extends WindowController{
           String s ="There is no account associated with this user.";
           alert.setContentText(s);
           alert.show();
-        }
+        } */
     }
 }

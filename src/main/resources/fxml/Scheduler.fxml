@@ -187,7 +187,7 @@
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" onMouseClicked="#onAddSection" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
                      </children>
                   </Group>
-                  <Group fx:id="calendarGroup" layoutX="-256.0" layoutY="-43.0" visible="false">
+                  <Group fx:id="calendarGroup" layoutX="-256.0" layoutY="-43.0">
                      <children>
                         <AnchorPane fx:id="calendarAnchor" layoutX="581.0" layoutY="383.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="1.0">
                            <children>
@@ -196,6 +196,19 @@
                               <Line endY="490.0" layoutX="-53.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
                               <Line endY="490.0" layoutX="83.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
                               <Line endY="490.0" layoutX="219.0" layoutY="-200.0" startY="1.0" stroke="#79879a" />
+                              <Group fx:id="innerCalendarGroup" layoutX="-325.0" layoutY="-200.0">
+                                 <children>
+                                    <HBox fx:id="calendarHBox" prefHeight="490.0" prefWidth="682.0">
+                                       <children>
+                                          <VBox prefHeight="490.0" prefWidth="137.0" />
+                                          <VBox prefHeight="490.0" prefWidth="137.0" />
+                                          <VBox prefHeight="490.0" prefWidth="142.0" />
+                                          <VBox prefHeight="490.0" prefWidth="135.0" />
+                                          <VBox prefHeight="490.0" prefWidth="136.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Group>
                            </children>
                         </AnchorPane>
                         <Text fill="#36465d" layoutX="248.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" x="50.0" y="-240.0">
@@ -225,7 +238,7 @@
                         </Text>
                      </children>
                   </Group>
-                  <Group fx:id="listGroup">
+                  <Group fx:id="listGroup" visible="false">
                      <children>
                         <HBox fx:id="listHBox" layoutX="-1.0" layoutY="93.0" prefHeight="536.0" prefWidth="680.0">
                            <children>
@@ -248,7 +261,7 @@
                                     <Group />
                                     <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
                                        <children>
-                                          <Text layoutX="52.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                                          <Text layoutX="52.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>

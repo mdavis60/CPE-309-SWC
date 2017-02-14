@@ -8,9 +8,9 @@ public class Section extends Model {
 	public Teacher prof;
 	public Room room; 
 	public CourseComponent courseComp; 
+	public String dow; 
 	public int startTime; 
 	public int endTime; 
-	
 	
 	public Section() {
 		

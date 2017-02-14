@@ -76,3 +76,9 @@
 
 }
 
+.calendar-block {
+    -fx-background-color: #79879a;
+    -fx-width: 100;
+    -fx-height: 500;
+}
+

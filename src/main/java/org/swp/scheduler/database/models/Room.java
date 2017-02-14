@@ -24,7 +24,7 @@ public class Room extends Model {
     }
 
     public String getRoom() {
-    	return building + " " + String.valueOf(roomNumber);
+    	return building + "-" + String.valueOf(roomNumber);
     }
     
 }
