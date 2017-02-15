@@ -3,6 +3,9 @@ package org.swp.scheduler;
 import java.awt.Button;
 import java.awt.event.ActionEvent;
 
+import org.swp.scheduler.database.DatabaseManager;
+import org.swp.scheduler.database.models.LoginData;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

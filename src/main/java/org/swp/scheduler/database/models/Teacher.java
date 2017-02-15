@@ -10,8 +10,8 @@ import javax.persistence.Id;
 @Entity
 public class Teacher extends Model {
     @Id
-    int teacherId;
-    String teacherName;
+    public int teacherId;
+    public String teacherName;
 
     public Teacher() {
 
