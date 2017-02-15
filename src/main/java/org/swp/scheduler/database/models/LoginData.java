@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "LoginData")
 public class LoginData extends Model {
     public enum AuthType {
-        ADIMIN, DSA, STUDENT;
+        ADMIN, DSA, STUDENT;
     }
 
     @Id
