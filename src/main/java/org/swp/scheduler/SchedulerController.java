@@ -1,36 +1,17 @@
 package org.swp.scheduler;
 
-import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.SplitPane;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.stage.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.scene.text.*;
-import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
-import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.Group;
-import javafx.stage.Stage;
-import javafx.*;
-
-import java.awt.Panel;
+import javafx.scene.shape.*;
+import javafx.application.*;
+import javafx.collections.*;
 import java.util.ArrayList;
-
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.swp.scheduler.database.models.Course;
-import org.swp.scheduler.database.models.CourseComponent;
-import org.swp.scheduler.database.models.Room;
-import org.swp.scheduler.database.models.Section;
-import org.swp.scheduler.database.models.Teacher;
+import org.slf4j.*;
+import org.swp.scheduler.database.models.*;
 
 public class SchedulerController extends WindowController {
 
@@ -58,14 +39,21 @@ public class SchedulerController extends WindowController {
 	@FXML
 	private Text closeFeedback; 
 	
-	@FXML 
-	private Group calendarGroup; 
-	
 	@FXML
 	private Group listGroup; 
+	
+	@FXML
+	private Group calendarGroup;
 
 	@FXML 
-	private HBox listHBox; 
+	private HBox listHBox;
+	
+	@FXML
+	private Group innercalendarGroup; 
+	
+
+	@FXML 
+	private HBox calendarHBox; 
 	
 	private boolean feedbackIsShown = true; 
 
@@ -142,7 +130,7 @@ public class SchedulerController extends WindowController {
 		comp.type = "Lecture";
 		prof.teacherName = "T. Kearns";
 		room.building = "14";
-		room.roomId = 255; 
+		room.roomNumber = 255; 
 		
 		Section section = new Section();
 		section.course = course; 
@@ -151,14 +139,46 @@ public class SchedulerController extends WindowController {
 		section.room = room;
 		section.startTime = 9; 
 		section.endTime = 11; 
+		section.dow = "M W F";
 	
 		addSection(section);
 	} 
 	
 	public void addSection(Section section) throws Exception {
+		addSectionToListView(section);
+		addSectionToCalendarView(section);
+	}
+
+	public void addSectionToCalendarView(Section section) throws Exception {
+		Text name = new Text(section.course.courseName);
+		Text prof = new Text(section.prof.teacherName);
+		Text hours = new Text(section.startTime + "-" + section.endTime);
+		
+		
+		ObservableList<Node> list = calendarHBox.getChildren(); 
+		
+		AnchorPane ap = new AnchorPane();
+		VBox v = new VBox();
+		ap.getStyleClass().add("calendar-block");
+		ap.setPrefHeight(100);
+		ap.getChildren().add(v);
+		v.getChildren().add(name);
+		v.getChildren().add(prof);
+		v.getChildren().add(hours);
+		
+		
+		//for (int i = 0; i < list.size(); i++) {
+			VBox vb = (VBox) list.get(0);
+			vb.getChildren().add(ap);
+	//	}
+		
+		
+	}	
+	
+	public void addSectionToListView(Section section) throws Exception {
 		ArrayList<String> sectionInfo = new ArrayList<String>();
 		sectionInfo.add(section.course.courseName);
-		sectionInfo.add(String.valueOf(section.startTime) + " - " + String.valueOf(section.endTime));
+		sectionInfo.add(String.valueOf(section.dow + " : " + section.startTime) + " - " + String.valueOf(section.endTime));
 		sectionInfo.add(section.prof.teacherName);
 		sectionInfo.add(section.room.getRoom());
 		sectionInfo.add(section.courseComp.type);
@@ -171,9 +191,7 @@ public class SchedulerController extends WindowController {
 			text.setTextAlignment(TextAlignment.CENTER);
 			vb.getChildren().add(text);
 		}
-	
 	}
-
 	
 	
 	
