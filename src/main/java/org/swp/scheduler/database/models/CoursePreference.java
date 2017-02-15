@@ -22,7 +22,7 @@ public class CoursePreference {
 
     public CoursePreference(Course course, Teacher teacher, int preferenceLevel) {
         this.preferenceLevel = preferenceLevel;
-        this.teacherId = teacher.teacherId;
+        //this.teacherId = teacher.teacherId;
         this.courseId = course.courseId;
     }
 }
