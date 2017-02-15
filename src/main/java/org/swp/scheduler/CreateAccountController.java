@@ -38,7 +38,7 @@ public class CreateAccountController extends WindowController{
       String password2 = passwordField2.getText();
       
       if(password1.equals(password2)){
-        LoginData data = new LoginData(username, email, password1, LoginData.AuthType.ADIMIN);
+        LoginData data = new LoginData(username, email, password1, LoginData.AuthType.ADMIN);
 
         try {
           DatabaseManager.getInstance().storeSingle(data);
