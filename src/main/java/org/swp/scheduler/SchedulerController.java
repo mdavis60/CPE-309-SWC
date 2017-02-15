@@ -99,8 +99,8 @@ public class SchedulerController extends WindowController {
 
     @FXML
     void launchTimePreferences() {
-    	System.out.println("TimePreferences");
-    	openWindow("TimePreferences");
+    	System.out.println("TimePreference");
+    	openWindow("TimePreference");
     }
     
 	// Hides or shows the Student Feedback panel depending on the current state

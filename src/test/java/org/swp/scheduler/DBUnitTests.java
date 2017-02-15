@@ -23,7 +23,6 @@ public class DBUnitTests {
 
     @AfterClass
     public void cleanup() {
-
     }
 
     @Test
@@ -50,11 +49,11 @@ public class DBUnitTests {
 
     @Test
     public void loginDataTest() throws Exception {
-        LoginData data = new LoginData("username", "email", "password", LoginData.AuthType.ADIMIN);
+        LoginData data = new LoginData("username", "email", "password", LoginData.AuthType.ADMIN);
         DatabaseManager.getInstance().storeSingle(data);
         LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, "username");
 
-        assert retrievedData.type == LoginData.AuthType.ADIMIN;
+        assert retrievedData.type == LoginData.AuthType.ADMIN;
 
         DatabaseManager.getInstance().deleteSingle(retrievedData);
     }
