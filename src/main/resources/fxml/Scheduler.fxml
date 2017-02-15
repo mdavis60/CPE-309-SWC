@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.Double?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
    <children>
       <Group fx:id="sidePanel">
          <children>
@@ -38,124 +33,29 @@
                   </BorderPane>
                </children>
             </AnchorPane>
-            <TabPane layoutY="65.0" styleClass="tab-pane-side">
-               <tabs>
-                  <Tab text="Filters">
-                     <content>
-                        <Group fx:id="filtersTab">
-                           <children>
-                              <Accordion prefHeight="620.0" prefWidth="202.0">
-                                      <panes>
-                                        <TitledPane fx:id="currentSchedule" animated="false" text="Current Schedule">
-                                          <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                   <children>
-                                                      <Accordion layoutX="15.0" prefHeight="608.0" prefWidth="238.0">
-                                                        <panes>
-                                                          <TitledPane animated="false" text="Courses">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                          <TitledPane animated="false" text="Faculty">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                          <TitledPane animated="false" text="Rooms">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                        </panes>
-                                                      </Accordion>
-                                                   </children>
-                                                </AnchorPane>
-                                          </content>
-                                        </TitledPane>
-                                        <TitledPane fx:id="previousTerms" animated="false" prefHeight="493.0" prefWidth="244.0" text="Terms">
-                                          <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                   <children>
-                                                      <Accordion layoutX="15.0" prefHeight="606.0" prefWidth="239.0">
-                                                        <panes>
-                                                          <TitledPane animated="false" text="Winter '17">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                          <TitledPane animated="false" text="Fall '16">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                          <TitledPane animated="false" text="Spring '16">
-                                                            <content>
-                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                            </content>
-                                                          </TitledPane>
-                                                            <TitledPane animated="false" text="Winter '16">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                               </content>
-                                                            </TitledPane>
-                                                        </panes>
-                                                      </Accordion>
-                                                   </children>
-                                                </AnchorPane>
-                                          </content>
-                                        </TitledPane>
-                                      </panes>
-                                    </Accordion>
-                           </children>
-                        </Group>
-                     </content>
-                  </Tab>
-                  <Tab text="Actions">
-                    <content>
-                        <Group fx:id="actionsTab">
-                           <children>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="632.0" prefWidth="200.0">
-                                 <children>
-                                    <ListView layoutX="6.0" layoutY="6.0" prefHeight="632.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <Group layoutX="14.0" onMouseClicked="#launchNewCourse">
-                                       <children>
-                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-                                          <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Course" />
-                                       </children>
-                                    </Group>
-                                    <Group layoutX="14.0" layoutY="34.0" onMouseClicked="#launchNewSection">
-                                       <children>
-                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-                                          <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Section" />
-                                       </children>
-                                    </Group>
-                                    <Group layoutX="14.0" layoutY="68.0" onMouseClicked="#launchNewRoom">
-                                       <children>
-                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="183.0" />
-                                          <Text fill="WHITE" layoutX="5.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Room" />
-                                       </children>
-                                    </Group>
-                                    <Group layoutX="14.0" layoutY="102.0" onMouseClicked="#launchStudentFeedback">
-                                       <children>
-                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="183.0" />
-                                          <Text fill="WHITE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Student Feedback" />
-                                       </children>
-                                    </Group>
-                                    <Group layoutX="14.0" layoutY="136.0" onMouseClicked="#launchTimePreferences">
-                                       <children>
-                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="183.0" />
-                                          <Text fill="WHITE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Time Preferences" />
-                                       </children>
-                                    </Group>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </Group>
-                    </content>
-                  </Tab>
-               </tabs>
-            </TabPane>
+            <ScrollPane layoutY="65.0" prefHeight="660.0" prefWidth="210.0">
+               <content>
+                  <Accordion prefHeight="620.0" prefWidth="210.0">
+                     <panes>
+                        <TitledPane animated="false" prefHeight="568.0" prefWidth="210.0" text="Courses">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Faculty">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Rooms">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </content>
+            </ScrollPane>
          </children>
       </Group>
       <Group fx:id="calendar1" layoutY="19.0">
@@ -172,7 +72,7 @@
                               <Font name="Avenir Roman" size="13.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="-102.0" layoutY="-296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
+                        <Text fill="WHITE" layoutX="-102.0" layoutY="-307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter Term">
                            <font>
                               <Font name="Avenir Roman" size="32.0" />
                            </font>
@@ -183,8 +83,12 @@
                               <Font name="Avenir Roman" size="13.0" />
                            </font>
                         </Text>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" onMouseClicked="#onAddSection" rotate="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" onMouseClicked="#onAddSection" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                        <Group fx:id="openSchedule" layoutX="280.0" layoutY="-286.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                           </children>
+                        </Group>
                      </children>
                   </Group>
                   <Group fx:id="calendarGroup" layoutX="-256.0" layoutY="-43.0">
@@ -240,12 +144,12 @@
                   </Group>
                   <Group fx:id="listGroup" visible="false">
                      <children>
-                        <HBox fx:id="listHBox" layoutX="-1.0" layoutY="93.0" prefHeight="536.0" prefWidth="680.0">
+                        <HBox layoutX="-1.0" layoutY="93.0" prefHeight="536.0" prefWidth="680.0">
                            <children>
                               <VBox prefHeight="536.0" prefWidth="137.0">
                                  <children>
                                     <Group />
-                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                    <AnchorPane fx:id="sectionCourse" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
                                        <children>
                                           <Text layoutX="47.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course">
                                              <font>
@@ -259,7 +163,7 @@
                               <VBox prefHeight="536.0" prefWidth="137.0">
                                  <children>
                                     <Group />
-                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                    <AnchorPane fx:id="sectionTime" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
                                        <children>
                                           <Text layoutX="52.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
                                              <font>
@@ -273,7 +177,7 @@
                               <VBox prefHeight="536.0" prefWidth="137.0">
                                  <children>
                                     <Group />
-                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                    <AnchorPane fx:id="sectionProfessor" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
                                        <children>
                                           <Text layoutX="57.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prof.">
                                              <font>
@@ -287,7 +191,7 @@
                               <VBox prefHeight="536.0" prefWidth="137.0">
                                  <children>
                                     <Group />
-                                    <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
+                                    <AnchorPane fx:id="sectionRoom" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
                                        <children>
                                           <Text layoutX="54.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room">
                                              <font>
@@ -298,7 +202,7 @@
                                     </AnchorPane>
                                  </children>
                               </VBox>
-                              <VBox prefHeight="536.0" prefWidth="137.0">
+                              <VBox fx:id="sectionType" prefHeight="536.0" prefWidth="137.0">
                                  <children>
                                     <Group />
                                     <AnchorPane prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: lightgray;">
@@ -339,6 +243,35 @@
                   <Font name="Avenir Roman" size="17.0" />
                </font>
             </Text>
+         </children>
+      </Group>
+      <ComboBox layoutX="760.0" layoutY="123.0" prefHeight="26.0" prefWidth="94.0" />
+      <Group layoutX="260.0" layoutY="110.0">
+         <children>
+            <Polygon fill="#36465d" rotate="-90.0" scaleX="0.35" scaleY="0.35" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="50.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="-60.0" />
+              </points>
+            </Polygon>
+         </children>
+      </Group>
+      <Group layoutX="825.0" layoutY="120.0">
+         <children>
+            <Polygon fill="#36465d" layoutX="54.0" layoutY="-10.0" rotate="90.0" scaleX="0.35" scaleY="0.35" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <points>
+                  <Double fx:value="-50.0" />
+                  <Double fx:value="40.0" />
+                  <Double fx:value="50.0" />
+                  <Double fx:value="40.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="-60.0" />
+               </points>
+            </Polygon>
          </children>
       </Group>
    </children>
