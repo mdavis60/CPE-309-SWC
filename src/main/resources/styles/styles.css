@@ -43,7 +43,7 @@
 .side-panel, .tab-pane-side , .sp-label{
     -fx-background-color: #ffffff;
     -fx-pref-width: 210;
-    -fx-pref-height: 725;
+    -fx-pref-height: 696;
 }
 .tab-pane-side {
     -fx-pref-height: 660;
@@ -54,6 +54,17 @@
 .sp-action {
     -fx-pref-width: 210;
     -fx-background-color: light-grey;
+}
+
+.menu {
+    -fx-background-color: linear-gradient(#515a66, #79879a);
+}
+
+.menu-item .label{
+	-fx-text-fill: #000000;
+}
+.tab-main {
+	-fx-fill: linear-gradient(#aeaeae, #ffffff);
 }
 
 
