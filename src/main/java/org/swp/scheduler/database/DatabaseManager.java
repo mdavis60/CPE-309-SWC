@@ -61,6 +61,10 @@ public class DatabaseManager {
         return executeTransaction((Session session) -> session.get(entityClass, id));
     }
 
+    public boolean containsKey(Class entityClass, Serializable id) throws DatabaseException {
+        return executeTransaction((Session session) -> session.get(entityClass, id)) != null;
+    }
+
     public void deleteSingle(Model toDelete) throws DatabaseException {
         executeTransaction((Session session) -> {
             session.delete(toDelete);

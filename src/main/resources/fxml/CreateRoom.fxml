@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="345.0" prefWidth="331.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateRoomController">
    <children>
-      <Label layoutX="104.0" layoutY="42.0" text="Create a new Room" textFill="#606060" />
-      <TextField fx:id="buildNum" layoutX="69.0" layoutY="82.0" prefHeight="27.0" prefWidth="84.0" promptText="Building Number">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="roomNum" layoutX="174.0" layoutY="82.0" prefHeight="27.0" prefWidth="84.0" promptText="Room Number">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="attributes" layoutX="70.0" layoutY="127.0" prefHeight="27.0" prefWidth="188.0" promptText="Attributes">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="roomType" layoutX="70.0" layoutY="167.0" prefHeight="27.0" prefWidth="188.0" promptText="Room Type">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="maxCap" layoutX="70.0" layoutY="233.0" prefHeight="27.0" prefWidth="188.0" promptText="Maximum Capacity">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </TextField>
-      <Label layoutX="132.0" layoutY="208.0" text="Max Capacity" textFill="#606060">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Rectangle fx:id="createButton" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="110.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="132.0" />
-      <Label layoutX="135.0" layoutY="300.0" onMouseClicked="#CreateRoom" styleClass="lable-dark" text="Create Room" textFill="#606060">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
+      <VBox alignment="CENTER" layoutX="104.0" layoutY="42.0" prefHeight="345.0" prefWidth="367.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="page-title" text="Create a new Room" textFill="#606060">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></Label>
+            <HBox alignment="CENTER" spacing="25.0">
+               <children>
+                  <TextField fx:id="buildNum" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Building Number">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="roomNum" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Room Number">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="attributes" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Attributes">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="roomType" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Room Type">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="maxCap" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Maximum Capacity">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="createButton" mnemonicParsing="false" text="Create Room" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
