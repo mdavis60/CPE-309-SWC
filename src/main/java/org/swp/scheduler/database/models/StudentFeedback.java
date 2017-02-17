@@ -12,7 +12,9 @@ public class StudentFeedback extends Model {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     public int feedbackId;
+    public int studentId;
     public String term;
+    public String subject;
     public String feedback;
 
     //Subject, Message, StudentID

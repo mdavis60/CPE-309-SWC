@@ -16,7 +16,6 @@ public class LoginData extends Model {
 
     @Id
     public String username;
-    public String email;
     public String password;
     public AuthType type;
 
@@ -24,9 +23,8 @@ public class LoginData extends Model {
 
     }
 
-    public LoginData(String username, String email, String password, AuthType type) {
+    public LoginData(String username, String password, AuthType type) {
         this.username = username;
-        this.email = email;
         this.password = password;
         this.type = type;
     }

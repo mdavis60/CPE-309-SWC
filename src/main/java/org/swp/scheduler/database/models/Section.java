@@ -1,11 +1,30 @@
 package org.swp.scheduler.database.models;
 
 import java.sql.Time;
+import java.util.List;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Section extends Model {
 
+  /*
+   *public int courseId; 
+   *public int sectionId;
+   *
+   *
+    //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
+    //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name="sectionComponentId")
+    public List<SectionComponent> componentList;
+   * 
+   */
+  
+  //For UI testing
 	private StringProperty course; 
 	public StringProperty prof;
 	public StringProperty room; 
