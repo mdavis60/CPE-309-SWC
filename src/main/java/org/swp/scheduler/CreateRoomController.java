@@ -3,6 +3,7 @@ package org.swp.scheduler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.Button;
 
 public class CreateRoomController extends WindowController {
 
@@ -22,7 +23,7 @@ public class CreateRoomController extends WindowController {
     private TextField maxCap;
 
     @FXML
-    private Rectangle createButton;
+    private Button createButton;
 
     @FXML
     void CreateRoom() {

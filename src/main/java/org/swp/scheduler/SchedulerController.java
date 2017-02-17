@@ -75,6 +75,10 @@ public class SchedulerController extends WindowController {
     	masterData.add(new Section("CPE 357", "T. Kearns", "14-202", "Lecture", "M W F", "8", "9"));
     	masterData.add(new Section("CPE 101", "T. Kearns", "14-202", "Lecture", "M W F", "3", "5"));
     	masterData.add(new Section("CPE 102", "T. Kearns", "14-202", "Lecture", "M W F", "5", "7"));
+        /*ArrayList<Section> sections = Database.getSections();
+        for(Section s : sections) {
+          addSection(s);
+        }*/
     }
     
     @FXML
@@ -106,30 +110,36 @@ public class SchedulerController extends WindowController {
     }
 
     @FXML
-    void launchNewCourse() {
+    void OpenAddCourse() {
     	System.out.println("New Course");
     	openWindow("CreateCourse");
     }
 
     @FXML
-    void launchNewSection() {
+    void OpenAddSection() {
     	System.out.println("New Section");
     	openWindow("CreateSection");
     }
 
     @FXML
-    void launchNewRoom() {
+    void OpenAddRoom() {
     	System.out.println("New Room");
     	openWindow("CreateRoom");    }
     @FXML
-    void launchStudentFeedback() {
+    void OpenAddStudentFeedback() {
     	System.out.println("Student Feedback");
     	openWindow("StudentFeedback");    }
 
     @FXML
-    void launchTimePreferences() {
+    void OpenTPDialog() {
     	System.out.println("TimePreference");
-    	openWindow("TimePreference");
+    	openWindow("TimePreferences");
+    }
+    
+    @FXML
+    void OpenCPDialog() {
+        System.out.println("CoursePreference");
+        openWindow("CoursePreferences");
     }
     
 	// Hides or shows the Student Feedback panel depending on the current state

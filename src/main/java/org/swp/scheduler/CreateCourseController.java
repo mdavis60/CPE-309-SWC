@@ -6,6 +6,7 @@ import org.swp.scheduler.database.models.LoginData;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.Button;
 
 public class CreateCourseController extends WindowController {
 
@@ -28,7 +29,7 @@ public class CreateCourseController extends WindowController {
     private TextField studentUnits;
 
     @FXML
-    private Rectangle createButton;
+    private Button createButton;
 
     @FXML
     void CreateCourse() {
