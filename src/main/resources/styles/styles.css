@@ -2,17 +2,29 @@
 
 .label, .label-dark, .label-large {
     -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 .lable-dark {
     -fx-text-fill: #000000;
 }
-.label-large {
-	-fx-font-size: 16px;
+.label-light {
+	-fx-text-fill: #ffffff;
 }
-
+.label-bold {
+    -fx-font-weight: bold;
+}
+.label-large {
+	-fx-font-size: 24px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+.label-xl {
+	-fx-font-size: 32px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+.page-title {
+	-fx-text-fill: #ffffff;
+	-fx-font-weight: bold;
+	-fx-font-size: 24px;
+}
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
@@ -35,6 +47,7 @@
 .main-panel {
     -fx-background-image: url("../images/background.jpg");
 }
+
 /* scheduler styles */
 
 .background-panel {
@@ -43,7 +56,7 @@
 .side-panel, .tab-pane-side , .sp-label{
     -fx-background-color: #ffffff;
     -fx-pref-width: 210;
-    -fx-pref-height: 725;
+    -fx-pref-height: 696;
 }
 .tab-pane-side {
     -fx-pref-height: 660;
@@ -56,6 +69,24 @@
     -fx-background-color: light-grey;
 }
 
+.menu {
+    -fx-background-color: linear-gradient(#515a66, #79879a);
+
+}
+.menu .label {
+    	-fx-text-fill: #ffffff;
+}
+
+.menu-item .label{
+	-fx-text-fill: #000000;
+}
+.tab-main {
+	-fx-fill: linear-gradient(#aeaeae, #ffffff);
+}
+.table-column .label {
+	-fx-text-fill: #000000;
+	-fx-font-weight: normal;
+}
 
 .hello-message {
     -fx-text-fill: #AA0000;

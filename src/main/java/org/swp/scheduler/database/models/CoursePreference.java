@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "CoursePreferences")
 public class CoursePreference {
     @Id
-    int preferenceId;
+    int coursePreferenceId;
 
     public int courseId;
     public int teacherId;
