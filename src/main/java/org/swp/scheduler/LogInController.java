@@ -26,7 +26,8 @@ public class LogInController extends WindowController{
         String password = passwordField.getText();
 
         openWindow("Scheduler");
-        
+        closeWindow(signInButton);
+
         /*
         try {
           LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, username);
