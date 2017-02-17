@@ -36,11 +36,11 @@
           </Menu>
           <Menu fx:id="editMenu" mnemonicParsing="false" styleClass="menu" text="Edit">
             <items>
-              <MenuItem fx:id="addCourseMI" mnemonicParsing="false" onAction="#OpenAddCourse" styleClass="menu-item" text="Add New Course" />
-                  <MenuItem fx:id="addSectionMI" mnemonicParsing="false" onAction="#OpenAddSection" styleClass="menu-item" text="Add New Section" />
-                  <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#OpenAddRoom" styleClass="menu-item" text="Add New Room" />
-                  <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#OpenTPDialog" styleClass="menu-item" text="Edit Time Preferences" />
-                  <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#OpenCPDialog" styleClass="menu-item" text="Edit Course Preferences" />
+              <MenuItem fx:id="addCourseMI" mnemonicParsing="false" onAction="#launchNewCourse" styleClass="menu-item" text="Add New Course" />
+                  <MenuItem fx:id="addSectionMI" mnemonicParsing="false" onAction="#launchNewSection" styleClass="menu-item" text="Add New Section" />
+                  <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#launchNewRoom" styleClass="menu-item" text="Add New Room" />
+                  <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#launchTimePreferences" styleClass="menu-item" text="Edit Time Preferences" />
+                  <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#launchCoursePreferences" styleClass="menu-item" text="Edit Course Preferences" />
             </items>
           </Menu>
           <Menu fx:id="windowMenu" mnemonicParsing="false" styleClass="menu" text="Window">

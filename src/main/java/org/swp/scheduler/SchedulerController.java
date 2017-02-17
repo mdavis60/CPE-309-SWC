@@ -9,7 +9,9 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.application.*;
 import javafx.collections.*;
+
 import java.util.ArrayList;
+
 import org.slf4j.*;
 import org.swp.scheduler.database.models.*;
 
@@ -62,6 +64,60 @@ public class SchedulerController extends WindowController {
 	
 	@FXML
 	private TableColumn<Section, String> timeColumn;
+	@FXML
+    private MenuItem newMI;
+
+    @FXML
+    private MenuItem openMI;
+
+    @FXML
+    private MenuItem saveMI;
+
+    @FXML
+    private MenuItem saveAsMI;
+
+    @FXML
+    private MenuItem ImportScheduleMI;
+
+    @FXML
+    private Menu editMenu;
+
+    @FXML
+    private MenuItem addCourseMI;
+
+    @FXML
+    private MenuItem addSectionMI;
+
+    @FXML
+    private MenuItem addRoomMI;
+
+    @FXML
+    private MenuItem editTimePrefMI;
+
+    @FXML
+    private MenuItem editCoursePrefMI;
+
+    @FXML
+    private Menu windowMenu;
+
+    @FXML
+    private MenuItem viewTimePrefMI;
+
+    @FXML
+    private MenuItem viewCohortDataMI;
+
+    @FXML
+    private MenuItem ListViewMI;
+
+    @FXML
+    private MenuItem CalViewMI;
+
+    @FXML
+    private Menu helpMenu;
+
+    @FXML
+    private MenuItem aboutMI;
+
 	
 	private boolean feedbackIsShown = true; 
 	
@@ -75,10 +131,6 @@ public class SchedulerController extends WindowController {
     	masterData.add(new Section("CPE 357", "T. Kearns", "14-202", "Lecture", "M W F", "8", "9"));
     	masterData.add(new Section("CPE 101", "T. Kearns", "14-202", "Lecture", "M W F", "3", "5"));
     	masterData.add(new Section("CPE 102", "T. Kearns", "14-202", "Lecture", "M W F", "5", "7"));
-        /*ArrayList<Section> sections = Database.getSections();
-        for(Section s : sections) {
-          addSection(s);
-        }*/
     }
     
     @FXML
@@ -110,37 +162,37 @@ public class SchedulerController extends WindowController {
     }
 
     @FXML
-    void OpenAddCourse() {
+    void launchNewCourse() {
     	System.out.println("New Course");
     	openWindow("CreateCourse");
     }
+    @FXML
+    void launchCoursePreferences() {
+    	System.out.println("Course Preferences");
+    	openWindow("CoursePreferences");
+    }
 
     @FXML
-    void OpenAddSection() {
+    void launchNewSection() {
     	System.out.println("New Section");
     	openWindow("CreateSection");
     }
 
     @FXML
-    void OpenAddRoom() {
+    void launchNewRoom() {
     	System.out.println("New Room");
     	openWindow("CreateRoom");    }
     @FXML
-    void OpenAddStudentFeedback() {
+    void launchStudentFeedback() {
     	System.out.println("Student Feedback");
     	openWindow("StudentFeedback");    }
 
     @FXML
-    void OpenTPDialog() {
+    void launchTimePreferences() {
     	System.out.println("TimePreference");
     	openWindow("TimePreferences");
     }
     
-    @FXML
-    void OpenCPDialog() {
-        System.out.println("CoursePreference");
-        openWindow("CoursePreferences");
-    }
     
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onExpandFeedback() throws Exception {
