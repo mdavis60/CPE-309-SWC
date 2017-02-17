@@ -6,6 +6,8 @@ import org.swp.scheduler.database.models.LoginData;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,6 +20,13 @@ public class LogInController extends WindowController{
     @FXML private PasswordField passwordField;
 
     @FXML private Button signInButton;
+    
+    @FXML
+    void enterPressed(KeyEvent key) throws Exception{
+    	if(key.getCode() == KeyCode.ENTER){
+    		validateInfo();
+    	}
+    }
     
     //function to process user credentials
     public void validateInfo() throws Exception {
@@ -37,21 +46,12 @@ public class LogInController extends WindowController{
             openWindow("Scheduler");
             closeWindow(signInButton);
           } else {
-              Alert alert = new Alert(AlertType.INFORMATION);
-              alert.setTitle("Error");
-              alert.setHeaderText("Bad Password");
-              String s ="Please re-enter your password.";
-              alert.setContentText(s);
-              alert.show();
+             errorMessage("Bad Password", "Please re-enter your password.");
           }
           
         } catch (Exception e) {
-          Alert alert = new Alert(AlertType.INFORMATION);
-          alert.setTitle("Error");
-          alert.setHeaderText("Invalid Credentials");
-          String s ="There is no account associated with this user.";
-          alert.setContentText(s);
-          alert.show();
+<<<<<<< Updated upstream
+        	errorMessage("Invalid Credentials", "There is no account associated with this user.");
         } */
     }
 }

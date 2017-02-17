@@ -53,6 +53,9 @@ public class SchedulerController extends WindowController {
 	@FXML
 	private TableColumn<Section, String> sectionNameColumn;
 	
+	@FXML 
+	private TextField filterField; 
+	
 	@FXML
 	private TableColumn<Section, String> profColumn;
 	
@@ -131,6 +134,16 @@ public class SchedulerController extends WindowController {
     	masterData.add(new Section("CPE 357", "T. Kearns", "14-202", "Lecture", "M W F", "8", "9"));
     	masterData.add(new Section("CPE 101", "T. Kearns", "14-202", "Lecture", "M W F", "3", "5"));
     	masterData.add(new Section("CPE 102", "T. Kearns", "14-202", "Lecture", "M W F", "5", "7"));
+    	masterData.add(new Section("CPE 308", "Workman", "14-202", "Lecture", "M W F", "1", "3"));
+    	masterData.add(new Section("CPE 305", "Abler", "14-202", "Lecture", "M W F", "12", "1"));
+    	masterData.add(new Section("CPE 357", "Staley", "14-202", "Lecture", "M W F", "8", "9"));
+    	masterData.add(new Section("CPE 101", "McAniff", "14-202", "Lecture", "M W F", "3", "5"));
+    	masterData.add(new Section("CPE 102", "Bob", "14-202", "Lecture", "M W F", "5", "7"));
+
+        /*ArrayList<Section> sections = Database.getSections();
+        for(Section s : sections) {
+          addSection(s);
+        }*/
     }
     
     @FXML
@@ -145,6 +158,25 @@ public class SchedulerController extends WindowController {
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Section> filteredData = new FilteredList<>(masterData, p -> true);
+        
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+			filteredData.setPredicate(section -> {
+				// If filter text is empty, display all persons.
+				if (newValue == null || newValue.isEmpty()) {
+					return true;
+				}
+				
+				// Compare first name and last name of every person with filter text.
+				String lowerCaseFilter = newValue.toLowerCase();
+				
+				if (section.getCourse().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true; // Filter matches first name.
+				} else if (section.getProf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true; // Filter matches last name.
+				}
+				return false; // Does not match.
+			});
+		});
 
         // 3. Wrap the FilteredList in a SortedList. 
         SortedList<Section> sortedData = new SortedList<>(filteredData);
