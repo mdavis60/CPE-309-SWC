@@ -14,13 +14,14 @@ public class Room extends Model {
     @Id
     public int roomId;
     public int roomNumber;
+    public int buildingNumber;
     public String building;
     public int capacity;
     public String attributes;
+
     public String type;
 
     public Room() {
-
     }
 
     public String getRoom() {
