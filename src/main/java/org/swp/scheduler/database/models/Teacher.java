@@ -1,8 +1,6 @@
 package org.swp.scheduler.database.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -15,8 +13,16 @@ public class Teacher extends Model {
     @Id
     public String teacherId;
     public String teacherName;
+
+    /*
+    @OneToMany
+    @JoinColumn(name="timePreferenceId")
     public List<TimePreference> timePreferences;
+
+    @OneToMany
+    @JoinColumn(name="coursePreferenceId")
     public List<CoursePreference> coursePreferences;
+    */
 
     public Teacher() {
     }

@@ -10,9 +10,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TimePreferences")
-public class TimePreference {
+public class TimePreference extends Model {
     @Id
-    int preferenceId;
+    int timePreferenceId;
 
     public String teacherId;
     public int preferenceLevel;
