@@ -15,9 +15,10 @@ import javax.persistence.Table;
 @Table(name = "CourseComponent")
 public class CourseComponent extends Model {
     @Id
-    public int componentId;
+    public int courseComponentId;
     public String type;
     public int workUnits;
+    public int studentUnits;
     public int classHours;
     public int courseId;
 

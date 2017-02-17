@@ -13,6 +13,8 @@ public class Teacher extends Model {
     @Id
     public String teacherId;
     public String teacherName;
+    public int targetWorkUnits;
+    public int currWorkUnits;
 
 
     @OneToMany
