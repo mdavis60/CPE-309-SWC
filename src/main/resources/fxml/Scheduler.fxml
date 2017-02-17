@@ -27,15 +27,12 @@
          <children>
             <AnchorPane prefHeight="725.0" prefWidth="208.0" styleClass="side-panel">
                <children>
-                  <BorderPane styleClass="sp-lable">
-                     <center>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduler">
-                           <font>
-                              <Font name="Avenir Roman" size="32.0" />
-                           </font>
-                        </Text>
-                     </center>
-                  </BorderPane>
+                  <BorderPane styleClass="sp-lable" />
+                  <Text layoutX="60.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduler">
+                     <font>
+                        <Font name="Avenir Roman" size="20.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
             <TabPane layoutY="65.0" styleClass="tab-pane-side">
@@ -185,6 +182,7 @@
                         </Text>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" onMouseClicked="#onAddSection" rotate="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="280.0" layoutY="-332.0" onMouseClicked="#onAddSection" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                        <TextField fx:id="filterField" layoutX="-339.0" layoutY="-341.0" />
                      </children>
                   </Group>
                   <Group fx:id="calendarGroup" layoutX="-256.0" layoutY="-43.0" visible="false">
