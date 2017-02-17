@@ -20,6 +20,10 @@
         <mapping class="org.swp.scheduler.database.models.StudentFeedback"/>
         <mapping class="org.swp.scheduler.database.models.Teacher"/>
         <mapping class="org.swp.scheduler.database.models.LoginData"/>
+        <mapping class="org.swp.scheduler.database.models.TimePreference"/>
+        <mapping class="org.swp.scheduler.database.models.CoursePreference"/>
+        <mapping class="org.swp.scheduler.database.models.RoomType"/>
+        <mapping class="org.swp.scheduler.database.models.CourseType"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -14,7 +14,7 @@ public class Teacher extends Model {
     public String teacherId;
     public String teacherName;
 
-    /*
+
     @OneToMany
     @JoinColumn(name="timePreferenceId")
     public List<TimePreference> timePreferences;
@@ -22,7 +22,7 @@ public class Teacher extends Model {
     @OneToMany
     @JoinColumn(name="coursePreferenceId")
     public List<CoursePreference> coursePreferences;
-    */
+
 
     public Teacher() {
     }
