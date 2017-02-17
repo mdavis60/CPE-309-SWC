@@ -9,6 +9,8 @@ import org.swp.scheduler.database.models.LoginData;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.Node;
@@ -37,5 +39,13 @@ public abstract class WindowController {
 
   public void closeWindow(Node node) {
     node.getScene().getWindow().hide();
+  }
+  
+  public void errorMessage(String header, String message){
+	  Alert alert = new Alert(AlertType.INFORMATION);
+      alert.setTitle("Error");
+      alert.setHeaderText(header);
+      alert.setContentText(message);
+      alert.show();
   }
 }
