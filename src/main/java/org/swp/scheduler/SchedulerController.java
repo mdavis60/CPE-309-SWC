@@ -122,24 +122,19 @@ public class SchedulerController extends WindowController {
     private MenuItem aboutMI;
 
 	
-	private boolean feedbackIsShown = true; 
-	
-	
-    private ObservableList<Section> masterData = FXCollections.observableArrayList();
-    
+	private boolean feedbackIsShown = true;
+	    
     public SchedulerController() {
-    	masterData.add(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	masterData.add(new Section("CPE 308", "T. Kearns", "14-202", "Lecture", "M W F", "1", "3"));
-    	masterData.add(new Section("CPE 305", "T. Kearns", "14-202", "Lecture", "M W F", "12", "1"));
-    	masterData.add(new Section("CPE 357", "T. Kearns", "14-202", "Lecture", "M W F", "8", "9"));
-    	masterData.add(new Section("CPE 101", "T. Kearns", "14-202", "Lecture", "M W F", "3", "5"));
-    	masterData.add(new Section("CPE 102", "T. Kearns", "14-202", "Lecture", "M W F", "5", "7"));
-    	masterData.add(new Section("CPE 308", "Workman", "14-202", "Lecture", "M W F", "1", "3"));
-    	masterData.add(new Section("CPE 305", "Abler", "14-202", "Lecture", "M W F", "12", "1"));
-    	masterData.add(new Section("CPE 357", "Staley", "14-202", "Lecture", "M W F", "8", "9"));
-    	masterData.add(new Section("CPE 101", "McAniff", "14-202", "Lecture", "M W F", "3", "5"));
-    	masterData.add(new Section("CPE 102", "Bob", "14-202", "Lecture", "M W F", "5", "7"));
-
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	
         /*ArrayList<Section> sections = Database.getSections();
         for(Section s : sections) {
           addSection(s);
@@ -157,7 +152,7 @@ public class SchedulerController extends WindowController {
 
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
-        FilteredList<Section> filteredData = new FilteredList<>(masterData, p -> true);
+        FilteredList<Section> filteredData = new FilteredList<>(MasterController.getMasterData(), p -> true);
         
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 			filteredData.setPredicate(section -> {
@@ -255,11 +250,9 @@ public class SchedulerController extends WindowController {
 		listGroup.setVisible(true);
 	}
 	
-	public void onAddSection() throws Exception {
-    	masterData.add(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
+	public void onAddSection(Section section) throws Exception {
+    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
 	} 
-	
-	
 	
 	public void addSection(Section section) throws Exception {
 		
@@ -274,5 +267,7 @@ public class SchedulerController extends WindowController {
 
 		
 	}
+	
+	
 	
 }

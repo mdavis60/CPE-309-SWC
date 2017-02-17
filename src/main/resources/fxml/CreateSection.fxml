@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -14,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="626.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateSectionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="626.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateSectionController">
    <children>
       <VBox alignment="CENTER" layoutX="121.0" layoutY="46.583984375" prefHeight="405.0" prefWidth="626.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,7 +33,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Text>
-            <TextField fx:id="courseType" layoutX="102.0" layoutY="119.0" maxWidth="400.0" onMouseClicked="#OpenList" prefHeight="35.0" prefWidth="200.0" promptText="Course Type" />
+            <TextField fx:id="courseType" layoutX="102.0" layoutY="119.0" maxWidth="400.0" prefHeight="35.0" prefWidth="200.0" promptText="Course Type" />
             <HBox alignment="CENTER" layoutX="102.0" layoutY="172.0" spacing="25.0">
                <children>
                   <TextField fx:id="professor" prefHeight="35.0" prefWidth="188.0" promptText="Professor" />
