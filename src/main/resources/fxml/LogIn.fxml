@@ -26,7 +26,7 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin></TextField>
-               <PasswordField fx:id="passwordField" layoutX="169.0" layoutY="194.0" maxWidth="250.0" prefHeight="31.0" prefWidth="250.0" promptText="Password">
+               <PasswordField fx:id="passwordField" layoutX="169.0" layoutY="194.0" maxWidth="250.0" onKeyPressed="#enterPressed" prefHeight="31.0" prefWidth="250.0" promptText="Password">
                <VBox.margin>
                   <Insets bottom="15.0" />
                </VBox.margin></PasswordField>
@@ -44,7 +44,5 @@
                </HBox>
          </children>
       </VBox>
-
-      
    </children>
 </AnchorPane>
