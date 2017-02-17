@@ -27,33 +27,33 @@
         <menus>
           <Menu mnemonicParsing="false" styleClass="menu" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="New" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Open" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Save" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Save As..." />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Import Schedule From Previous Term..." />
+              <MenuItem fx:id="newMI" mnemonicParsing="false" styleClass="menu-item" text="New" />
+                  <MenuItem fx:id="openMI" mnemonicParsing="false" styleClass="menu-item" text="Open" />
+                  <MenuItem fx:id="saveMI" mnemonicParsing="false" styleClass="menu-item" text="Save" />
+                  <MenuItem fx:id="saveAsMI" mnemonicParsing="false" styleClass="menu-item" text="Save As..." />
+                  <MenuItem fx:id="ImportScheduleMI" mnemonicParsing="false" styleClass="menu-item" text="Import Schedule From Previous Term..." />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Edit">
+          <Menu fx:id="editMenu" mnemonicParsing="false" styleClass="menu" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Add New Course" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Add New Section" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Add New Room" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Edit Time Preferences" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Delete" />
+              <MenuItem fx:id="addCourseMI" mnemonicParsing="false" onAction="#OpenAddCourse" styleClass="menu-item" text="Add New Course" />
+                  <MenuItem fx:id="addSectionMI" mnemonicParsing="false" onAction="#OpenAddSection" styleClass="menu-item" text="Add New Section" />
+                  <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#OpenAddRoom" styleClass="menu-item" text="Add New Room" />
+                  <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#OpenTPDialog" styleClass="menu-item" text="Edit Time Preferences" />
+                  <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#OpenCPDialog" styleClass="menu-item" text="Edit Course Preferences" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Window">
+          <Menu fx:id="windowMenu" mnemonicParsing="false" styleClass="menu" text="Window">
             <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="View Time Preferences..." />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="View Cohort Data..." />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="List View" />
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Calendar View" />
+              <MenuItem fx:id="viewTimePrefMI" mnemonicParsing="false" styleClass="menu-item" text="View Time Preferences..." />
+                  <MenuItem fx:id="viewCohortDataMI" mnemonicParsing="false" styleClass="menu-item" text="View Cohort Data..." />
+                  <MenuItem fx:id="ListViewMI" mnemonicParsing="false" styleClass="menu-item" text="List View" />
+                  <MenuItem fx:id="CalViewMI" mnemonicParsing="false" styleClass="menu-item" text="Calendar View" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" styleClass="menu" text="Help">
+            <Menu fx:id="helpMenu" mnemonicParsing="false" styleClass="menu" text="Help">
                <items>
-                  <MenuItem mnemonicParsing="false" styleClass="menu-item" text="About" />
+                  <MenuItem fx:id="aboutMI" mnemonicParsing="false" styleClass="menu-item" text="About" />
                </items>
             </Menu>
         </menus>
