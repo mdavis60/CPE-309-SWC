@@ -18,13 +18,16 @@ public class TimePreference extends Model {
     public int preferenceLevel;
 
     public String days;
-
+    public int startTime;
+    public int endTime;
 
     public TimePreference() {
     }
 
-    public TimePreference(Teacher teacher, int preferenceLevel) {
+    public TimePreference(Teacher teacher, int preferenceLevel, int startTime, int endTime) {
         this.preferenceLevel = preferenceLevel;
         this.teacherId = teacher.teacherId;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 }

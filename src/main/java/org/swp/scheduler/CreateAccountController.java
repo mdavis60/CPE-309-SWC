@@ -18,9 +18,6 @@ public class CreateAccountController extends WindowController{
     private TextField usernameField;
 
     @FXML
-    private TextField emailField;
-
-    @FXML
     private PasswordField passwordField1;
 
     @FXML
@@ -33,12 +30,11 @@ public class CreateAccountController extends WindowController{
     void createAccount() {
       
       String username = usernameField.getText();
-      String email = emailField.getText();
       String password1 = passwordField1.getText();
       String password2 = passwordField2.getText();
       
       if(password1.equals(password2)){
-        LoginData data = new LoginData(username, email, password1, LoginData.AuthType.ADMIN);
+        LoginData data = new LoginData(username, password1, LoginData.AuthType.ADMIN);
 
         try {
           DatabaseManager.getInstance().storeSingle(data);

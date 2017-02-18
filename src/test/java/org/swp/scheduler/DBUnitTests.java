@@ -49,7 +49,7 @@ public class DBUnitTests {
 
     @Test
     public void loginDataTest() throws Exception {
-        LoginData data = new LoginData("username", "email", "password", LoginData.AuthType.ADMIN);
+        LoginData data = new LoginData("username", "password", LoginData.AuthType.ADMIN);
         DatabaseManager.getInstance().storeSingle(data);
         LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, "username");
 
