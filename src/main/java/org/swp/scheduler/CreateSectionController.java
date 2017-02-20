@@ -43,11 +43,6 @@ public class CreateSectionController extends WindowController {
     @FXML
     void CreateSection() {
       System.out.println("Section Created");
-      
-      
-      
-      
-      
       closeWindow(createButton);
     }
 }

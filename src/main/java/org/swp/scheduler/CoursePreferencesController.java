@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
-public class CoursePreferencesController {
+public class CoursePreferencesController extends WindowController{
 
     @FXML private ComboBox<?> qualifiedCoursesField;
     @FXML private ComboBox<?> preferredCoursesField;
@@ -21,10 +21,12 @@ public class CoursePreferencesController {
     @FXML
     void submitPressed() {
     	System.out.println("Submit button was pressed!");
+    	closeWindow(submitButton);
     }
     
     @FXML
     void cancelPressed() {
     	System.out.println("Cancel button was pressed!");
+        closeWindow(cancelButton);
     }
 }
