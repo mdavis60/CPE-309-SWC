@@ -221,7 +221,7 @@
       <Group layoutX="1039.0" layoutY="27.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-100.0" layoutY="9.0" onMouseClicked="#onExpandFeedback" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-97.0" layoutY="32.0" onMouseClicked="#onExpandFeedback" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
+            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-97.0" layoutY="32.0" onMouseClicked="#launchStudentFeedback" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
                <font>
                   <Font name="Avenir Roman" size="17.0" />
                </font>

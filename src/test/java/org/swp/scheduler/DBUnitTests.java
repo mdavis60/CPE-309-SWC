@@ -63,8 +63,8 @@ public class DBUnitTests {
         String fall = Constants.getTerm("fall", 2016);
         String winter = Constants.getTerm("winter", 2016);
 
-        StudentFeedback fallFeedback = new StudentFeedback(fallMessage, fall);
-        StudentFeedback winterFeedback = new StudentFeedback(message, winter);
+        StudentFeedback fallFeedback = new StudentFeedback("roweber", "Feedback", fallMessage, fall);
+        StudentFeedback winterFeedback = new StudentFeedback("clee", "Feedback", message, winter);
 
         DatabaseManager.getInstance().storeSingle(fallFeedback);
         DatabaseManager.getInstance().storeSingle(winterFeedback);
