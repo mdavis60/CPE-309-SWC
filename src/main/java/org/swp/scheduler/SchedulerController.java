@@ -126,14 +126,14 @@ public class SchedulerController extends WindowController {
 	    
     public SchedulerController() {
     	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 305", "N. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 300", "M. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 357", "L. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 101", "K. Karen", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 102", "T. Bob", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 103", "Abler", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 400", "Workman", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 412", "K. Ronhovde", "14-202", "Lecture", "M W F", "9", "11"));
     	
         /*ArrayList<Section> sections = Database.getSections();
         for(Section s : sections) {
@@ -250,12 +250,12 @@ public class SchedulerController extends WindowController {
 		listGroup.setVisible(true);
 	}
 	
-	public void onAddSection(Section section) throws Exception {
-    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
+	public void onAddSection() throws Exception {
+		addSection(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
 	} 
 	
 	public void addSection(Section section) throws Exception {
-		
+    	MasterController.getInstance().addToData(section);
 	}
 
 	
