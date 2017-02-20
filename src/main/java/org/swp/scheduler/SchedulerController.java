@@ -220,6 +220,11 @@ public class SchedulerController extends WindowController {
     	openWindow("TimePreferences");
     }
     
+    @FXML
+    void onAddSection() {
+    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
+        System.out.println("Added new Section");
+    }
     
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onExpandFeedback() throws Exception {
@@ -250,9 +255,6 @@ public class SchedulerController extends WindowController {
 		listGroup.setVisible(true);
 	}
 	
-	public void onAddSection() throws Exception {
-		addSection(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
-	} 
 	
 	public void addSection(Section section) throws Exception {
     	MasterController.getInstance().addToData(section);

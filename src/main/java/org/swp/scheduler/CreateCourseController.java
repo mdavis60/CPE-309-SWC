@@ -36,7 +36,8 @@ public class CreateCourseController extends WindowController {
 
       //Course data = new Course(courseName, courseNumber, "password", LoginData.AuthType.ADIMIN);
       //DatabaseManager.getInstance().storeSingle(data);
-      
+      System.out.println("Course Created");
+
       closeWindow(createButton);
     }
 }
