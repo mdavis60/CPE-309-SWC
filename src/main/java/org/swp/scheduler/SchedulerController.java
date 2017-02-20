@@ -220,6 +220,10 @@ public class SchedulerController extends WindowController {
     	openWindow("TimePreferences");
     }
     
+    @FXML
+    void onAddSection() {
+        System.out.println("Added new Section");
+    }
     
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onExpandFeedback() throws Exception {
