@@ -34,10 +34,10 @@ public class LogInController extends WindowController{
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        openWindow("Scheduler");
-        closeWindow(signInButton);
+        //openWindow("Scheduler");
+        //closeWindow(signInButton);
 
-        /*
+       
         try {
           LoginData retrievedData = (LoginData) DatabaseManager.getInstance().getSingle(LoginData.class, username);
           
@@ -50,8 +50,7 @@ public class LogInController extends WindowController{
           }
           
         } catch (Exception e) {
-<<<<<<< Updated upstream
         	errorMessage("Invalid Credentials", "There is no account associated with this user.");
-        } */
+        } 
     }
 }

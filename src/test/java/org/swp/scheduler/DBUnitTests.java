@@ -3,14 +3,12 @@ package org.swp.scheduler;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.swp.scheduler.database.DatabaseManager;
-import org.swp.scheduler.database.models.LoginData;
-import org.swp.scheduler.database.models.Model;
-import org.swp.scheduler.database.models.StudentFeedback;
-import org.swp.scheduler.database.models.StudentPlanData;
+import org.swp.scheduler.database.models.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 /**
@@ -85,6 +83,30 @@ public class DBUnitTests {
 
         DatabaseManager.getInstance().deleteSingle(fallFeedback);
         DatabaseManager.getInstance().deleteSingle(winterFeedback);
+    }
+
+    @Test
+    public void testRoomType() throws Exception {
+        RoomType type = new RoomType("typea");
+        DatabaseManager.getInstance().storeSingle(type);
+
+        RoomType retrievedType = (RoomType) DatabaseManager.getInstance().getSingle(RoomType.class, "typea");
+
+        assert retrievedType.roomType.equals("typea");
+
+        DatabaseManager.getInstance().deleteSingle(retrievedType);
+    }
+
+    @Test
+    public void testCourseType() throws Exception {
+        CourseType type = new CourseType("typea");
+        DatabaseManager.getInstance().storeSingle(type);
+
+        CourseType retrievedType = (CourseType) DatabaseManager.getInstance().getSingle(CourseType.class, "typea");
+
+        assert retrievedType.courseType.equals("typea");
+
+        DatabaseManager.getInstance().deleteSingle(retrievedType);
     }
 }
 

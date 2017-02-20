@@ -3,9 +3,7 @@ package org.swp.scheduler.database.models;
 import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.DatabaseManager;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by jackson on 2/3/17.
@@ -20,6 +18,7 @@ public class CourseComponent extends Model {
     public int workUnits;
     public int studentUnits;
     public int classHours;
+
     public int courseId;
 
     public CourseComponent() {
