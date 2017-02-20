@@ -10,7 +10,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CourseTypes")
-public class CourseType {
+public class CourseType extends Model {
     @Id
-    String courseType;
+    public String courseType;
+
+    public CourseType() {
+
+    }
+
+    public CourseType(String courseType) {
+        this.courseType = courseType;
+    }
 }
