@@ -52,7 +52,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="createButton" mnemonicParsing="false" text="Create Room" />
+            <Button fx:id="createButton" onAction="#CreateRoom" mnemonicParsing="false" text="Create Room" />
          </children>
       </VBox>
    </children>
