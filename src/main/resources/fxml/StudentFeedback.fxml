@@ -22,11 +22,11 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
             </Text>
-            <TextField fx:id="subjectField" layoutX="64.0" layoutY="104.0" prefHeight="31.0" prefWidth="423.0" promptText="Student ID">
+            <TextField fx:id="studentIdField" layoutX="64.0" layoutY="104.0" prefHeight="31.0" prefWidth="423.0" promptText="Student ID">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></TextField>
-            <TextField fx:id="subjectField1" layoutX="74.0" layoutY="114.0" prefHeight="31.0" prefWidth="423.0" promptText="Subject">
+            <TextField fx:id="subjectField" layoutX="74.0" layoutY="114.0" prefHeight="31.0" prefWidth="423.0" promptText="Subject">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin></TextField>

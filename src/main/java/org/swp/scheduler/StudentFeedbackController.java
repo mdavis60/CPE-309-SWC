@@ -12,25 +12,27 @@ import javafx.scene.control.TextField;
 
 public class StudentFeedbackController extends WindowController {
 
-    @FXML private TextArea messageField;
+    @FXML private TextField studentIdField;
     @FXML private TextField subjectField;
+    @FXML private TextArea messageField;
     @FXML private Button submitButton;
     @FXML private Button cancelButton;
     
     //function to submit student feedback
-    public void submitFeedback() throws DatabaseException {
-    	
+    public void submitFeedback() throws Exception {
+    	String studentId = studentIdField.getText();
     	String subject = subjectField.getText();
     	String message = messageField.getText();
 
     	if(!subject.isEmpty() && !message.isEmpty()){
-    	     StudentFeedback feedback = new StudentFeedback(message, subject);
+    	  //Change hardcoded term
+    	     StudentFeedback feedback = new StudentFeedback(studentId, subject, message, Constants.getTerm("winter", 2017));
     	     DatabaseManager.getInstance().storeSingle(feedback);
     	}
     }
     
     @FXML
-    void submitPressed() throws DatabaseException {
+    void submitPressed() throws Exception {
     	System.out.println("Submit button was pressed!");
     	submitFeedback();
     	closeWindow(submitButton);
