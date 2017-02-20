@@ -222,6 +222,7 @@ public class SchedulerController extends WindowController {
     
     @FXML
     void onAddSection() {
+    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
         System.out.println("Added new Section");
     }
     
@@ -253,10 +254,7 @@ public class SchedulerController extends WindowController {
 		calendarGroup.setVisible(false);
 		listGroup.setVisible(true);
 	}
-	
-	public void onAddSection(Section section) throws Exception {
-    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
-	} 
+
 	
 	public void addSection(Section section) throws Exception {
 		
