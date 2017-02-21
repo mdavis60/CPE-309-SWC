@@ -166,15 +166,15 @@ public class SchedulerController extends WindowController {
     	MasterController.getInstance().addToCourses(new Course(11 , "365", "CPE", null ));
     	System.out.println("Added Courses");
     	
-    	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, "14", 35, "none"));
-    	MasterController.getInstance().addToRooms(new Room(3 , 252, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(4 , 253, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(5 , 254, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(6 , 255, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(7 , 258, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(8 , 259, 14, "14", 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(9 , 261, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, 35, "none"));
+    	MasterController.getInstance().addToRooms(new Room(3 , 252, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(4 , 253, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(5 , 254, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(6 , 255, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(7 , 258, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(8 , 259, 14, 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(9 , 261, 14, 35, "computers"));
     	System.out.println("Added Rooms");
 
     	MasterController.getInstance().addToTeachers(new Teacher( "1", "Kearns"));

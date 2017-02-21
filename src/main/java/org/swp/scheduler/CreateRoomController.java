@@ -33,7 +33,7 @@ public class CreateRoomController extends WindowController {
     	int buildingNumber = Integer.parseInt(buildNum.getText());
     	int capacity = Integer.parseInt(maxCap.getText());
     	
-    	MasterController.getInstance().addToRooms(new Room(roomNumber, roomNumber, buildingNumber, String.valueOf(buildingNumber), capacity, attributes.getText()));
+    	MasterController.getInstance().addToRooms(new Room(roomNumber, roomNumber, buildingNumber, capacity, attributes.getText()));
     	System.out.println("Room Created");
     	closeWindow(createButton);
     }

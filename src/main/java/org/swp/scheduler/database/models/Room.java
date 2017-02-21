@@ -15,7 +15,6 @@ public class Room extends Model {
     public int roomId;
     public int roomNumber;
     public int buildingNumber;
-    public String building;
     public int capacity;
     public String attributes;
 
@@ -24,18 +23,17 @@ public class Room extends Model {
     public Room() {
     }
     
-    public Room(int roomId, int roomNumber, int buildingNumber, String building, int capacity, String attributes)
+    public Room(int roomId, int roomNumber, int buildingNumber, int capacity, String attributes)
     {
     	this.roomId = roomId;
     	this.roomNumber = roomNumber;
     	this.buildingNumber = buildingNumber;
-    	this.building = building;
     	this.capacity = capacity;
     	this.attributes = attributes;
     }
 
     public String getRoom() {
-    	return building + "-" + String.valueOf(roomNumber);
+    	return String.valueOf(buildingNumber) + "-" + String.valueOf(roomNumber);
     }
     
 }
