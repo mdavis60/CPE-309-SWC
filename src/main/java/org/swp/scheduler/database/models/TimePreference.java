@@ -1,8 +1,6 @@
 package org.swp.scheduler.database.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by jackson on 2/13/17.
@@ -12,6 +10,7 @@ import javax.persistence.Table;
 @Table(name = "TimePreferences")
 public class TimePreference extends Model {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     int timePreferenceId;
 
     public String teacherId;
@@ -24,7 +23,7 @@ public class TimePreference extends Model {
     public TimePreference() {
     }
 
-    public TimePreference(Teacher teacher, int preferenceLevel, int startTime, int endTime) {
+    public TimePreference(Teacher teacher, int preferenceLevel, int startTime, int endTime, String days) {
         this.preferenceLevel = preferenceLevel;
         this.teacherId = teacher.teacherId;
         this.startTime = startTime;

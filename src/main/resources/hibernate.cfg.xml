@@ -14,6 +14,8 @@
         <property name="org.hibernate.type">trace</property>
 
         <mapping class="org.swp.scheduler.database.models.StudentPlanData"/>
+        <mapping class="org.swp.scheduler.database.models.Section"/>
+        <mapping class="org.swp.scheduler.database.models.SectionComponent"/>
         <mapping class="org.swp.scheduler.database.models.Course"/>
         <mapping class="org.swp.scheduler.database.models.CourseComponent"/>
         <mapping class="org.swp.scheduler.database.models.Room"/>

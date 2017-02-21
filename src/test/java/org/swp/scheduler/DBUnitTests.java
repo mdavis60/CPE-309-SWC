@@ -2,6 +2,7 @@ package org.swp.scheduler;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.metamodel.relational.Database;
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.*;
 import org.testng.annotations.AfterClass;
@@ -107,6 +108,65 @@ public class DBUnitTests {
         assert retrievedType.courseType.equals("typea");
 
         DatabaseManager.getInstance().deleteSingle(retrievedType);
+    }
+
+    @Test
+    public void testTeacher() throws Exception {
+        String username = "asdf";
+
+        Teacher t = new Teacher(username, "teacher");
+
+        TimePreference p1 = new TimePreference(t, 5, 100, 200, "MWF");
+        TimePreference p2 = new TimePreference(t, 2, 100, 200, "TH");
+
+        CoursePreference c1 = new CoursePreference();
+
+        DatabaseManager.getInstance().storeSingle(t);
+        DatabaseManager.getInstance().storeSingle(p1);
+        DatabaseManager.getInstance().storeSingle(p2);
+
+
+        Teacher retrievedT = (Teacher)DatabaseManager.getInstance().getSingle(Teacher.class, username);
+
+        assert retrievedT.timePreferences.size() >= 2;
+
+        DatabaseManager.getInstance().deleteSingle(t);
+        DatabaseManager.getInstance().deleteSingle(p1);
+        DatabaseManager.getInstance().deleteSingle(p2);
+
+    }
+
+    @Test
+    public void testCourse() throws Exception {
+        Course course = new Course(1234, "se2", "asdf", "CPE");
+
+        CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "TYPEQ");
+        if (type == null) {
+            type = new CourseType("TYPEQ");
+            DatabaseManager.getInstance().storeSingle(type);
+        }
+
+        DatabaseManager.getInstance().storeSingle(course);
+
+        CourseComponent cc1 = new CourseComponent(type, 3, 4, course);
+        CourseComponent cc2 = new CourseComponent(type, 6, 8, course);
+
+        DatabaseManager.getInstance().storeSingle(cc1);
+        DatabaseManager.getInstance().storeSingle(cc2);
+
+        Course retrievedC = (Course)DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
+
+        assert retrievedC.componentList.size() >= 1;
+        assert retrievedC.courseId >= 0;
+
+        DatabaseManager.getInstance().deleteSingle(cc1);
+        DatabaseManager.getInstance().deleteSingle(cc2);
+        DatabaseManager.getInstance().deleteSingle(type);
+        DatabaseManager.getInstance().deleteSingle(course);
+
+
+
+
     }
 }
 

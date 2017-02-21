@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "room")
+@Table(name = "Rooms")
 public class Room extends Model {
     @Id
     public int roomId;

@@ -17,12 +17,12 @@ public class Teacher extends Model {
     public int currWorkUnits;
 
 
-    @OneToMany
-    @JoinColumn(name="timePreferenceId")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="teacherId")
     public List<TimePreference> timePreferences;
 
-    @OneToMany
-    @JoinColumn(name="coursePreferenceId")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="teacherId")
     public List<CoursePreference> coursePreferences;
 
 

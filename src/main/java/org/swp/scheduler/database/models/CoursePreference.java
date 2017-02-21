@@ -1,28 +1,27 @@
 package org.swp.scheduler.database.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by jackson on 2/13/17.
  */
 @Entity
 @Table(name = "CoursePreferences")
-public class CoursePreference {
+public class CoursePreference extends Model {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     int coursePreferenceId;
 
     public int courseId;
-    public int teacherId;
+    public String teacherId;
     public int preferenceLevel;
 
     public CoursePreference() {
     }
 
-    public CoursePreference(Course course, Teacher teacher, int preferenceLevel) {
+    public CoursePreference(Teacher teacher, Course course, int preferenceLevel) {
         this.preferenceLevel = preferenceLevel;
-        //this.teacherId = teacher.teacherId;
+        this.teacherId = teacher.teacherId;
         this.courseId = course.courseId;
     }
 }
