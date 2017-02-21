@@ -33,4 +33,8 @@ public class Teacher extends Model {
         this.teacherId = teacherId;
         this.teacherName = teacherName;
     }
+    public String getTeacherName()
+    {
+    	return teacherName;
+    }
 }

@@ -33,4 +33,8 @@ public class Course extends Model {
         this.department = department;
         this.courseName = courseName;
     }
+    public String getCourseName()
+    {
+    	return department + " " + courseName;
+    }
 }
