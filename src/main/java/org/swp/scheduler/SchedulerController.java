@@ -10,12 +10,16 @@ import javafx.scene.shape.*;
 import javafx.application.*;
 import javafx.collections.*;
 
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+
 import java.util.ArrayList;
 
 import org.slf4j.*;
 import org.swp.scheduler.database.models.*;
 
 import javafx.collections.transformation.*;
+import javafx.util.Callback;
 
 public class SchedulerController extends WindowController {
 
@@ -67,6 +71,16 @@ public class SchedulerController extends WindowController {
 	
 	@FXML
 	private TableColumn<Section, String> timeColumn;
+	
+	@FXML
+    private ListView<Course> courseListView;
+
+    @FXML
+    private ListView<Teacher> teachersListView;
+
+    @FXML
+    private ListView<Room> roomsListView;
+    
 	@FXML
     private MenuItem newMI;
 
@@ -123,17 +137,53 @@ public class SchedulerController extends WindowController {
 
 	
 	private boolean feedbackIsShown = true;
-	    
+
+    protected ListProperty<Course> courseListProperty = new SimpleListProperty<>();
+    protected ListProperty<Teacher> teacherListProperty = new SimpleListProperty<>();
+    protected ListProperty<Room> roomListProperty = new SimpleListProperty<>();
+    
     public SchedulerController() {
     	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 305", "N. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 300", "M. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 357", "L. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 101", "K. Karen", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 102", "T. Bob", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 103", "Abler", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 400", "Workman", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 412", "K. Ronhovde", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
+
+    	MasterController.getInstance().addToCourses(new Course(1 , "309", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(2 , "308", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(3 , "307", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(4 , "357", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(5 , "123", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(6 , "101", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(7 , "102", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(8 , "103", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(9 , "225", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(10 , "484", "CPE", null ));
+    	MasterController.getInstance().addToCourses(new Course(11 , "365", "CPE", null ));
+    	System.out.println("Added Courses");
+    	
+    	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, "14", 35, "none"));
+    	MasterController.getInstance().addToRooms(new Room(3 , 252, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(4 , 253, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(5 , 254, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(6 , 255, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(7 , 258, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(8 , 259, 14, "14", 35, "computers"));
+    	MasterController.getInstance().addToRooms(new Room(9 , 261, 14, "14", 35, "computers"));
+    	System.out.println("Added Rooms");
+
+    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Kearns"));
+    	MasterController.getInstance().addToTeachers(new Teacher( "2", "Daulby"));
+    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Mammen"));
+    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Workman"));
+    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Woods"));
+    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Sakellariou"));
+    	System.out.println("Added Teachers");
     	
         /*ArrayList<Section> sections = Database.getSections();
         for(Section s : sections) {
@@ -150,6 +200,71 @@ public class SchedulerController extends WindowController {
 		sectionTypeColumn.setCellValueFactory(cellData -> cellData.getValue().courseCompProperty());
 		timeColumn.setCellValueFactory(cellData -> cellData.getValue().startTimeProperty());
 
+		courseListView.setItems(MasterController.getInstance().getCourseData());
+		roomsListView.setItems(MasterController.getInstance().getRoomData());
+		teachersListView.setItems(MasterController.getInstance().getTeacherData());
+		
+		courseListView.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>(){
+			 
+            @Override
+            public ListCell<Course> call(ListView<Course> p) {
+                 
+                ListCell<Course> cell = new ListCell<Course>(){
+ 
+                    @Override
+                    protected void updateItem(Course t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getCourseName());
+                        }
+                    }
+ 
+                };
+                 
+                return cell;
+            }
+        });
+		teachersListView.setCellFactory(new Callback<ListView<Teacher>, ListCell<Teacher>>(){
+			 
+            @Override
+            public ListCell<Teacher> call(ListView<Teacher> p) {
+                 
+                ListCell<Teacher> cell = new ListCell<Teacher>(){
+ 
+                    @Override
+                    protected void updateItem(Teacher t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getTeacherName());
+                        }
+                    }
+ 
+                };
+                 
+                return cell;
+            }
+        });
+        roomsListView.setCellFactory(new Callback<ListView<Room>, ListCell<Room>>(){
+			 
+            @Override
+            public ListCell<Room> call(ListView<Room> p) {
+                 
+                ListCell<Room> cell = new ListCell<Room>(){
+ 
+                    @Override
+                    protected void updateItem(Room t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getRoom());
+                        }
+                    }
+ 
+                };
+                 
+                return cell;
+            }
+        });
+		
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Section> filteredData = new FilteredList<>(MasterController.getMasterData(), p -> true);
@@ -222,7 +337,6 @@ public class SchedulerController extends WindowController {
     
     @FXML
     void onAddSection() {
-    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
         System.out.println("Added new Section");
     }
     
@@ -255,9 +369,12 @@ public class SchedulerController extends WindowController {
 		listGroup.setVisible(true);
 	}
 	
+	public void onAddSection(Section section) throws Exception {
+    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
+	} 
 	
 	public void addSection(Section section) throws Exception {
-    	MasterController.getInstance().addToData(section);
+		
 	}
 
 	

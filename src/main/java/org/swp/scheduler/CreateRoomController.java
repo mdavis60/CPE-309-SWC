@@ -1,5 +1,7 @@
 package org.swp.scheduler;
 
+import org.swp.scheduler.database.models.Room;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
@@ -27,8 +29,13 @@ public class CreateRoomController extends WindowController {
 
     @FXML
     void CreateRoom() {
-      System.out.println("Room Created");
-      closeWindow(createButton);
+    	int roomNumber = Integer.parseInt(roomNum.getText());
+    	int buildingNumber = Integer.parseInt(buildNum.getText());
+    	int capacity = Integer.parseInt(maxCap.getText());
+    	
+    	MasterController.getInstance().addToRooms(new Room(roomNumber, roomNumber, buildingNumber, String.valueOf(buildingNumber), capacity, attributes.getText()));
+    	System.out.println("Room Created");
+    	closeWindow(createButton);
     }
 
 }

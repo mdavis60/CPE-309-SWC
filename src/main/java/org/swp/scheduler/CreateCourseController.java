@@ -2,6 +2,8 @@ package org.swp.scheduler;
 
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.LoginData;
+import org.swp.scheduler.database.models.Course;
+import org.swp.scheduler.database.models.CourseComponent;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -36,8 +38,14 @@ public class CreateCourseController extends WindowController {
 
       //Course data = new Course(courseName, courseNumber, "password", LoginData.AuthType.ADIMIN);
       //DatabaseManager.getInstance().storeSingle(data);
-      System.out.println("Course Created");
-
+      String name = courseName.getText();
+      int cnum = Integer.parseInt(courseNumber.getText());
+      String type = courseType.getText();
+      String prereq = prereqs.getText();
+      int wu = Integer.parseInt(workUnits.getText());
+      int su = Integer.parseInt(studentUnits.getText());
+      
+      MasterController.getInstance().addToCourses(new Course(cnum, String.valueOf(cnum), name, null));
       closeWindow(createButton);
     }
 }
