@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -13,52 +20,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="626.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateSectionController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="626.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateSectionController">
    <children>
-      <VBox alignment="CENTER" layoutX="121.0" layoutY="46.583984375" prefHeight="405.0" prefWidth="626.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Text fill="WHITE" layoutX="185.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-title" text="Create a new Section">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <VBox alignment="TOP_CENTER" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="626.0" spacing="20.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-title" text="Create a new Section">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Text>
-            <TextField fx:id="courseType" layoutX="102.0" layoutY="119.0" maxWidth="400.0" prefHeight="35.0" prefWidth="200.0" promptText="Course Type" />
-            <HBox alignment="CENTER" layoutX="102.0" layoutY="172.0" spacing="25.0">
-               <children>
-                  <TextField fx:id="professor" prefHeight="35.0" prefWidth="188.0" promptText="Professor" />
-                  <TextField fx:id="room" layoutX="307.0" layoutY="172.0" prefHeight="35.0" prefWidth="188.0" promptText="Room" />
-               </children>
-            </HBox>
-            <Group layoutX="104.0" layoutY="207.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0" layoutX="-2.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
-                  <RadioButton fx:id="mondayToggle" layoutX="12.0" layoutY="26.0" mnemonicParsing="false" styleClass="radiobutton-small" text="Monday" />
-                  <RadioButton fx:id="tuesdayToggle" layoutX="90.0" layoutY="27.0" mnemonicParsing="false" styleClass="radiobutton-small" text="Tuesday" />
-                  <RadioButton fx:id="wednesdayToggle" layoutX="164.0" layoutY="27.0" mnemonicParsing="false" styleClass="radiobutton-small" text="Wednesday" />
-                  <RadioButton fx:id="thursdayToggle" layoutX="255.0" layoutY="27.0" mnemonicParsing="false" styleClass="radiobutton-small" text="Thursday" />
-                  <RadioButton fx:id="fridayToggle" layoutX="332.0" layoutY="26.0" mnemonicParsing="false" styleClass="radiobutton-small" text="Friday" />
-                  <Label text="Select Day(s) of the Week" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Group>
-            <HBox alignment="CENTER" layoutX="102.0" layoutY="291.0" spacing="25.0">
-               <children>
-                  <TextField fx:id="startTime" prefHeight="35.0" prefWidth="188.0" promptText="Start Time" />
-                  <TextField fx:id="endTime" layoutX="307.0" layoutY="291.0" prefHeight="35.0" prefWidth="188.0" promptText="End Time" />
-               </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </HBox>
-            <Button fx:id="createButton" layoutX="218.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#CreateSection" prefHeight="27.0" prefWidth="139.0" text="Create Section" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="243.0" AnchorPane.topAnchor="339.0" />
+            <ComboBox prefHeight="27.0" prefWidth="399.0" promptText="Course" style="-fx-background-color: white;" />
+            <Text fx:id="addComponent" fill="#f2f5fc" onMouseClicked="#onAddComponent" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new component" />
       
          </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
       </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="34.0" layoutX="250.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="126.0" />
+      <Text fill="#544f4f" layoutX="294.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create" />
    </children>
 </AnchorPane>
