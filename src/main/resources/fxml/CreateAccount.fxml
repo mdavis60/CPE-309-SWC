@@ -50,11 +50,6 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="emailField" prefHeight="25.0" prefWidth="261.0" promptText="E-mail">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </TextField>
             <PasswordField fx:id="passwordField1" prefHeight="25.0" prefWidth="261.0" promptText="Password">
                <VBox.margin>
                   <Insets bottom="5.0" />
