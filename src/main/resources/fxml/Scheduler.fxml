@@ -43,6 +43,7 @@
                   <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#launchNewRoom" styleClass="menu-item" text="Add New Room" />
                   <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#launchTimePreferences" styleClass="menu-item" text="Edit Time Preferences" />
                   <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#launchCoursePreferences" styleClass="menu-item" text="Edit Course Preferences" />
+                  <MenuItem fx:id="createNewAccountMI" mnemonicParsing="false" onAction="#launchCreateNewAccount" styleClass="menu-item" text="Create New Account" />
             </items>
           </Menu>
           <Menu fx:id="windowMenu" mnemonicParsing="false" styleClass="menu" text="Window">

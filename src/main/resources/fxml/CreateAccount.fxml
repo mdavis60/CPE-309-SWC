@@ -39,17 +39,15 @@
                         <String fx:value="label-bold" />
                      </styleClass>
                   </Label>
-                  <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="150.0">
+                   		<String fx:value="Administrator" /> 
+                   		<String fx:value="Faculty" />
+                   </ChoiceBox>
                </children>
             </HBox>
             <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="261.0" promptText="Username">
                <VBox.margin>
                   <Insets bottom="5.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField fx:id="emailField" prefHeight="25.0" prefWidth="261.0" promptText="E-mail">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
                </VBox.margin>
             </TextField>
             <PasswordField fx:id="passwordField1" prefHeight="25.0" prefWidth="261.0" promptText="Password">

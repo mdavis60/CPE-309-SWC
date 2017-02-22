@@ -113,6 +113,9 @@ public class SchedulerController extends WindowController {
 
     @FXML
     private MenuItem editCoursePrefMI;
+    
+    @FXML
+    private MenuItem createNewAccountMI;
 
     @FXML
     private Menu windowMenu;
@@ -338,6 +341,11 @@ public class SchedulerController extends WindowController {
     @FXML
     void onAddSection() {
         System.out.println("Added new Section");
+    }
+    
+    @FXML
+    void launchCreateNewAccount() {
+    	openWindow("CreateAccount");
     }
     
 	// Hides or shows the Student Feedback panel depending on the current state
