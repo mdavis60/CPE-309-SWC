@@ -3,66 +3,91 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="310.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
+
+<AnchorPane prefHeight="430.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateCourseController">
    <children>
-      <VBox alignment="CENTER" layoutX="61.0" layoutY="55.0" prefHeight="377.0" prefWidth="310.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-                  <Label styleClass="page-title" text="Create new Course" textFill="#606060">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin></Label>
-            <HBox alignment="CENTER" spacing="25.0">
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="419.0" prefWidth="339.0" styleClass="background-panel" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox alignment="CENTER" spacing="10.0" styleClass="background-panel">
                <children>
-                        <TextField fx:id="courseName" maxWidth="100.0" prefHeight="27.0" prefWidth="100.0" promptText="Course name">
-                           <font>
-                              <Font size="9.0" />
-                           </font>
+                        <Label styleClass="page-title" text="Create new Course" textFill="#606060">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="25.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <HBox alignment="CENTER" spacing="25.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label styleClass="label-light" text="Department" underline="true" />
+                                    <TextField fx:id="courseName" maxWidth="100.0" prefHeight="27.0" prefWidth="100.0" promptText="Department" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label styleClass="label-light" text="Course Number" underline="true" />
+                                    <TextField fx:id="courseNumber" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Course Number" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label maxWidth="-Infinity" prefWidth="225.0" styleClass="label-light" text="Course Name" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                        <TextField fx:id="courseType" maxWidth="225.0" prefWidth="225.0" promptText="Course Name" />
+                  <VBox maxWidth="-Infinity" prefWidth="225.0" spacing="10.0">
+                     <children>
+                        <Label styleClass="label-light" text="Prerequisite(s)" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="prereqField" promptText="Enter Course Number">
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
                         </TextField>
-                        <TextField fx:id="courseNumber" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Course Number">
-                           <font>
-                              <Font size="9.0" />
-                           </font>
-                        </TextField>
+                        <ListView fx:id="availablePrereqs" maxHeight="80.0" minHeight="-Infinity" onMouseClicked="#selectPrereq" prefHeight="0.0" prefWidth="200.0" />
+                        <Label prefHeight="17.0" prefWidth="225.0" styleClass="label-light" text="Selected Prerequisites" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ListView fx:id="prereqList" maxHeight="75.0" minHeight="23.0" onMouseClicked="#deselectPrereq" prefHeight="23.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="courseComponents" alignment="CENTER" maxWidth="225.0" prefHeight="26.0" prefWidth="225.0" spacing="10.0" style="-fx-border-radius: 2; -fx-border-color: white; -fx-border-style: dashed; -fx-border-width: 2px;">
+                     <children>
+                        <Label prefWidth="225.0" styleClass="label-light" text="Course Components" underline="true" />
+                        <Button mnemonicParsing="false" onAction="#addComponent" prefWidth="93.0" text="Add Component" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                        <Button fx:id="createButton" mnemonicParsing="false" onAction="#CreateCourse" onMouseClicked="#CreateCourse" prefWidth="153.0" text="Create Course">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
-            </HBox>
-                  <TextField fx:id="courseType" maxWidth="225.0" prefHeight="27.0" prefWidth="225.0" promptText="Course Type">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="prereqs" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Prerequisites">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-               <VBox.margin>
-                  <Insets bottom="25.0" />
-               </VBox.margin>
-                  </TextField>
-            <HBox alignment="CENTER" spacing="25.0">
-               <children>
-                        <TextField fx:id="workUnits" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Work Units">
-                           <font>
-                              <Font size="9.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="studentUnits" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Student Units">
-                           <font>
-                              <Font size="9.0" />
-                           </font>
-                        </TextField>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-                  <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#CreateCourse" prefHeight="31.0" prefWidth="157.0" text="Create Course" />
-         </children>
-      </VBox>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

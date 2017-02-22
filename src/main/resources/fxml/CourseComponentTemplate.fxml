@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root minWidth="-Infinity" prefWidth="215.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="96.0" prefWidth="215.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group fx:id="blankComponent">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="215.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="componentType" maxWidth="-Infinity" prefWidth="210.0" text="Component">
+                           <styleClass>
+                              <String fx:value="label-light" />
+                              <String fx:value="label-bold" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label prefWidth="100.0" styleClass="label-light" text="Component Type" underline="true" />
+                              <TextField prefWidth="100.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefWidth="225.0" spacing="5.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Label styleClass="label-light" text="Work Units" underline="true" />
+                                    <TextField fx:id="workUnits" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Work Units">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label styleClass="label-light" text="Student Units" underline="true" />
+                                    <TextField fx:id="studentUnits" maxWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Student Units">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>
