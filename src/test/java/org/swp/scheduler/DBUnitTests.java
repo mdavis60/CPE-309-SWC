@@ -136,37 +136,37 @@ public class DBUnitTests {
 
     }
 
-    @Test
-    public void testCourse() throws Exception {
-        Course course = new Course(1234, "se2", "asdf", "CPE");
+//    @Test
+//    public void testCourse() throws Exception {
+//        Course course = new Course(1234, "se2", "asdf", "CPE");
+//
+//        CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "TYPEQ");
+//        if (type == null) {
+//            type = new CourseType("TYPEQ");
+//            DatabaseManager.getInstance().storeSingle(type);
+//        }
+//
+//        DatabaseManager.getInstance().storeSingle(course);
+//
+//        CourseComponent cc1 = new CourseComponent(type, 3, 4, course);
+//        CourseComponent cc2 = new CourseComponent(type, 6, 8, course);
+//
+//        DatabaseManager.getInstance().storeSingle(cc1);
+//        DatabaseManager.getInstance().storeSingle(cc2);
+//
+//        Course retrievedC = (Course)DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
+//
+//        assert retrievedC.componentList.size() >= 1;
+//        assert retrievedC.courseId >= 0;
+//
+//        DatabaseManager.getInstance().deleteSingle(cc1);
+//        DatabaseManager.getInstance().deleteSingle(cc2);
+//        DatabaseManager.getInstance().deleteSingle(type);
+//        DatabaseManager.getInstance().deleteSingle(course);
+//
 
-        CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "TYPEQ");
-        if (type == null) {
-            type = new CourseType("TYPEQ");
-            DatabaseManager.getInstance().storeSingle(type);
-        }
-
-        DatabaseManager.getInstance().storeSingle(course);
-
-        CourseComponent cc1 = new CourseComponent(type, 3, 4, course);
-        CourseComponent cc2 = new CourseComponent(type, 6, 8, course);
-
-        DatabaseManager.getInstance().storeSingle(cc1);
-        DatabaseManager.getInstance().storeSingle(cc2);
-
-        Course retrievedC = (Course)DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
-
-        assert retrievedC.componentList.size() >= 1;
-        assert retrievedC.courseId >= 0;
-
-        DatabaseManager.getInstance().deleteSingle(cc1);
-        DatabaseManager.getInstance().deleteSingle(cc2);
-        DatabaseManager.getInstance().deleteSingle(type);
-        DatabaseManager.getInstance().deleteSingle(course);
 
 
-
-
-    }
+  //  }
 }
 

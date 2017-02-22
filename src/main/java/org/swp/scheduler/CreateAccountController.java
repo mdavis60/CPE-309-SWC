@@ -33,6 +33,7 @@ public class CreateAccountController extends WindowController{
       String password1 = passwordField1.getText();
       String password2 = passwordField2.getText();
       
+      
       if(password1.equals(password2)){
         LoginData data = new LoginData(username, password1, LoginData.AuthType.ADMIN);
 
@@ -40,8 +41,12 @@ public class CreateAccountController extends WindowController{
           DatabaseManager.getInstance().storeSingle(data);
           closeWindow(createAccountButton);
         } catch (Exception e) {
+          errorMessage("Duplicate User", "An account associated with this username already exists.");
           System.out.println("Username already in database");
         }
+      }
+      else {
+    	  errorMessage("Incorrect Passwords", "The two passwords do not match.");
       }
     }
 
