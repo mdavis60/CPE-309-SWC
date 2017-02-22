@@ -39,10 +39,10 @@ public class CreateAccountController extends WindowController{
 
         try {
           DatabaseManager.getInstance().storeSingle(data);
+          errorMessage("Success", "Account Created!");
           closeWindow(createAccountButton);
         } catch (Exception e) {
           errorMessage("Duplicate User", "An account associated with this username already exists.");
-          System.out.println("Username already in database");
         }
       }
       else {
