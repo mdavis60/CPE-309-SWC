@@ -75,13 +75,15 @@ public class CreateCourseController extends WindowController {
 				
 				// Compare first name and last name of every person with filter text.
 				String lowerCaseFilter = newValue.toLowerCase();
-				
+				System.out.println("Filter: " + lowerCaseFilter);
+				System.out.println("Courses: " + course.getCourseName().toLowerCase());
+				System.out.println(course.getCourseName().toLowerCase().indexOf(lowerCaseFilter));
 				if (course.getCourseName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					availablePrereqs.setPrefHeight(filteredCourseData.size() * 23.0);
 					return true; // Filter matches first name.
 				}
 				return false; // Does not match.
 			});
+            availablePrereqs.setPrefHeight(filteredCourseData.size() * 23.0);
 		});
     	availablePrereqs.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>(){
 			 
@@ -174,6 +176,7 @@ public class CreateCourseController extends WindowController {
     	if(!selectedPrereqs.contains(selected)) {
     		selectedPrereqs.add(selected);
     		prereqList.setPrefHeight(prereqList.getPrefHeight() + 23.0);
+    	    prereqField.setText("");
     	}
     }
 
