@@ -12,7 +12,7 @@ import javafx.scene.control.PasswordField;
 public class CreateAccountController extends WindowController{
 
     @FXML
-    private ChoiceBox<?> accountType;
+    private ChoiceBox<String> accountType;
   
     @FXML
     private TextField usernameField;
@@ -32,7 +32,8 @@ public class CreateAccountController extends WindowController{
       String username = usernameField.getText();
       String password1 = passwordField1.getText();
       String password2 = passwordField2.getText();
-      
+      String account = accountType.getValue();
+      System.out.println("Account: " + account);
       
       if(password1.equals(password2)){
         LoginData data = new LoginData(username, password1, LoginData.AuthType.ADMIN);

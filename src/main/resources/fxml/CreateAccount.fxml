@@ -39,7 +39,10 @@
                         <String fx:value="label-bold" />
                      </styleClass>
                   </Label>
-                  <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="150.0">
+                   		<String fx:value="Administrator" /> 
+                   		<String fx:value="Faculty" />
+                   </ChoiceBox>
                </children>
             </HBox>
             <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="261.0" promptText="Username">
