@@ -22,19 +22,29 @@ import javafx.collections.transformation.*;
 import javafx.util.Callback;
 public class CreateSectionController extends WindowController {
 
- @FXML
- private Text addComponent; 
- 
- @FXML
- private AnchorPane mainAnchor;
-    
- 	@FXML
- 	public void onAddComponent() {
- 		System.out.println("Adding component");
- 		mainAnchor.setPrefHeight(mainAnchor.getHeight() * 2);
- 	}
-    
-    /*
+	@FXML
+	private Text addComponent; 
+
+	@FXML
+	private AnchorPane mainAnchor;
+
+	@FXML
+	private VBox vBox; 
+
+
+	@FXML
+	private void initialize() {
+    	vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());		
+	}
+	
+	@FXML
+	public void onAddComponent() {
+		System.out.println("Adding component");
+		vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());
+	} 	
+
+
+	/*
     @FXML
     void CreateSection() {
       System.out.println("Section Created");

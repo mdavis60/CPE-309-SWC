@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class LogInController extends WindowController{
+public class LogInController extends WindowController {
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;

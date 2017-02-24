@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="127.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css">
+         <children>
+            <Text fill="WHITE" layoutX="40.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter" wrappingWidth="81.18579864501953" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d00b0b" height="3.0" layoutX="7.0" layoutY="14.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="16.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d00b0b" height="3.0" layoutX="7.0" layoutY="14.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="16.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>

@@ -9,10 +9,13 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.application.*;
 import javafx.collections.*;
+import javafx.scene.input.*;
+
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.slf4j.*;
@@ -137,6 +140,9 @@ public class SchedulerController extends WindowController {
 
     @FXML
     private MenuItem aboutMI;
+    
+    @FXML 
+    private HBox filterHBox; 
 
 	
 	private boolean feedbackIsShown = true;
@@ -301,6 +307,14 @@ public class SchedulerController extends WindowController {
         listTable.setItems(sortedData);
         System.out.println("Added Sorted Data");
     }
+    
+    public void enterPressedOnFilter(KeyEvent key) {
+    	if (key.getCode().equals(KeyCode.ENTER)) {
+    		if (filterHBox.getChildren().size() < 3) {
+    			filterHBox.getChildren().add(new FilterController());
+    		}
+    	}
+    }
 	
     public void start(Stage stage) throws Exception {
     	System.out.println("Started");
@@ -392,6 +406,25 @@ public class SchedulerController extends WindowController {
 	
 	public void addSectionToListView(Section section) throws Exception {
 
+		
+	}
+	
+	private static class FilterController extends AnchorPane {
+		
+		public FilterController()
+	    {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+	    			"/fxml/FilterTemplate.fxml"));
+	    	fxmlLoader.setRoot(this);
+	        fxmlLoader.setController(this);
+
+	        try {
+	            fxmlLoader.load();
+	        } catch (IOException exception) {
+	            throw new RuntimeException(exception);
+	        }
+	    }
+		
 		
 	}
 	
