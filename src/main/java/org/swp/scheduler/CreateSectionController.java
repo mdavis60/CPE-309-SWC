@@ -53,8 +53,9 @@ public class CreateSectionController extends WindowController {
       String roomNum = room.getText();
       String start = startTime.getText();
       String end = endTime.getText();
-      
-      MasterController.getInstance().addToData(new Section(course, prof , roomNum, "Lecture", getDaysOfWeek(), start, end));
+
+      // TODO
+      //MasterController.getInstance().addToData(new Section(course, prof , roomNum, "Lecture", getDaysOfWeek(), start, end));
       closeWindow(createButton);
     }
     

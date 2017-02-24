@@ -1,5 +1,6 @@
 package org.swp.scheduler.database.models;
 
+import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.DatabaseManager;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.List;
 @Table(name = "Courses")
 public class Course extends Model {
     @Id
-    public int courseId;
+    public String courseId;
     public String department;
     public String courseName;
     public int courseNumber;
@@ -28,10 +29,18 @@ public class Course extends Model {
     public Course() {
     }
 
-    public Course(int courseId, String courseName, String department, List<CourseComponent> components) {
-        this.courseId = courseId;
-        this.department = department;
+    public Course(int courseNumber, String courseName, String prerequisites,
+                  String department, List<CourseComponent> components) throws DatabaseException {
+        this.courseNumber = courseNumber;
         this.courseName = courseName;
+        this.department = department.toUpperCase();
+        this.courseName = courseName;
+        this.prerequisites = prerequisites;
+        this.courseId = department.toUpperCase() + " " + courseNumber;
+
+        for (CourseComponent c : components) {
+            DatabaseManager.getInstance().storeSingle(c);
+        }
     }
     public String getCourseName()
     {

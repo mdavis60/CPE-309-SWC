@@ -154,12 +154,15 @@ public class CreateCourseController extends WindowController {
     	  if(component instanceof CourseComponentController)
     	  {
     		  CourseComponent c = ((CourseComponentController)component).getComponent();
-    		  c.setCourseID(cnum);
+    		  //c.setCourseID(cnum);
+              // why is the course ID the same as the course number?
     		  components.add(c);
     	  }
       }
-      
-      MasterController.getInstance().addToCourses(new Course(cnum, String.valueOf(cnum), name, components));
+      // TODO: make a course name thats not the cnum
+      try {
+          MasterController.getInstance().addToCourses(new Course(cnum, name, "PREREQZ", "DEPARTMENT", components));
+      } catch(Exception e) {}
       closeWindow(createButton);
     }
 
