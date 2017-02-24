@@ -14,7 +14,7 @@ import javax.persistence.Transient;
 @Table(name = "Section")
 public class Section extends Model {
 	@Id
-    public int sectionId;
+	public int sectionId;
 
 	public int courseComponentId;
 	@Transient
@@ -22,19 +22,19 @@ public class Section extends Model {
 	@Transient
 	public Course course = null;
 
-    public String teacherId;
+	public String teacherId;
 	@Transient
-    public Teacher teacher = null;
+	public Teacher teacher = null;
 
-    public int roomId;
+	public int roomId;
 	@Transient
-    public Room room = null;
+	public Room room = null;
 
-    public String dow;
-    public String startTime;
-    public String endTime;
+	public String dow;
+	public String startTime;
+	public String endTime;
 
-  //For UI testing
+	//For UI testing
 	/*
 	private StringProperty course; 
 	public StringProperty prof;
@@ -58,36 +58,52 @@ public class Section extends Model {
 		this.endTime = endTime;
 	}
 
-	public CourseComponent getCourseComponent() throws DatabaseException {
-	    if (courseComponent == null) {
-	    	this.courseComponent = (CourseComponent)DatabaseManager.getInstance().getSingle(CourseComponent.class, this.courseComponentId);
+	public CourseComponent getCourseComponent() {
+		try {
+			if (courseComponent == null) {
+				this.courseComponent = (CourseComponent)DatabaseManager.getInstance().getSingle(CourseComponent.class, this.courseComponentId);
+			}
+			return this.courseComponent;
+		} catch(Exception e) {
+			throw new RuntimeException(e);
 		}
-	    return this.courseComponent;
 	}
 
-	public Course getCourse() throws DatabaseException {
-	    if (this.course == null) {
-	    	this.course = (Course) DatabaseManager.getInstance().getSingle(Course.class, getCourseComponent().courseId);
+	public Course getCourse() {
+		try {
+			if (this.course == null) {
+				this.course = (Course) DatabaseManager.getInstance().getSingle(Course.class, getCourseComponent().courseId);
+			}
+			return this.course;
+		} catch(Exception e) {
+			throw new RuntimeException(e);
 		}
-		return this.course;
 	}
 
-	public Teacher getTeacher() throws DatabaseException {
-	    if (teacher == null) {
-	        this.teacher = (Teacher)DatabaseManager.getInstance().getSingle(Teacher.class, this.teacherId);
+	public Teacher getTeacher() {
+		try {
+			if (teacher == null) {
+				this.teacher = (Teacher)DatabaseManager.getInstance().getSingle(Teacher.class, this.teacherId);
+			}
+			return this.teacher;
+		} catch(Exception e) {
+			throw new RuntimeException(e);
 		}
-		return this.teacher;
 	}
 
-	public String getProf() throws DatabaseException {
-	    return this.getTeacher().teacherId;
+	public String getProf() {
+		return this.getTeacher().teacherId;
 	}
 
-	public Room getRoom() throws DatabaseException {
+	public Room getRoom() {
+	    try {
 		if (this.room == null) {
-		    this.room = (Room)DatabaseManager.getInstance().getSingle(Room.class, this.roomId);
+			this.room = (Room)DatabaseManager.getInstance().getSingle(Room.class, this.roomId);
 		}
 		return this.room;
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public String getDow() {
@@ -107,33 +123,33 @@ public class Section extends Model {
 	public void setEndTime(String endTime) {
 
 	}
-	
-	public StringProperty courseProperty() throws DatabaseException {
+
+	public StringProperty courseProperty() {
 		return new SimpleStringProperty(getCourse().courseId);
 	}
-	
-	public StringProperty profProperty() throws DatabaseException {
+
+	public StringProperty profProperty() {
 		return new SimpleStringProperty(getTeacher().teacherName);
 	}
-	
-	public StringProperty roomProperty() throws DatabaseException {
+
+	public StringProperty roomProperty() {
 		return new SimpleStringProperty(getRoom().getRoom());
 	}
-	
-	public StringProperty courseCompProperty() throws DatabaseException {
-	    return new SimpleStringProperty(getCourseComponent().type);
+
+	public StringProperty courseCompProperty() {
+		return new SimpleStringProperty(getCourseComponent().type);
 	}
-	
+
 	public StringProperty courseDow() {
 		return new SimpleStringProperty(this.dow);
 	}
-	
+
 	public StringProperty startTimeProperty() {
 		return new SimpleStringProperty(this.startTime);
 	}
-	
+
 	public StringProperty endTimeProperty() {
 		return new SimpleStringProperty(this.endTime);
 	}
-	
+
 }
