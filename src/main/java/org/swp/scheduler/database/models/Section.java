@@ -1,130 +1,139 @@
 package org.swp.scheduler.database.models;
 
-import java.sql.Time;
-import java.util.List;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.swp.scheduler.database.DatabaseException;
+import org.swp.scheduler.database.DatabaseManager;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "Section")
 public class Section extends Model {
+	@Id
+    public int sectionId;
 
-  /*
-   *public int courseId; 
-   *public int sectionId;
-   *
-   *
-    //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
-    //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
-    @OneToMany
-    @JoinColumn(name="sectionComponentId")
-    public List<SectionComponent> componentList;
-   * 
-   */
-  
+	public int courseComponentId;
+	@Transient
+	public CourseComponent courseComponent = null;
+	@Transient
+	public Course course = null;
+
+    public String teacherId;
+	@Transient
+    public Teacher teacher = null;
+
+    public int roomId;
+	@Transient
+    public Room room = null;
+
+    public String dow;
+    public String startTime;
+    public String endTime;
+
   //For UI testing
+	/*
 	private StringProperty course; 
 	public StringProperty prof;
 	public StringProperty room; 
 	public StringProperty courseComp; 
 	public StringProperty dow; 
 	public StringProperty startTime; 
-	public StringProperty endTime; 
-	
-	public Section(String course, String prof, String room, String courseComp, String dow, String startTime, String endTime) {
-		this.course = new SimpleStringProperty(course); 
-		this.prof = new SimpleStringProperty(prof); 
-		this.room = new SimpleStringProperty(room); 
-		this.courseComp = new SimpleStringProperty(courseComp);
-		this.dow = new SimpleStringProperty(dow); 
-		this.startTime = new SimpleStringProperty(startTime); 
-		this.endTime = new SimpleStringProperty(endTime);
+	public StringProperty endTime;
+
+*/
+	public Section() {
+
 	}
 
-	public String getCourse() {
-		return course.get();
+	public Section(CourseComponent courseComp, Teacher teacher, Room room, String dow, String startTime, String endTime) {
+		this.courseComponentId = courseComp.courseComponentId;
+		this.teacherId = teacher.teacherId;
+		this.roomId = room.roomId;
+		this.dow = dow;
+		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 
-	public void setCourse(String course) {
-		this.course.set(course);
+	public CourseComponent getCourseComponent() throws DatabaseException {
+	    if (courseComponent == null) {
+	    	this.courseComponent = (CourseComponent)DatabaseManager.getInstance().getSingle(CourseComponent.class, this.courseComponentId);
+		}
+	    return this.courseComponent;
 	}
 
-	public String getProf() {
-		return prof.get();
+	public Course getCourse() throws DatabaseException {
+	    if (this.course == null) {
+	    	this.course = (Course) DatabaseManager.getInstance().getSingle(Course.class, getCourseComponent().courseId);
+		}
+		return this.course;
 	}
 
-	public void setProf(String prof) {
-		this.prof.set(prof);
+	public Teacher getTeacher() throws DatabaseException {
+	    if (teacher == null) {
+	        this.teacher = (Teacher)DatabaseManager.getInstance().getSingle(Teacher.class, this.teacherId);
+		}
+		return this.teacher;
 	}
 
-	public String getRoom() {
-		return room.get();
+	public String getProf() throws DatabaseException {
+	    return this.getTeacher().teacherId;
 	}
 
-	public void setRoom(String room) {
-		this.room.set(room);
-	}
-
-	public String getCourseComp() {
-		return courseComp.get();
-	}
-
-	public void setCourseComp(String courseComp) {
-		this.courseComp.set(courseComp);
+	public Room getRoom() throws DatabaseException {
+		if (this.room == null) {
+		    this.room = (Room)DatabaseManager.getInstance().getSingle(Room.class, this.roomId);
+		}
+		return this.room;
 	}
 
 	public String getDow() {
-		return dow.get();
+		return dow;
 	}
 
 	public void setDow(String dow) {
-		this.dow.set(dow);
+
 	}
 
-	public String getStartTime() {
-		return startTime.get();
-	}
 
 	public void setStartTime(String startTime) {
-		this.startTime.set(startTime);
+
 	}
 
-	public String getEndTime() {
-		return endTime.get();
-	}
 
 	public void setEndTime(String endTime) {
-		this.endTime.set(endTime);
+
 	}
 	
-	public StringProperty courseProperty() {
-		return this.course;
+	public StringProperty courseProperty() throws DatabaseException {
+		return new SimpleStringProperty(getCourse().courseId);
 	}
 	
-	public StringProperty profProperty() {
-		return this.prof;
+	public StringProperty profProperty() throws DatabaseException {
+		return new SimpleStringProperty(getTeacher().teacherName);
 	}
 	
-	public StringProperty roomProperty() {
-		return this.room;
+	public StringProperty roomProperty() throws DatabaseException {
+		return new SimpleStringProperty(getRoom().getRoom());
 	}
 	
-	public StringProperty courseCompProperty() {
-		return this.courseComp;
+	public StringProperty courseCompProperty() throws DatabaseException {
+	    return new SimpleStringProperty(getCourseComponent().type);
 	}
 	
 	public StringProperty courseDow() {
-		return this.dow;
+		return new SimpleStringProperty(this.dow);
 	}
 	
 	public StringProperty startTimeProperty() {
-		return this.startTime;
+		return new SimpleStringProperty(this.startTime);
 	}
 	
 	public StringProperty endTimeProperty() {
-		return this.endTime;
+		return new SimpleStringProperty(this.endTime);
 	}
 	
 }

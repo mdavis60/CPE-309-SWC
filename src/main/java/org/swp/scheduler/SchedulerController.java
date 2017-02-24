@@ -16,6 +16,7 @@ import javafx.beans.property.SimpleListProperty;
 import java.util.ArrayList;
 
 import org.slf4j.*;
+import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.models.*;
 
 import javafx.collections.transformation.*;
@@ -146,6 +147,7 @@ public class SchedulerController extends WindowController {
     protected ListProperty<Room> roomListProperty = new SimpleListProperty<>();
     
     public SchedulerController() {
+        /*
     	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
     	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
     	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
@@ -168,6 +170,7 @@ public class SchedulerController extends WindowController {
     	MasterController.getInstance().addToCourses(new Course(10 , "484", "CPE", null ));
     	MasterController.getInstance().addToCourses(new Course(11 , "365", "CPE", null ));
     	System.out.println("Added Courses");
+    	*/
     	
     	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, 35, "computers"));
     	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, 35, "none"));
@@ -196,12 +199,14 @@ public class SchedulerController extends WindowController {
     
     @FXML
     private void initialize() {
-    	System.out.println("Top");
-		sectionNameColumn.setCellValueFactory(cellData -> cellData.getValue().courseProperty());
-		profColumn.setCellValueFactory(cellData -> cellData.getValue().profProperty());
-		roomColumn.setCellValueFactory(cellData -> cellData.getValue().roomProperty());
-		sectionTypeColumn.setCellValueFactory(cellData -> cellData.getValue().courseCompProperty());
-		timeColumn.setCellValueFactory(cellData -> cellData.getValue().startTimeProperty());
+        try {
+            System.out.println("Top");
+            sectionNameColumn.setCellValueFactory(cellData -> cellData.getValue().courseProperty());
+            profColumn.setCellValueFactory(cellData -> cellData.getValue().profProperty());
+            roomColumn.setCellValueFactory(cellData -> cellData.getValue().roomProperty());
+            sectionTypeColumn.setCellValueFactory(cellData -> cellData.getValue().courseCompProperty());
+            timeColumn.setCellValueFactory(cellData -> cellData.getValue().startTimeProperty());
+        }catch (Exception e){}
 
 		courseListView.setItems(MasterController.getInstance().getCourseData());
 		roomsListView.setItems(MasterController.getInstance().getRoomData());
@@ -281,12 +286,14 @@ public class SchedulerController extends WindowController {
 				
 				// Compare first name and last name of every person with filter text.
 				String lowerCaseFilter = newValue.toLowerCase();
-				
-				if (section.getCourse().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					return true; // Filter matches first name.
-				} else if (section.getProf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					return true; // Filter matches last name.
-				}
+
+				try {
+					if (section.getCourse().courseId.toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true; // Filter matches first name.
+					} else if (section.getProf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true; // Filter matches last name.
+					}
+				} catch (Exception e){}
 				return false; // Does not match.
 			});
 		});
@@ -378,7 +385,7 @@ public class SchedulerController extends WindowController {
 	}
 	
 	public void onAddSection(Section section) throws Exception {
-    	MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
+    	//MasterController.getInstance().addToData(new Section("CPE 309", "M. McAniff", "14-202", "Lecture", "M W F", "9", "11"));
 	} 
 	
 	public void addSection(Section section) throws Exception {

@@ -19,18 +19,18 @@ public class CourseComponent extends Model {
     public int studentUnits;
     public int classHours;
 
-    public int courseId;
+    public String courseId;
 
     public CourseComponent() {
     }
 
-    public CourseComponent(String type, int workUnits, int classHours, int courseId) throws DatabaseException {
+    public CourseComponent(CourseType type, int workUnits, int classHours, Course course) throws DatabaseException {
         // verify the type
-        if (DatabaseManager.getInstance().containsKey(CourseType.class, type)) {
-            this.type = type;
+        if (DatabaseManager.getInstance().containsKey(CourseType.class, type.courseType)) {
+            this.type = type.courseType;
             this.workUnits = workUnits;
             this.classHours = classHours;
-            this.courseId = courseId;
+            this.courseId = course.courseId;
 
         } else {
             throw new DatabaseException("Not a valid course type");
@@ -46,9 +46,5 @@ public class CourseComponent extends Model {
 //        } else {
 //            throw new DatabaseException("Not a valid course type");
 //        }
-    }
-    public void setCourseID(int courseId)
-    {
-    	this.courseId = courseId;
     }
 }

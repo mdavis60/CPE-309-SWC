@@ -12,7 +12,7 @@ public class CoursePreference extends Model {
     @GeneratedValue(strategy= GenerationType.AUTO)
     int coursePreferenceId;
 
-    public int courseId;
+    public String courseId;
     public String teacherId;
     public int preferenceLevel;
 
