@@ -105,3 +105,9 @@
     -fx-height: 500;
 }
 
+.filter-panel {
+	-fx-background-color: #79879a; 
+	-fx-width: 200;
+	-fx-height: 50; 
+}
+
