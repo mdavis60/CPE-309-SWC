@@ -165,12 +165,10 @@ public class DBUnitTests {
 //        DatabaseManager.getInstance().deleteSingle(course);
 //
 
-
-
   //  }
     @Test
     public void testCourse() throws Exception {
-        Course course = new Course(123, "se2", "asdf", "CPE");
+        Course course = new Course(212, "se2", "asdf", "CPE");
 
         CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "CPE 123");
         if (type == null) {

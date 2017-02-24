@@ -31,16 +31,24 @@ public class Course extends Model {
 
     public Course(int courseNumber, String courseName, String prerequisites,
                   String department, List<CourseComponent> components) throws DatabaseException {
+        this(courseNumber, courseName, prerequisites, department);
+        addComponents(components);
+    }
+
+    public void addComponents(List<CourseComponent> components) throws DatabaseException {
+        for (CourseComponent c : components) {
+            DatabaseManager.getInstance().storeSingle(c);
+        }
+    }
+
+    public Course(int courseNumber, String courseName, String prerequisites,
+                  String department) throws DatabaseException {
         this.courseNumber = courseNumber;
         this.courseName = courseName;
         this.department = department.toUpperCase();
         this.courseName = courseName;
         this.prerequisites = prerequisites;
         this.courseId = department.toUpperCase() + " " + courseNumber;
-
-        for (CourseComponent c : components) {
-            DatabaseManager.getInstance().storeSingle(c);
-        }
     }
     public String getCourseName()
     {
