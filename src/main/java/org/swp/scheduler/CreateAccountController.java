@@ -2,6 +2,7 @@ package org.swp.scheduler;
 
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.LoginData;
+import org.swp.scheduler.database.models.Teacher;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,6 +15,12 @@ public class CreateAccountController extends WindowController{
     @FXML
     private ChoiceBox<String> accountType;
   
+    @FXML
+    private TextField firstNameField;
+    
+    @FXML
+    private TextField lastNameField;
+    
     @FXML
     private TextField usernameField;
 
@@ -29,6 +36,8 @@ public class CreateAccountController extends WindowController{
     @FXML
     void createAccount() {
       
+      String firstName = firstNameField.getText();
+      String lastName = lastNameField.getText();
       String username = usernameField.getText();
       String password1 = passwordField1.getText();
       String password2 = passwordField2.getText();
@@ -37,9 +46,10 @@ public class CreateAccountController extends WindowController{
       
       if(password1.equals(password2)){
         LoginData data = new LoginData(username, password1, LoginData.AuthType.ADMIN);
-
+        Teacher teacher = new Teacher(username, firstName + lastName);
         try {
           DatabaseManager.getInstance().storeSingle(data);
+          MasterController.getInstance().addToTeachers(teacher);
           errorMessage("Success", "Account Created!");
           closeWindow(createAccountButton);
         } catch (Exception e) {
@@ -50,5 +60,4 @@ public class CreateAccountController extends WindowController{
     	  errorMessage("Incorrect Passwords", "The two passwords do not match.");
       }
     }
-
 }
