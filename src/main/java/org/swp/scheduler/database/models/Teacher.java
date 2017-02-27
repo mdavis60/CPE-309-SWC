@@ -21,7 +21,7 @@ public class Teacher extends Model {
     @JoinColumn(name="teacherId")
     public List<TimePreference> timePreferences;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="teacherId")
     public List<CoursePreference> coursePreferences;
 

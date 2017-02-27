@@ -44,6 +44,9 @@ public class DBUnitTests {
     public void getAllTableTest() throws Exception {
         List<Model> list = DatabaseManager.getInstance().getAll(StudentPlanData.class);
         assert list.size() > 1;
+
+        List<Model> list2 = DatabaseManager.getInstance().getAll(Course.class);
+        List<Model> list4 = DatabaseManager.getInstance().getAll(Teacher.class);
     }
 
     @Test
