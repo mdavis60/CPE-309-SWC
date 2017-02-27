@@ -13,13 +13,13 @@ import javax.persistence.*;
 @Table(name = "CourseComponent")
 public class CourseComponent extends Model {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public int courseComponentId;
+    public int classHours;
+    public String courseId;
     public String type;
     public int workUnits;
     public int studentUnits;
-    public int classHours;
-
-    public String courseId;
 
     public CourseComponent() {
     }

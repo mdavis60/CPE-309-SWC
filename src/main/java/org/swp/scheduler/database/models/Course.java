@@ -16,13 +16,14 @@ public class Course extends Model {
     public String courseId;
     public String department;
     public String courseName;
-    public int courseNumber;
     public String prerequisites;
+    public int courseNumber;
 
     //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
     //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
-    @OneToMany
-    @JoinColumn(name="courseComponentId")
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="courseId")
     public List<CourseComponent> componentList;
 
     //courseName, courseNumber, courseType, prereqs, workUnits, studentUnits
