@@ -153,58 +153,12 @@ public class SchedulerController extends WindowController {
     protected ListProperty<Room> roomListProperty = new SimpleListProperty<>();
     
     public SchedulerController() {
-        /*
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-    	MasterController.getInstance().addToData(new Section("CPE 309", "T. Kearns", "14-202", "Lecture", "M W F", "9", "11"));
-
-    	MasterController.getInstance().addToCourses(new Course(1 , "309", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(2 , "308", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(3 , "307", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(4 , "357", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(5 , "123", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(6 , "101", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(7 , "102", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(8 , "103", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(9 , "225", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(10 , "484", "CPE", null ));
-    	MasterController.getInstance().addToCourses(new Course(11 , "365", "CPE", null ));
-    	System.out.println("Added Courses");
-    	*/
-    	/*
-    	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, 35, "none"));
-    	MasterController.getInstance().addToRooms(new Room(3 , 252, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(4 , 253, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(5 , 254, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(6 , 255, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(7 , 258, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(8 , 259, 14, 35, "computers"));
-    	MasterController.getInstance().addToRooms(new Room(9 , 261, 14, 35, "computers"));
-    	System.out.println("Added Rooms");
-
-    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Kearns"));
-    	MasterController.getInstance().addToTeachers(new Teacher( "2", "Daulby"));
-    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Mammen"));
-    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Workman"));
-    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Woods"));
-    	MasterController.getInstance().addToTeachers(new Teacher( "1", "Sakellariou"));
-    	System.out.println("Added Teachers");
-    	
-        /*ArrayList<Section> sections = Database.getSections();
-        for(Section s : sections) {
-          addSection(s);
-        }*/
     }
     
     @FXML
     private void initialize() {
+
+    	MasterController.initializeLists();
         try {
             System.out.println("Top");
             sectionNameColumn.setCellValueFactory(cellData -> cellData.getValue().courseProperty());
