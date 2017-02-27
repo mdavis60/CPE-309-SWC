@@ -158,7 +158,7 @@ public class SchedulerController extends WindowController {
     @FXML
     private void initialize() {
 
-    	MasterController.initializeLists();
+    	//MasterController.initializeLists();
         try {
             System.out.println("Top");
             sectionNameColumn.setCellValueFactory(cellData -> cellData.getValue().courseProperty());

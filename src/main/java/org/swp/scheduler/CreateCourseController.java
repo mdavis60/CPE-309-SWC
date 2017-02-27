@@ -28,15 +28,16 @@ import javafx.stage.Window;
 public class CreateCourseController extends WindowController {
 
 	@FXML
-    private VBox courseComponents;
-	@FXML
-    private TextField courseName;
+    private TextField department;
 
     @FXML
     private TextField courseNumber;
 
     @FXML
-    private TextField courseType;
+    private TextField courseName;
+
+    @FXML
+    private TextField prereqField;
 
     @FXML
     private ListView<Course> availablePrereqs;
@@ -45,19 +46,11 @@ public class CreateCourseController extends WindowController {
     private ListView<Course> prereqList;
 
     @FXML
-    private TextField workUnits;
-
-    @FXML
-    private TextField studentUnits;
+    private VBox courseComponents;
 
     @FXML
     private Button createButton;
-    
-    @FXML
-    private Group blankComponent;
-    
-    @FXML
-    private TextField prereqField;
+
     
     private ObservableList<Course> selectedPrereqs;
     
@@ -144,25 +137,25 @@ public class CreateCourseController extends WindowController {
 
       //Course data = new Course(courseName, courseNumber, "password", LoginData.AuthType.ADIMIN);
       //DatabaseManager.getInstance().storeSingle(data);
-      String name = courseName.getText();
-      int cnum = Integer.parseInt(courseNumber.getText());
-      String type = courseType.getText();
+      String depart = department.getText();
+      int cNumber = Integer.parseInt(courseNumber.getText());
+      String cName = courseName.getText();
       String prereq = prereqField.getText();
-      List<CourseComponent> components = new ArrayList<CourseComponent>();
-      for(javafx.scene.Node component : courseComponents.getChildren())
-      {
-    	  if(component instanceof CourseComponentController)
-    	  {
-    		  CourseComponent c = ((CourseComponentController)component).getComponent();
-    		  //c.setCourseID(cnum);
-              // why is the course ID the same as the course number?
-    		  components.add(c);
-    	  }
-      }
-      // TODO: make a course name thats not the cnum
-      try {
-          MasterController.getInstance().addToCourses(new Course(cnum, name, "PREREQZ", "DEPARTMENT", components));
+      try{
+	      Course theCourse = new Course(cNumber, cName, "PREREQZ", depart);
+	      for(javafx.scene.Node component : courseComponents.getChildren())
+	      {
+	    	  if(component instanceof CourseComponentController)
+	    	  {
+	    		  CourseComponent c = ((CourseComponentController)component).getComponent();
+	    		  c.setCourseID(theCourse.getCourseID());
+	    		  
+	    			  theCourse.addComponent(c);
+	    	  }
+	      }
+	      MasterController.getInstance().addToCourses(theCourse);
       } catch(Exception e) {}
+     
       closeWindow(createButton);
     }
 

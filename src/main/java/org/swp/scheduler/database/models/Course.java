@@ -41,6 +41,9 @@ public class Course extends Model {
             DatabaseManager.getInstance().storeSingle(c);
         }
     }
+    public void addComponent(CourseComponent component) throws DatabaseException {
+    	DatabaseManager.getInstance().storeSingle(component);
+    }
 
     public Course(int courseNumber, String courseName, String prerequisites,
                   String department) throws DatabaseException {
@@ -53,6 +56,11 @@ public class Course extends Model {
     }
     public String getCourseName()
     {
-    	return department + " " + courseName;
+    	return getCourseID();
     }
+    public String getCourseID()
+    {
+    	return courseId;
+    }
+    
 }
