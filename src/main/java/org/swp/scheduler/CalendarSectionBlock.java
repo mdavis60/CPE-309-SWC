@@ -28,10 +28,10 @@ public class CalendarSectionBlock extends AnchorPane{
     private Label room;
     
 	public CalendarSectionBlock(Section section, int sectionNumber) {
-		course.setText(section.getCourse());
+		course.setText(section.getCourse().getCourseName());
 		this.sectionNumber.setText("" + sectionNumber);
 		professor.setText(section.getProf());
-		room.setText(section.getRoom());
+		room.setText(section.getRoom().getRoom());
 		startTime.setText(section.getStartTime());
 		endTime.setText(section.getEndTime());
 	}

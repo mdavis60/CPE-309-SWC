@@ -177,7 +177,7 @@ public class SchedulerController extends WindowController {
     	MasterController.getInstance().addToCourses(new Course(11 , "365", "CPE", null ));
     	System.out.println("Added Courses");
     	*/
-    	
+    	/*
     	MasterController.getInstance().addToRooms(new Room(1 , 250, 14, 35, "computers"));
     	MasterController.getInstance().addToRooms(new Room(2 , 251, 14, 35, "none"));
     	MasterController.getInstance().addToRooms(new Room(3 , 252, 14, 35, "computers"));
@@ -294,7 +294,7 @@ public class SchedulerController extends WindowController {
 				String lowerCaseFilter = newValue.toLowerCase();
 
 				try {
-					if (section.getCourse().courseId.toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					if (("" + section.getCourse().courseId).toLowerCase().indexOf(lowerCaseFilter) != -1) {
 						return true; // Filter matches first name.
 					} else if (section.getProf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
 						return true; // Filter matches last name.

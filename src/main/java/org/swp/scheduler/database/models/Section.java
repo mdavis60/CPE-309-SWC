@@ -125,7 +125,7 @@ public class Section extends Model {
 	}
 
 	public StringProperty courseProperty() {
-		return new SimpleStringProperty(getCourse().courseId);
+		return new SimpleStringProperty("" + getCourse().courseId);
 	}
 
 	public StringProperty profProperty() {
@@ -150,6 +150,14 @@ public class Section extends Model {
 
 	public StringProperty endTimeProperty() {
 		return new SimpleStringProperty(this.endTime);
+	}
+	public String getStartTime()
+	{
+		return startTime;
+	}
+	public String getEndTime()
+	{
+		return endTime;
 	}
 
 }

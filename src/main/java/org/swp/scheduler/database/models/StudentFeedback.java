@@ -27,4 +27,9 @@ public class StudentFeedback extends Model {
         this.feedback = feedback;
         this.term = term;
     }
+    public StudentFeedback(String message, String term)
+    {
+    	feedback = message;
+    	this.term = term;
+    }
 }
