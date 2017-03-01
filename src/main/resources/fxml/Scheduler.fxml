@@ -32,7 +32,7 @@
             <items>
               <MenuItem fx:id="newMI" mnemonicParsing="false" styleClass="menu-item" text="New" />
                   <MenuItem fx:id="openMI" mnemonicParsing="false" styleClass="menu-item" text="Open" />
-                  <MenuItem fx:id="saveMI" mnemonicParsing="false" styleClass="menu-item" text="Save" />
+                  <MenuItem fx:id="saveMI" mnemonicParsing="false" onAction="#onSave" styleClass="menu-item" text="Save" />
                   <MenuItem fx:id="saveAsMI" mnemonicParsing="false" styleClass="menu-item" text="Save As..." />
                   <MenuItem fx:id="ImportScheduleMI" mnemonicParsing="false" styleClass="menu-item" text="Import Schedule From Previous Term..." />
             </items>

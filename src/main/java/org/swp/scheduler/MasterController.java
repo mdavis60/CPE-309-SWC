@@ -2,6 +2,7 @@ package org.swp.scheduler;
 
 import java.util.List;
 
+import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.Model;
 import org.swp.scheduler.database.models.Section;
@@ -42,10 +43,18 @@ public class MasterController {
 		Room rm[] = new Room[1];
 		Teacher teach[] = new Teacher[1];
 		try {
-			sections.addAll(DatabaseManager.getInstance().getAll(Section.class).toArray(sect));
-			courses.addAll(DatabaseManager.getInstance().getAll(Course.class).toArray(cour));
-			rooms.addAll(DatabaseManager.getInstance().getAll(Room.class).toArray(rm));
-			teachers.addAll(DatabaseManager.getInstance().getAll(Teacher.class).toArray(teach));
+			if(!DatabaseManager.getInstance().getAll(Section.class).isEmpty()) {
+				sections.addAll(DatabaseManager.getInstance().getAll(Section.class).toArray(sect));
+			}
+			if(!DatabaseManager.getInstance().getAll(Course.class).isEmpty()) {
+				courses.addAll(DatabaseManager.getInstance().getAll(Course.class).toArray(cour));
+			}
+			if(!DatabaseManager.getInstance().getAll(Room.class).isEmpty()) {
+				rooms.addAll(DatabaseManager.getInstance().getAll(Room.class).toArray(rm));
+			}
+			if(!DatabaseManager.getInstance().getAll(Teacher.class).isEmpty()) {
+				teachers.addAll(DatabaseManager.getInstance().getAll(Teacher.class).toArray(teach));
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -85,6 +94,33 @@ public class MasterController {
 	
 	public static ObservableList<Teacher> getTeacherData() {
 		return teachers;
+	}
+	
+	public void saveDataToDB() throws DatabaseException
+	{
+		for(Course c : courseDelta)
+		{
+			DatabaseManager.getInstance().storeSingle(c);
+		}
+		courseDelta.clear();
+		
+		for(Room r : roomDelta)
+		{
+			DatabaseManager.getInstance().storeSingle(r);
+		}
+		roomDelta.clear();
+		
+		for(Section s : sectionDelta)
+		{
+			DatabaseManager.getInstance().storeSingle(s);
+		}
+		sectionDelta.clear();
+		
+		for(Teacher t: teacherDelta) 
+		{
+			DatabaseManager.getInstance().storeSingle(t);
+		}
+		teacherDelta.clear();
 	}
 
 }
