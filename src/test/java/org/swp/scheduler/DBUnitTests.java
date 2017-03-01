@@ -44,6 +44,9 @@ public class DBUnitTests {
     public void getAllTableTest() throws Exception {
         List<Model> list = DatabaseManager.getInstance().getAll(StudentPlanData.class);
         assert list.size() > 1;
+
+        List<Model> list2 = DatabaseManager.getInstance().getAll(Course.class);
+        List<Model> list4 = DatabaseManager.getInstance().getAll(Teacher.class);
     }
 
     @Test
@@ -60,7 +63,7 @@ public class DBUnitTests {
     @Test
     public void testStudentFeedback() throws Exception {
         String message = "this was a great class schedule great job";
-        String fallMessage = "this was a great class schedule great job WHICH HAPPENED IN FALL";
+        String fallMessage = "this was a great class schedule great job HAPPENED IN FALL";
         String fall = Constants.getTerm("fall", 2016);
         String winter = Constants.getTerm("winter", 2016);
 
@@ -133,44 +136,14 @@ public class DBUnitTests {
         DatabaseManager.getInstance().deleteSingle(t);
         DatabaseManager.getInstance().deleteSingle(p1);
         DatabaseManager.getInstance().deleteSingle(p2);
-
     }
 
-//    @Test
-//    public void testCourse() throws Exception {
-//        Course course = new Course(1234, "se2", "asdf", "CPE");
-//
-//        CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "TYPEQ");
-//        if (type == null) {
-//            type = new CourseType("TYPEQ");
-//            DatabaseManager.getInstance().storeSingle(type);
-//        }
-//
-//        DatabaseManager.getInstance().storeSingle(course);
-//
-//        CourseComponent cc1 = new CourseComponent(type, 3, 4, course);
-//        CourseComponent cc2 = new CourseComponent(type, 6, 8, course);
-//
-//        DatabaseManager.getInstance().storeSingle(cc1);
-//        DatabaseManager.getInstance().storeSingle(cc2);
-//
-//        Course retrievedC = (Course)DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
-//
-//        assert retrievedC.componentList.size() >= 1;
-//        assert retrievedC.courseId >= 0;
-//
-//        DatabaseManager.getInstance().deleteSingle(cc1);
-//        DatabaseManager.getInstance().deleteSingle(cc2);
-//        DatabaseManager.getInstance().deleteSingle(type);
-//        DatabaseManager.getInstance().deleteSingle(course);
-//
 
-  //  }
     @Test
     public void testCourse() throws Exception {
-        Course course = new Course(212, "se2", "asdf", "CPE");
+        Course course = new Course(123, "intro to cs", "CPE-123|CSC-329", "CPE");
 
-        CourseType type = (CourseType)DatabaseManager.getInstance().getSingle(CourseType.class, "CPE 123");
+        CourseType type = (CourseType) DatabaseManager.getInstance().getSingle(CourseType.class, "TYPEQ");
         if (type == null) {
             type = new CourseType("TYPEQ");
             DatabaseManager.getInstance().storeSingle(type);
@@ -183,15 +156,26 @@ public class DBUnitTests {
 
         DatabaseManager.getInstance().storeSingle(cc1);
         DatabaseManager.getInstance().storeSingle(cc2);
+        System.out.println(cc1.courseId);
+        System.out.println(cc2.courseId);
 
-        Course retrievedC = (Course)DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
+        Course retrievedC = (Course) DatabaseManager.getInstance().getSingle(Course.class, course.courseId);
 
+        System.out.println(retrievedC.componentList.size());
         assert retrievedC.componentList.size() >= 1;
 
         DatabaseManager.getInstance().deleteSingle(cc1);
         DatabaseManager.getInstance().deleteSingle(cc2);
-        DatabaseManager.getInstance().deleteSingle(type);
         DatabaseManager.getInstance().deleteSingle(course);
     }
+
+    @Test
+    public void testSections() {
+        CourseComponent cc = new CourseComponent();
+        Teacher t = new Teacher();
+        Room r = new Room();
+        Section section = new Section(cc, t, r, "MWF", "1:00", "2:00");
+    }
+
 }
 

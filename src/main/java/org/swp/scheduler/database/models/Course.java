@@ -16,13 +16,14 @@ public class Course extends Model {
     public String courseId;
     public String department;
     public String courseName;
-    public int courseNumber;
     public String prerequisites;
+    public int courseNumber;
 
     //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
     //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
-    @OneToMany
-    @JoinColumn(name="courseComponentId")
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="courseId")
     public List<CourseComponent> componentList;
 
     //courseName, courseNumber, courseType, prereqs, workUnits, studentUnits
@@ -40,6 +41,9 @@ public class Course extends Model {
             DatabaseManager.getInstance().storeSingle(c);
         }
     }
+    public void addComponent(CourseComponent component) throws DatabaseException {
+    	DatabaseManager.getInstance().storeSingle(component);
+    }
 
     public Course(int courseNumber, String courseName, String prerequisites,
                   String department) throws DatabaseException {
@@ -52,6 +56,11 @@ public class Course extends Model {
     }
     public String getCourseName()
     {
-    	return department + " " + courseName;
+    	return getCourseID();
     }
+    public String getCourseID()
+    {
+    	return courseId;
+    }
+    
 }

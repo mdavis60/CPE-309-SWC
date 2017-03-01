@@ -13,13 +13,13 @@ import javax.persistence.*;
 @Table(name = "CourseComponent")
 public class CourseComponent extends Model {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public int courseComponentId;
+    public int classHours;
+    public String courseId;
     public String type;
     public int workUnits;
     public int studentUnits;
-    public int classHours;
-
-    public String courseId;
 
     public CourseComponent() {
     }
@@ -38,13 +38,17 @@ public class CourseComponent extends Model {
     }
     public CourseComponent(String type, int workUnits, int classHours) {
         // verify the type
-      //  if (DatabaseManager.getInstance().containsKey(CourseType.class, type)) {
+        //if (DatabaseManager.getInstance().containsKey(CourseType.class, type)) {
             this.type = type;
             this.workUnits = workUnits;
             this.classHours = classHours;
 
-//        } else {
-//            throw new DatabaseException("Not a valid course type");
-//        }
+            //} else {
+            //    throw new DatabaseException("Not a valid course type");
+            //}
+    }
+    public void setCourseID(String id)
+    {
+    	courseId = id;
     }
 }

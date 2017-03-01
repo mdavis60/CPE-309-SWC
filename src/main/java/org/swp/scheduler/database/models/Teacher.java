@@ -2,6 +2,7 @@ package org.swp.scheduler.database.models;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by jackson on 2/3/17.
@@ -19,11 +20,11 @@ public class Teacher extends Model {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="teacherId")
-    public List<TimePreference> timePreferences;
+    public Set<TimePreference> timePreferences;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="teacherId")
-    public List<CoursePreference> coursePreferences;
+    public Set<CoursePreference> coursePreferences;
 
 
     public Teacher() {
@@ -32,6 +33,8 @@ public class Teacher extends Model {
     public Teacher(String teacherId, String teacherName) {
         this.teacherId = teacherId;
         this.teacherName = teacherName;
+        this.targetWorkUnits = 16;
+        this.currWorkUnits = 0;
     }
     public String getTeacherName()
     {

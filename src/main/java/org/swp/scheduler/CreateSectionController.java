@@ -14,8 +14,10 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.*;
+import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.*;
 
 import javafx.collections.transformation.*;
@@ -30,10 +32,42 @@ public class CreateSectionController extends WindowController {
 
 	@FXML
 	private VBox vBox; 
+	
+	@FXML
+	private ComboBox comboBox;
 
 
 	@FXML
 	private void initialize() {
+//		List<Model> list = DatabaseManager.getInstance().getAll(RoomType.class);
+//		 list.add("hey");
+//		 list.add("yo");
+		 
+	        // Now add observability by wrapping it with ObservableList.
+	 //   ObservableList<String> observableList = FXCollections.observableList(list);
+	    
+	    
+	    
+	    
+        try {
+			List<Model> list = DatabaseManager.getInstance().getAll(Course.class);
+	    	ObservableList<String> options = FXCollections.observableArrayList();
+	    	
+	    	for(Model type: list){
+	    		options.add(((Course)type).courseName);
+	    	}
+	    	
+	    	comboBox.getItems().removeAll(comboBox.getItems());
+	    	comboBox.getItems().addAll(options);
+	    	//comboBox.setItems(options);
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	    
+	    
+	    
     	vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());		
 	}
 	
@@ -41,7 +75,7 @@ public class CreateSectionController extends WindowController {
 	public void onAddComponent() {
 		System.out.println("Adding component");
 		vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());
-	} 	
+	} 
 
 
 	/*
