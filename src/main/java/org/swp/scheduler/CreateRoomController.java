@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
 
-public class CreateRoomController extends WindowController implements Initializable{
+public class CreateRoomController extends WindowController implements Initializable {
 
     @FXML
     private TextField buildNum;

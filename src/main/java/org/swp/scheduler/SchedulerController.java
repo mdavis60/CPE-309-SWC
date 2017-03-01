@@ -303,6 +303,11 @@ public class SchedulerController extends WindowController {
     	System.out.println("New Room");
     	openWindow("CreateRoom");    }
     @FXML
+    void launchRoomType() {
+    	System.out.println("New Room Type");
+    	openWindow("AddRoomType");
+    }
+    @FXML
     void launchStudentFeedback() {
     	System.out.println("Student Feedback");
     	openWindow("StudentFeedback");    }
