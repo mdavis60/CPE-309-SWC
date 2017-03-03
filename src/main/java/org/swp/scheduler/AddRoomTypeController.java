@@ -27,20 +27,25 @@ public class AddRoomTypeController extends WindowController {
     	}
     }
     
-    public void helper(Class id, String typeField) throws Exception {
+    public void add(Class id, String typeField) throws Exception {
     	Model type;
+    	String message;
     	
-    	if(id == RoomType.class)
+    	if(id == RoomType.class) {
 			type = new RoomType(typeField);
-    	else
+			message = "Room";
+    	}
+    	else {
 			type = new CourseType(typeField);
+			message = "Course";
+    	}
     	
     	if(!DatabaseManager.getInstance().containsKey(id, typeField)) {
     		DatabaseManager.getInstance().storeSingle(type);
         	closeWindow(addRoomTypeButton);
 		}
 		else {
-    		errorMessage("Room/Course type already exists", "Please specify a new Room/Course type");
+    		errorMessage(message + " type already exists", "Please specify a new " + message + " type");
 		}
     }
     
@@ -49,16 +54,14 @@ public class AddRoomTypeController extends WindowController {
     	
     	if(!typeField.isEmpty()) {        		
     		if(both.isSelected()) {
-    			helper(RoomType.class, typeField);
-        		helper(CourseType.class, typeField);
+    			add(RoomType.class, typeField);
+        		add(CourseType.class, typeField);
     		}
     		else if(room.isSelected()) {
-    			helper(RoomType.class, typeField);
-    			//closeWindow(addRoomTypeButton);
+    			add(RoomType.class, typeField);
     		}
     		else if(course.isSelected()) {
-        		helper(CourseType.class, typeField);
-        		//closeWindow(addRoomTypeButton);
+        		add(CourseType.class, typeField);
     		}
     		else{
         		errorMessage("No button selected", "Please specify if this is a new Room/Course type or both");
