@@ -40,4 +40,9 @@ public class Teacher extends Model {
     {
     	return teacherName;
     }
+    
+    public String toString() {
+    	return getTeacherName();
+    }
+    
 }

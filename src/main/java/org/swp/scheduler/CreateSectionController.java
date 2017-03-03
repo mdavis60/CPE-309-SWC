@@ -12,6 +12,8 @@ import javafx.collections.*;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +36,12 @@ public class CreateSectionController extends WindowController {
 	private VBox vBox; 
 	
 	@FXML
-	private ComboBox comboBox;
-
-
+	private ComboBox<Course> courseBox;
+	
+	@FXML 
+	private Button createButton; 
+	
+	@SuppressWarnings("restriction")
 	@FXML
 	private void initialize() {
 //		List<Model> list = DatabaseManager.getInstance().getAll(RoomType.class);
@@ -48,34 +53,68 @@ public class CreateSectionController extends WindowController {
 	    
 	    
 	    
-	    
-        try {
-			List<Model> list = DatabaseManager.getInstance().getAll(Course.class);
-	    	ObservableList<String> options = FXCollections.observableArrayList();
-	    	
-	    	for(Model type: list){
-	    		options.add(((Course)type).courseName);
-	    	}
-	    	
-	    	comboBox.getItems().removeAll(comboBox.getItems());
-	    	comboBox.getItems().addAll(options);
-	    	//comboBox.setItems(options);
+		courseBox.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
 
+			@Override
+			public ListCell<Course> call(ListView<Course> param) {
+				
+				ListCell<Course> cell = new ListCell<Course>() {
+					@Override
+                    protected void updateItem(Course t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getCourseName());
+                        }
+                    }
+					
+					
+				};	
+				
+				return cell;
+			}
+		});
+		
+		ObservableList<Course> courses = MasterController.getCourseData();
+		courseBox.getItems().addAll(courses);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	    
-	    
-	    
-    	vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());		
+    	vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController(null));		
 	}
 	
 	@FXML
-	public void onAddComponent() {
+	public void onAddSection() {
 		System.out.println("Adding component");
-		vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController());
+		vBox.getChildren().add(vBox.getChildren().size()-1, new SectionComponentController(null));
 	} 
+	
+	   @FXML
+	    void createSection() { 
+		   try{
+		      Section theCourse = new Section();
+		      for(javafx.scene.Node component : vBox.getChildren())
+		      {		    	  
+		    	  if(component instanceof SectionComponentController)
+		    	  {
+    				
+    				  Section section = ((SectionComponentController) component).getSection(); 
+
+		    		  section.course = courseBox.getValue();
+		    			  
+		    			 
+		    	
+		    		  
+		    		  
+		    		  
+			    	  //Section section = new Section(new CourseComponent(), new Teacher(), new Room(), "", "", ""); 
+			    	  //section.course = courseBox.getValue();
+			    	  //section.teacher = 
+		    	  		    		  
+				      MasterController.getInstance().addToData(section);
+		    	  }
+		      }
+	      } catch(Exception e) {}
+	     
+	      closeWindow(createButton);
+	    }
 
 
 	/*

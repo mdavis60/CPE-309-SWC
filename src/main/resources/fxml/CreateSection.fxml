@@ -41,14 +41,14 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Text>
-                  <ComboBox fx:id="comboBox" prefHeight="27.0" prefWidth="246.0" promptText="Course">
+                  <ComboBox fx:id="courseBox" prefHeight="27.0" prefWidth="246.0" promptText="Course">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </ComboBox>
                   <VBox fx:id="vBox" alignment="TOP_CENTER" maxWidth="357.0" prefHeight="387.0" prefWidth="357.0" spacing="10.0" styleClass="background-panel">
                      <children>
-                        <Text fill="#f2f2f2" onMouseClicked="#onAddComponent" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new section">
+                        <Text fill="#f2f2f2" onMouseClicked="#onAddSection" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new section">
                            <font>
                               <Font name="Avenir Oblique" size="13.0" />
                            </font>
@@ -61,7 +61,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <Button mnemonicParsing="false" text="Create Section(s)">
+                  <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createSection" text="Create Section(s)">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin></Button>
