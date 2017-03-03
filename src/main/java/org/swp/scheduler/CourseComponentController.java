@@ -24,7 +24,7 @@ public class CourseComponentController extends AnchorPane {
     private TextField studentUnits;
     
     @FXML
-    private Label componentType;
+    private TextField componentType;
     
     public CourseComponentController()
     {
@@ -52,7 +52,7 @@ public class CourseComponentController extends AnchorPane {
     {
     	try
     	{
-    		CourseComponent component = new CourseComponent(componentType.getText(), Integer.parseInt(getWorkUnits()), Integer.parseInt(getStudentUnits()));
+    		CourseComponent component = new CourseComponent(componentType.getText(), Integer.parseInt(getWorkUnits()), Integer.parseInt(getStudentUnits()), Integer.parseInt(getStudentUnits()));
     		return component;
     	}catch(Exception e)
     	{

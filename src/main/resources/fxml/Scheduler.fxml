@@ -42,7 +42,6 @@
               <MenuItem fx:id="addCourseMI" mnemonicParsing="false" onAction="#launchNewCourse" styleClass="menu-item" text="Add New Course" />
                   <MenuItem fx:id="addSectionMI" mnemonicParsing="false" onAction="#launchNewSection" styleClass="menu-item" text="Add New Section" />
                   <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#launchNewRoom" styleClass="menu-item" text="Add New Room" />
-                  <MenuItem fx:id="addRoomTypeMI" mnemonicParsing="false" onAction="#launchRoomType" text="Add New Room Type" />
                   <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#launchTimePreferences" styleClass="menu-item" text="Edit Time Preferences" />
                   <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#launchCoursePreferences" styleClass="menu-item" text="Edit Course Preferences" />
                   <MenuItem fx:id="createNewAccountMI" mnemonicParsing="false" onAction="#launchCreateNewAccount" styleClass="menu-item" text="Create New Account" />

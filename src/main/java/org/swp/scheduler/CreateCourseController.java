@@ -92,7 +92,6 @@ public class CreateCourseController extends WindowController {
                             setText(t.getCourseName());
                         }
                     }
- 
                 };
                  
                 return cell;
@@ -141,7 +140,7 @@ public class CreateCourseController extends WindowController {
       int cNumber = Integer.parseInt(courseNumber.getText());
       String cName = courseName.getText();
       String prereq = prereqField.getText();
-      try{
+      try {
 	      Course theCourse = new Course(cNumber, cName, "PREREQZ", depart);
 	      for(javafx.scene.Node component : courseComponents.getChildren())
 	      {
@@ -150,11 +149,13 @@ public class CreateCourseController extends WindowController {
 	    		  CourseComponent c = ((CourseComponentController)component).getComponent();
 	    		  c.setCourseID(theCourse.getCourseID());
 	    		  
-	    			  theCourse.addComponent(c);
+	    		  theCourse.addComponent(c);
 	    	  }
 	      }
 	      MasterController.getInstance().addToCourses(theCourse);
-      } catch(Exception e) {}
+      } catch(Exception e) {
+    	  e.printStackTrace();
+      }
      
       closeWindow(createButton);
     }

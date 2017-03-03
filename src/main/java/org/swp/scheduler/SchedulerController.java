@@ -158,7 +158,7 @@ public class SchedulerController extends WindowController {
     @FXML
     private void initialize() {
 
-    	//MasterController.initializeLists();
+    	MasterController.initializeLists();
         try {
             System.out.println("Top");
             sectionNameColumn.setCellValueFactory(cellData -> cellData.getValue().courseProperty());
@@ -250,7 +250,7 @@ public class SchedulerController extends WindowController {
 				try {
 					if (("" + section.getCourse().courseId).toLowerCase().indexOf(lowerCaseFilter) != -1) {
 						return true; // Filter matches first name.
-					} else if (section.getProf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					} else if (section.getTeacher().getTeacherId().toLowerCase().indexOf(lowerCaseFilter) != -1) {
 						return true; // Filter matches last name.
 					}
 				} catch (Exception e){}

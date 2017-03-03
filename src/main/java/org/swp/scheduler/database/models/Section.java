@@ -68,6 +68,10 @@ public class Section extends Model {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void setCourseComponent(CourseComponent component) {
+		this.courseComponent = component;
+	}
 
 	public Course getCourse() {
 		try {
@@ -78,6 +82,14 @@ public class Section extends Model {
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
+	}
+	public int getComponentId()
+	{
+		return courseComponentId;
+	}
+	
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 
 	public Teacher getTeacher() {
@@ -90,11 +102,15 @@ public class Section extends Model {
 			throw new RuntimeException(e);
 		}
 	}
-
-	public String getProf() {
-		return this.getTeacher().teacherId;
+	public void setTeacher(Teacher teacher)
+	{
+		this.teacher = teacher;
 	}
 
+	public String getTeacherId()
+	{
+		return teacherId;
+	}
 	public Room getRoom() {
 	    try {
 		if (this.room == null) {
@@ -105,27 +121,43 @@ public class Section extends Model {
 			throw new RuntimeException(e);
 		}
 	}
+	public void setRoom(Room room)
+	{
+		this.room = room;
+	}
+	public int getRoomId()
+	{
+		return roomId;
+	}
 
 	public String getDow() {
 		return dow;
 	}
 
 	public void setDow(String dow) {
-
+		this.dow = dow;
 	}
-
-
+	
+	public String getStartTime()
+	{
+		return startTime;
+	}
+	
 	public void setStartTime(String startTime) {
-
+		this.startTime = startTime;
 	}
-
+	
+	public String getEndTime()
+	{
+		return endTime;
+	}
 
 	public void setEndTime(String endTime) {
-
+		this.endTime = endTime;
 	}
 
 	public StringProperty courseProperty() {
-		return new SimpleStringProperty("" + getCourse().courseId);
+		return new SimpleStringProperty(getCourse().getCourseName());
 	}
 
 	public StringProperty profProperty() {
@@ -151,13 +183,9 @@ public class Section extends Model {
 	public StringProperty endTimeProperty() {
 		return new SimpleStringProperty(this.endTime);
 	}
-	public String getStartTime()
+	public int getId()
 	{
-		return startTime;
-	}
-	public String getEndTime()
-	{
-		return endTime;
+		return sectionId;
 	}
 
 }

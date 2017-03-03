@@ -1,9 +1,12 @@
 package org.swp.scheduler.database.models;
 
+import org.swp.scheduler.MasterController;
 import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.DatabaseManager;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,9 +19,8 @@ public class Course extends Model {
     public String courseId;
     public String department;
     public String courseName;
-    public String prerequisites;
     public int courseNumber;
-
+    public String prerequisites;
     //https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
     //@OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
 
@@ -28,21 +30,14 @@ public class Course extends Model {
 
     //courseName, courseNumber, courseType, prereqs, workUnits, studentUnits
     public Course() {
+    	componentList = new ArrayList<CourseComponent>();
     }
 
     public Course(int courseNumber, String courseName, String prerequisites,
                   String department, List<CourseComponent> components) throws DatabaseException {
         this(courseNumber, courseName, prerequisites, department);
         addComponents(components);
-    }
-
-    public void addComponents(List<CourseComponent> components) throws DatabaseException {
-        for (CourseComponent c : components) {
-            DatabaseManager.getInstance().storeSingle(c);
-        }
-    }
-    public void addComponent(CourseComponent component) throws DatabaseException {
-    	DatabaseManager.getInstance().storeSingle(component);
+    	componentList = new ArrayList<CourseComponent>();
     }
 
     public Course(int courseNumber, String courseName, String prerequisites,
@@ -53,13 +48,26 @@ public class Course extends Model {
         this.courseName = courseName;
         this.prerequisites = prerequisites;
         this.courseId = department.toUpperCase() + " " + courseNumber;
+    	componentList = new ArrayList<CourseComponent>();
     }
-    public String getCourseName()
-    {
-    	return getCourseID();
+    
+    public void addComponents(List<CourseComponent> components) throws DatabaseException {
+        for (CourseComponent c : components) {
+        	componentList.add(c);
+            MasterController.getInstance().addToComponents(c);
+        }
     }
-    public String getCourseID()
-    {
+    
+    public void addComponent(CourseComponent component) throws DatabaseException {
+        MasterController.getInstance().addToComponents(component);
+    	componentList.add(component);
+    }
+
+    public String getCourseName() {
+    	return department + " " + courseNumber;
+    }
+    
+    public String getCourseID() {
     	return courseId;
     }
     

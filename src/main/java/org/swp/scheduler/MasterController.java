@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.swp.scheduler.database.DatabaseException;
 import org.swp.scheduler.database.DatabaseManager;
+import org.swp.scheduler.database.models.CourseComponent;
 import org.swp.scheduler.database.models.Model;
 import org.swp.scheduler.database.models.Section;
 import org.swp.scheduler.database.models.Course;
@@ -21,12 +22,14 @@ public class MasterController {
     private static ObservableList<Section> sections = FXCollections.observableArrayList();
     private static ObservableList<Course> courses = FXCollections.observableArrayList();
     private static ObservableList<Room> rooms = FXCollections.observableArrayList();
-    private static ObservableList<Teacher> teachers = FXCollections.observableArrayList();	
+    private static ObservableList<Teacher> teachers = FXCollections.observableArrayList();
+    private static ObservableList<CourseComponent> components = FXCollections.observableArrayList();	
     
     private static ObservableList<Section> sectionDelta = FXCollections.observableArrayList();
     private static ObservableList<Course> courseDelta = FXCollections.observableArrayList();
     private static ObservableList<Room> roomDelta = FXCollections.observableArrayList();
     private static ObservableList<Teacher> teacherDelta = FXCollections.observableArrayList();
+    private static ObservableList<CourseComponent> componentDelta = FXCollections.observableArrayList();
 	
 	private MasterController() {
 		
@@ -45,15 +48,30 @@ public class MasterController {
 		try {
 			if(!DatabaseManager.getInstance().getAll(Section.class).isEmpty()) {
 				sections.addAll(DatabaseManager.getInstance().getAll(Section.class).toArray(sect));
+				System.out.println("sections size: " + sections.size());
+				for(Section s : sections)
+				{
+					System.out.println("section id: " + s.getId());
+					System.out.println("room id: " + s.getRoomId());
+					System.out.println("teacher id: " + s.getTeacherId());
+					System.out.println("start time: " + s.getStartTime());
+					System.out.println("component id: " + s.getComponentId());
+					System.out.println("end time: " + s.getEndTime());
+
+					s = setupSection(s);
+				}
 			}
 			if(!DatabaseManager.getInstance().getAll(Course.class).isEmpty()) {
 				courses.addAll(DatabaseManager.getInstance().getAll(Course.class).toArray(cour));
+				System.out.println("courses size: " + courses.size());
 			}
 			if(!DatabaseManager.getInstance().getAll(Room.class).isEmpty()) {
 				rooms.addAll(DatabaseManager.getInstance().getAll(Room.class).toArray(rm));
+				System.out.println("rooms size: " + rooms.size());
 			}
 			if(!DatabaseManager.getInstance().getAll(Teacher.class).isEmpty()) {
 				teachers.addAll(DatabaseManager.getInstance().getAll(Teacher.class).toArray(teach));
+				System.out.println("teachers size: " + teachers.size());
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -86,6 +104,15 @@ public class MasterController {
 	public static ObservableList<Room> getRoomData() {
 		return rooms;
 	}
+	
+	public void addToComponents(CourseComponent component) {
+		components.add(component);
+		componentDelta.add(component);
+	}
+	
+	public static ObservableList<CourseComponent> getComponentData() {
+		return components;
+	}
 
 	public void addToTeachers(Teacher teacher) {
 		teachers.add(teacher);
@@ -104,6 +131,12 @@ public class MasterController {
 		}
 		courseDelta.clear();
 		
+		for(CourseComponent c : componentDelta)
+		{
+			DatabaseManager.getInstance().storeSingle(c);
+		}
+		componentDelta.clear();
+		
 		for(Room r : roomDelta)
 		{
 			DatabaseManager.getInstance().storeSingle(r);
@@ -121,6 +154,24 @@ public class MasterController {
 			DatabaseManager.getInstance().storeSingle(t);
 		}
 		teacherDelta.clear();
+	}
+	
+	private static Section setupSection(Section in)
+	{
+		try
+		{
+			CourseComponent component = (CourseComponent)(DatabaseManager.getInstance().getSingle(CourseComponent.class, in.getComponentId()));
+			in.setCourseComponent(component);
+			Course course = (Course)(DatabaseManager.getInstance().getSingle(Course.class, component.courseId));
+			in.setCourse(course);
+			Room room = (Room)(DatabaseManager.getInstance().getSingle(Room.class, in.getRoomId()));
+			in.setRoom(room);
+			Teacher teacher = (Teacher)(DatabaseManager.getInstance().getSingle(Teacher.class, in.getTeacherId()));			in.setRoom(room);
+			in.setTeacher(teacher);
+		} catch(Exception e) {
+			System.out.println(in.getCourseComponent().getCourseId());
+		}
+		return in;
 	}
 
 }
