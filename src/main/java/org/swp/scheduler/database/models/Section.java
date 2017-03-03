@@ -82,6 +82,7 @@ public class Section extends Model {
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
+		
 	}
 	public int getComponentId()
 	{

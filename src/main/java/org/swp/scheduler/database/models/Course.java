@@ -71,4 +71,8 @@ public class Course extends Model {
     	return courseId;
     }
     
+    public String toString() {
+    	return getCourseID();
+    }
+    
 }

@@ -30,29 +30,29 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Text>
-                  <ComboBox prefHeight="27.0" prefWidth="188.0" promptText="Component Type">
+                  <ComboBox fx:id="sectionType" prefHeight="27.0" prefWidth="188.0" promptText="Section Type">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="27.0" prefWidth="188.0" promptText="Professor">
+                  <ComboBox fx:id="professor" prefHeight="27.0" prefWidth="188.0" promptText="Professor">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="27.0" prefWidth="188.0" promptText="Room">
+                  <ComboBox fx:id="room" prefHeight="27.0" prefWidth="188.0" promptText="Room">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ComboBox>
                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="203.0">
                      <children>
-                        <ComboBox prefHeight="27.0" prefWidth="90.0" promptText="Start">
+                        <ComboBox fx:id="startTime" prefHeight="27.0" prefWidth="90.0" promptText="Start">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
                         </ComboBox>
-                        <ComboBox prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
+                        <ComboBox fx:id="endTime" prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
                      </children>
                      <VBox.margin>
                         <Insets />

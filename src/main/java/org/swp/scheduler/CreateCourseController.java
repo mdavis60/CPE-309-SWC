@@ -50,7 +50,6 @@ public class CreateCourseController extends WindowController {
 
     @FXML
     private Button createButton;
-
     
     private ObservableList<Course> selectedPrereqs;
     
@@ -131,6 +130,7 @@ public class CreateCourseController extends WindowController {
     	
 
     }
+    
     @FXML
     void CreateCourse() {
 

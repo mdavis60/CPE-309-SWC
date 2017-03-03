@@ -30,7 +30,7 @@ public class CalendarSectionBlock extends AnchorPane{
 	public CalendarSectionBlock(Section section, int sectionNumber) {
 		course.setText(section.getCourse().getCourseName());
 		this.sectionNumber.setText("" + sectionNumber);
-		professor.setText(section.getProf());
+		professor.setText(section.getTeacher().getTeacherName());
 		room.setText(section.getRoom().getRoom());
 		startTime.setText(section.getStartTime());
 		endTime.setText(section.getEndTime());

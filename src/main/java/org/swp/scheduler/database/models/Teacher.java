@@ -40,8 +40,14 @@ public class Teacher extends Model {
     {
     	return teacherName;
     }
+
     public String getTeacherId()
     {
     	return teacherId;
     }
+    
+    public String toString() {
+    	return getTeacherName();
+    }
+    
 }
