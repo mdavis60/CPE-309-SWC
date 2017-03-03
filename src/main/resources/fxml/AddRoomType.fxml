@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="191.0" prefWidth="301.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.AddNewRoomTypeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="301.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.AddRoomTypeController">
    <children>
       <VBox layoutX="31.0" layoutY="14.0" prefHeight="39.0" prefWidth="240.0">
          <children>
@@ -19,11 +18,11 @@
             </Label>
          </children>
       </VBox>
-      <Button fx:id="addRoomType" layoutX="93.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#AddRoomType" text="Add Room Type" />
+      <Button fx:id="addRoomTypeButton" layoutX="93.0" layoutY="150.0" mnemonicParsing="false" onAction="#addRoomType" text="Add Room Type" />
       <VBox layoutX="50.0" layoutY="71.0" prefHeight="53.0" prefWidth="202.0">
          <children>
             <Label styleClass="label-light" text="Room Type" />
-            <TextField fx:id="roomType" prefHeight="31.0" prefWidth="203.0" promptText="Room Type" />
+            <TextField fx:id="roomType" onKeyPressed="#enterPressed" prefHeight="31.0" prefWidth="203.0" promptText="Room Type" />
          </children>
       </VBox>
    </children>

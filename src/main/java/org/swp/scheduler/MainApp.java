@@ -24,7 +24,7 @@ public class MainApp extends Application {
 
 
         //initialize the application at the LogIn page
-        String fxmlFile = "/fxml/LogIn.fxml";
+        String fxmlFile = "/fxml/Scheduler.fxml";
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
         Parent parent = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));

@@ -302,6 +302,12 @@ public class SchedulerController extends WindowController {
     void launchNewRoom() {
     	System.out.println("New Room");
     	openWindow("CreateRoom");    }
+    
+    @FXML
+    void launchRoomType() {
+    	     	System.out.println("New Room Type");
+    	     	openWindow("AddRoomType");
+    	     }
     @FXML
     void launchStudentFeedback() {
     	System.out.println("Student Feedback");
@@ -322,7 +328,16 @@ public class SchedulerController extends WindowController {
     void launchCreateNewAccount() {
     	openWindow("CreateAccount");
     }
-    
+    @FXML
+    void onSave() {
+    	
+    	try {
+    		System.out.println("Data saved to database");
+    		MasterController.getInstance().saveDataToDB();
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    		}
+    }
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onExpandFeedback() throws Exception {
 		System.out.println("SCale");

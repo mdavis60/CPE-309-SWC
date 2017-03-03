@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.Double?>
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.ListView?>
@@ -30,7 +24,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="1200.0" styleClass="menu">
         <menus>
@@ -38,7 +32,7 @@
             <items>
               <MenuItem fx:id="newMI" mnemonicParsing="false" styleClass="menu-item" text="New" />
                   <MenuItem fx:id="openMI" mnemonicParsing="false" styleClass="menu-item" text="Open" />
-                  <MenuItem fx:id="saveMI" mnemonicParsing="false" styleClass="menu-item" text="Save" />
+                  <MenuItem fx:id="saveMI" mnemonicParsing="false" onAction="#onSave" styleClass="menu-item" text="Save" />
                   <MenuItem fx:id="saveAsMI" mnemonicParsing="false" styleClass="menu-item" text="Save As..." />
                   <MenuItem fx:id="ImportScheduleMI" mnemonicParsing="false" styleClass="menu-item" text="Import Schedule From Previous Term..." />
             </items>
@@ -48,6 +42,7 @@
               <MenuItem fx:id="addCourseMI" mnemonicParsing="false" onAction="#launchNewCourse" styleClass="menu-item" text="Add New Course" />
                   <MenuItem fx:id="addSectionMI" mnemonicParsing="false" onAction="#launchNewSection" styleClass="menu-item" text="Add New Section" />
                   <MenuItem fx:id="addRoomMI" mnemonicParsing="false" onAction="#launchNewRoom" styleClass="menu-item" text="Add New Room" />
+                  <MenuItem fx:id="addRoomTypeMI" mnemonicParsing="false" onAction="#launchRoomType" text="Add New Room Type" />
                   <MenuItem fx:id="editTimePrefMI" mnemonicParsing="false" onAction="#launchTimePreferences" styleClass="menu-item" text="Edit Time Preferences" />
                   <MenuItem fx:id="editCoursePrefMI" mnemonicParsing="false" onAction="#launchCoursePreferences" styleClass="menu-item" text="Edit Course Preferences" />
                   <MenuItem fx:id="createNewAccountMI" mnemonicParsing="false" onAction="#launchCreateNewAccount" styleClass="menu-item" text="Create New Account" />
