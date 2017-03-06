@@ -8,7 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+
 
 @SuppressWarnings("restriction")
 public class CourseComponentController extends AnchorPane {
@@ -22,6 +24,9 @@ public class CourseComponentController extends AnchorPane {
 
     @FXML
     private TextField studentUnits;
+
+    @FXML
+    private Button removeButton;
     
     @FXML
     private TextField componentType;
@@ -59,5 +64,11 @@ public class CourseComponentController extends AnchorPane {
     		e.printStackTrace();
     		return null;
     	}
+    }
+    
+    @FXML
+    void onRemove() {
+    	System.out.println("Removed Component");
+    	((VBox)this.getParent()).getChildren().remove(this);
     }
 }

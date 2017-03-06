@@ -338,6 +338,10 @@ public class SchedulerController extends WindowController {
     		e.printStackTrace();
     		}
     }
+    @FXML
+    void importSchedule() {
+
+    }
 	// Hides or shows the Student Feedback panel depending on the current state
 	public void onExpandFeedback() throws Exception {
 		System.out.println("SCale");

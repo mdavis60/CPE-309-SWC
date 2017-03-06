@@ -176,5 +176,7 @@ public class CreateCourseController extends WindowController {
     	    prereqField.setText("");
     	}
     }
+    
+    
 
 }
