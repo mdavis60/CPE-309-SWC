@@ -30,20 +30,26 @@ public class CreateRoomController extends WindowController implements Initializa
     private TextField attributes;
 
     @FXML
-    private ComboBox roomType;
+    private ComboBox<String> roomType;
 
     @FXML
     private TextField maxCap;
 
     @FXML
     private Button createButton;
+    
+    @FXML
+    private Button roomTypeButton;
+    
+    private List<Model> list;
+    private ObservableList<String> options;
 
     @SuppressWarnings({"restriction"})
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
         try {
-			List<Model> list = DatabaseManager.getInstance().getAll(RoomType.class);
-	    	ObservableList<String> options = FXCollections.observableArrayList();
+			list = DatabaseManager.getInstance().getAll(RoomType.class);
+	    	options = FXCollections.observableArrayList();
 	    	
 	    	for(Model type: list){
 	    		options.add(((RoomType)type).roomType);
@@ -58,7 +64,18 @@ public class CreateRoomController extends WindowController implements Initializa
 	}
     
     @FXML
-    void CreateRoom() {
+    void roomTypePressed() {
+    	System.out.println("RoomType Pressed!");
+    	initialize(null, null);
+    }
+    
+    @FXML
+    void roomTypeButtonPressed() {
+    	openWindow("AddRoomType");
+    }
+    
+    @FXML
+    void createRoom() {
     	int roomNumber = Integer.parseInt(roomNum.getText());
     	int buildingNumber = Integer.parseInt(buildNum.getText());
     	int capacity = Integer.parseInt(maxCap.getText());

@@ -98,15 +98,28 @@ public class CreateSectionController extends WindowController {
     				  Section section = ((SectionComponentController) component).getSection(); 
 
 		    		  section.course = courseBox.getValue();
-		    			  
-		    			 
-		    	
 		    		  
-		    		  
-		    		  
-			    	  //Section section = new Section(new CourseComponent(), new Teacher(), new Room(), "", "", ""); 
-			    	  //section.course = courseBox.getValue();
-			    	  //section.teacher = 
+		    		  List<Section> existingSections = MasterController.getInstance().getMasterData();
+		    		  boolean teacherConflict = false;
+		    		  boolean roomConflict = false;
+		    		  for(Section s : existingSections){
+		    		    int oldStart = GetTime(s.startTime);
+		    		    int oldEnd = GetTime(s.endTime);
+		    		    int newStart = GetTime(section.startTime);
+		    		    int newEnd = GetTime(section.endTime);
+		    		    if ((oldStart >= newStart && oldStart < newEnd) || (oldEnd > newStart && oldEnd <= newEnd) || (oldStart <= newStart && oldEnd >= newEnd)) {
+		    		      if(s.teacherId.equals(section.teacherId) && !teacherConflict) {
+		    		        errorMessage("Teacher Time Conflict(s)", "Teacher has been scheduled for another section during this time");
+		    		        teacherConflict = true;
+		    		      }
+		    		      
+		    		      if(s.roomId == section.roomId && !roomConflict) {
+		    		        errorMessage("Room Time Conflict(s)", "Room has been scheduled for another section during this time");
+		    		        roomConflict = true;
+		    		      }
+		    		    }
+		    		    
+		    		  }
 		    	  		    		  
 				      MasterController.getInstance().addToData(section);
 		    	  }
@@ -115,6 +128,20 @@ public class CreateSectionController extends WindowController {
 	     
 	      closeWindow(createButton);
 	    }
+	   
+	   private int GetTime(String input) {
+	     String[] elements = input.split(" ");
+	     int time = Integer.parseInt(elements[0]);
+	     
+	     if (time == 12) {
+	       time = 0;
+	     }
+	     
+	     if (elements[1].toUpperCase().equals("PM")) {
+	       time += 12;
+	     }
+	     return time;
+	   }
 
 
 	/*
