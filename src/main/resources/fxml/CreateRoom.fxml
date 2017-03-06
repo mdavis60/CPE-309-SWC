@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="345.0" prefWidth="331.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateRoomController">
+<AnchorPane prefHeight="348.0" prefWidth="331.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateRoomController">
    <children>
-      <VBox alignment="CENTER" layoutX="104.0" layoutY="42.0" prefHeight="345.0" prefWidth="367.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="104.0" layoutY="42.0" prefHeight="348.0" prefWidth="331.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label styleClass="page-title" text="Create a new Room" textFill="#606060">
                <VBox.margin>
@@ -40,8 +40,9 @@
                   <Insets bottom="25.0" />
                </VBox.margin>
             </TextField>
-            <ComboBox fx:id="roomType" prefHeight="31.0" prefWidth="225.0" promptText="Room Type" />
-            <TextField fx:id="maxCap" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Maximum Capacity">
+            <ComboBox fx:id="roomType" onMouseClicked="#roomTypePressed" prefHeight="31.0" prefWidth="225.0" promptText="Room Type" translateY="-16.0" />
+            <Button fx:id="roomTypeButton" mnemonicParsing="false" onAction="#roomTypeButtonPressed" text="New Room Type" translateY="-16.0" />
+            <TextField fx:id="maxCap" maxWidth="-Infinity" prefHeight="27.0" prefWidth="225.0" promptText="Maximum Capacity" translateY="-5.0">
                <font>
                   <Font size="9.0" />
                </font>
@@ -49,7 +50,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="createButton" mnemonicParsing="false" onAction="#CreateRoom" text="Create Room" />
+            <Button fx:id="createButton" mnemonicParsing="false" onAction="#createRoom" text="Create Room" translateY="-10.0" />
          </children>
       </VBox>
    </children>
