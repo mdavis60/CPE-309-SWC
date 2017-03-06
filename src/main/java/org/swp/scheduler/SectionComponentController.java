@@ -121,7 +121,9 @@ public class SectionComponentController extends AnchorPane {
 		courseComponent.type = sectionType.getValue();
 		section.courseComponent = courseComponent;
 		section.room = room.getValue();
+		section.roomId = section.room.roomId;
 		section.teacher = professor.getValue();
+	    section.teacherId = section.teacher.teacherId;
 		section.startTime = startTime.getValue();
 		section.endTime = endTime.getValue();
 		

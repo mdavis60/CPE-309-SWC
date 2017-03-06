@@ -120,6 +120,8 @@ public class CreateCourseController extends WindowController {
                 return cell;
             }
         });
+    	
+    	addComponent();
     }
     
     @FXML

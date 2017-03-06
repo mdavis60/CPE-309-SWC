@@ -304,7 +304,7 @@ public class SchedulerController extends WindowController {
     	openWindow("CreateRoom");    }
     
     @FXML
-    void launchRoomType() {
+    void launchNewType() {
     	     	System.out.println("New Room Type");
     	     	openWindow("AddRoomType");
     	     }
