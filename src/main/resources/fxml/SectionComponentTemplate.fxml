@@ -113,12 +113,12 @@
                   </HBox>
                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="203.0">
                      <children>
-                        <ComboBox fx:id="startTime1" prefHeight="27.0" prefWidth="90.0" promptText="Start">
+                        <ComboBox fx:id="startTime" prefHeight="27.0" prefWidth="90.0" promptText="Start">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
                         </ComboBox>
-                        <ComboBox fx:id="endTime1" prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
+                        <ComboBox fx:id="endTime" prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
                      </children>
                   </HBox>
                </children>
