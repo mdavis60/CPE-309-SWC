@@ -6,6 +6,7 @@ import javax.persistence.Table;
 
 /**
  * Created by jackson on 2/6/17.
+ *
  */
 @Entity
 @Table(name = "LoginData")

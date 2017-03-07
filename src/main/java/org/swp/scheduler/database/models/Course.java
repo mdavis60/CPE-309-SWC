@@ -50,7 +50,7 @@ public class Course extends Model {
         this.courseId = department.toUpperCase() + " " + courseNumber;
     	componentList = new ArrayList<CourseComponent>();
     }
-    
+
     public void addComponents(List<CourseComponent> components) throws DatabaseException {
         for (CourseComponent c : components) {
         	componentList.add(c);

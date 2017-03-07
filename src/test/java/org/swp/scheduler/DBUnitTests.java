@@ -176,6 +176,5 @@ public class DBUnitTests {
         Room r = new Room();
         Section section = new Section(cc, t, r, "MWF", "1:00", "2:00");
     }
-
 }
 
