@@ -9,7 +9,6 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.application.*;
 import javafx.collections.*;
-
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 
@@ -130,4 +129,8 @@ public class SectionComponentController extends AnchorPane {
 		
 		return section; 
 	}
+	@FXML
+    void onRemove() {
+    	((VBox)this.getParent()).getChildren().remove(this);
+    }
 }

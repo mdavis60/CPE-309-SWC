@@ -20,15 +20,17 @@
                <children>
                   <VBox alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="215.0" spacing="10.0">
                      <children>
-                        <Label maxWidth="-Infinity" prefHeight="17.0" prefWidth="70.0" text="Component">
-                           <styleClass>
-                              <String fx:value="label-light" />
-                              <String fx:value="label-bold" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="-10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label maxWidth="-Infinity" prefWidth="210.0" text="Component">
+                                 <styleClass>
+                                    <String fx:value="label-light" />
+                                    <String fx:value="label-bold" />
+                                 </styleClass>
+                              </Label>
+                              <Button fx:id="removeButton" mnemonicParsing="false" onAction="#onRemove" text="X" />
+                           </children>
+                        </HBox>
                         <HBox prefHeight="89.0" prefWidth="205.0">
                            <children>
                               <VBox prefHeight="98.0" prefWidth="205.0">

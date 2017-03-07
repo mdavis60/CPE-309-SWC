@@ -22,7 +22,9 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+
 
 @SuppressWarnings("restriction")
 public class CourseComponentController extends AnchorPane implements Initializable{
@@ -36,6 +38,9 @@ public class CourseComponentController extends AnchorPane implements Initializab
 
     @FXML
     private TextField studentUnits;
+
+    @FXML
+    private Button removeButton;
     
     @FXML
     private ComboBox<String> courseType;
@@ -118,5 +123,11 @@ public class CourseComponentController extends AnchorPane implements Initializab
     		e.printStackTrace();
     		return null;
     	}
+    }
+    
+    @FXML
+    void onRemove() {
+    	System.out.println("Removed Component");
+    	((VBox)this.getParent()).getChildren().remove(this);
     }
 }
