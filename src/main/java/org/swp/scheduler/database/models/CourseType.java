@@ -15,7 +15,6 @@ public class CourseType extends Model {
     public String courseType;
 
     public CourseType() {
-
     }
 
     public CourseType(String courseType) {
