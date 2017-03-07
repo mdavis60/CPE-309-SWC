@@ -127,10 +127,6 @@ public class CreateCourseController extends WindowController {
     @FXML
     void addComponent() {
     	courseComponents.getChildren().add(courseComponents.getChildren().size()-1, new CourseComponentController());
-//    	Window thisWindow = courseComponents.getScene().getWindow();
-//    	thisWindow.setHeight(thisWindow.getHeight() + 80);
-    	
-
     }
     
     @FXML

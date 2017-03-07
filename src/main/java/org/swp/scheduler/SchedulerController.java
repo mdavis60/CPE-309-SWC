@@ -72,9 +72,12 @@ public class SchedulerController extends WindowController {
 	
 	@FXML
 	private TableColumn<Section, String> sectionTypeColumn;
+
+	@FXML
+	private TableColumn<Section, String> startTimeColumn;
 	
 	@FXML
-	private TableColumn<Section, String> timeColumn;
+	private TableColumn<Section, String> endTimeColumn;
 	
 	@FXML
     private ListView<Course> courseListView;
@@ -165,7 +168,8 @@ public class SchedulerController extends WindowController {
             profColumn.setCellValueFactory(cellData -> cellData.getValue().profProperty());
             roomColumn.setCellValueFactory(cellData -> cellData.getValue().roomProperty());
             sectionTypeColumn.setCellValueFactory(cellData -> cellData.getValue().courseCompProperty());
-            timeColumn.setCellValueFactory(cellData -> cellData.getValue().startTimeProperty());
+            startTimeColumn.setCellValueFactory(cellData -> cellData.getValue().startTimeProperty());
+            endTimeColumn.setCellValueFactory(cellData -> cellData.getValue().endTimeProperty());
         }catch (Exception e){}
 
 		courseListView.setItems(MasterController.getInstance().getCourseData());
@@ -183,7 +187,7 @@ public class SchedulerController extends WindowController {
                     protected void updateItem(Course t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getCourseName());
+                            setText(t.getCourseName() + " - " + t.getCourseTitle());
                         }
                     }
  
@@ -252,6 +256,15 @@ public class SchedulerController extends WindowController {
 						return true; // Filter matches first name.
 					} else if (section.getTeacher().getTeacherId().toLowerCase().indexOf(lowerCaseFilter) != -1) {
 						return true; // Filter matches last name.
+					} else if (section.getCourse().getCourseTitle().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true; // Filter by course name
+					} else if (section.getStartTime().toLowerCase().indexOf(lowerCaseFilter) != -1 ||
+							section.getEndTime().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true; // Filter by Start and end time
+					} else if (section.getRoom().getRoom().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true;
+					} else if (section.getTeacher().getTeacherName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+						return true;
 					}
 				} catch (Exception e){}
 				return false; // Does not match.

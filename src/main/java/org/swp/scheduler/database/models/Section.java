@@ -158,7 +158,7 @@ public class Section extends Model {
 	}
 
 	public StringProperty courseProperty() {
-		return new SimpleStringProperty(getCourse().getCourseName());
+		return new SimpleStringProperty(getCourse().getCourseName() + " - " + getCourse().getCourseTitle());
 	}
 
 	public StringProperty profProperty() {

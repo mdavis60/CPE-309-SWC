@@ -13,7 +13,9 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import org.slf4j.*;
 import org.swp.scheduler.database.models.*;
@@ -23,7 +25,7 @@ import javafx.util.Callback;
 import javafx.fxml.FXMLLoader;
 
 @SuppressWarnings("restriction")
-public class SectionComponentController extends AnchorPane {
+public class SectionComponentController extends AnchorPane{
 	
 	private static ObservableList<String> times = FXCollections.observableArrayList("7 am","8 am","9 am","10 am", "11 am", "12 pm", 
 			"1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm");
@@ -133,4 +135,5 @@ public class SectionComponentController extends AnchorPane {
     void onRemove() {
     	((VBox)this.getParent()).getChildren().remove(this);
     }
+
 }

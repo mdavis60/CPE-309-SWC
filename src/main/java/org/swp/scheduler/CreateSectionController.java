@@ -1,29 +1,17 @@
 package org.swp.scheduler;
 
 import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.stage.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
-import javafx.scene.shape.*;
-import javafx.application.*;
+import javafx.util.Callback;
 import javafx.collections.*;
 
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-
-import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.*;
-import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.*;
 
-import javafx.collections.transformation.*;
-import javafx.util.Callback;
+@SuppressWarnings("restriction")
 public class CreateSectionController extends WindowController {
 
 	@FXML
@@ -41,17 +29,8 @@ public class CreateSectionController extends WindowController {
 	@FXML 
 	private Button createButton; 
 	
-	@SuppressWarnings("restriction")
 	@FXML
 	private void initialize() {
-//		List<Model> list = DatabaseManager.getInstance().getAll(RoomType.class);
-//		 list.add("hey");
-//		 list.add("yo");
-		 
-	        // Now add observability by wrapping it with ObservableList.
-	 //   ObservableList<String> observableList = FXCollections.observableList(list);
-	    
-	    
 	    
 		courseBox.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
 

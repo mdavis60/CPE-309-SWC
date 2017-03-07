@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "Courses")
-public class Course extends Model {
+public class Course extends Model implements Comparable<Course>{
     @Id
     public String courseId;
     public String department;
@@ -66,7 +66,9 @@ public class Course extends Model {
     public String getCourseName() {
     	return department + " " + courseNumber;
     }
-    
+    public String getCourseTitle() {
+    	return courseName;
+    }
     public String getCourseID() {
     	return courseId;
     }
@@ -74,5 +76,10 @@ public class Course extends Model {
     public String toString() {
     	return getCourseID();
     }
+
+	@Override
+	public int compareTo(Course other) {
+		return this.courseId.compareTo(other.getCourseID());
+	}
     
 }

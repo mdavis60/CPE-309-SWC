@@ -14,7 +14,7 @@
 
 <fx:root minWidth="-Infinity" prefHeight="140.0" prefWidth="215.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="150.0" prefWidth="215.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="150.0" prefWidth="215.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Group fx:id="blankComponent">
                <children>
