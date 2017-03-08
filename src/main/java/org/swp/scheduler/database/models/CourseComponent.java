@@ -12,48 +12,56 @@ import javax.persistence.*;
 @Entity
 @Table(name = "CourseComponent")
 public class CourseComponent extends Model {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    public int courseComponentId;
-    public int classHours;
-    public String courseId;
-    public String type;
-    public int workUnits;
-    public int studentUnits;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  public int courseComponentId;
+  public int classHours;
+  public String courseId;
+  public String type;
+  public int workUnits;
+  public int studentUnits;
 
-    public CourseComponent() {
-    }
+  public CourseComponent() {
+  }
 
-    public CourseComponent(CourseType type, int workUnits, int classHours, Course course) throws DatabaseException {
-        // verify the type
-        if (DatabaseManager.getInstance().containsKey(CourseType.class, type.courseType)) {
-            this.type = type.courseType;
-            this.workUnits = workUnits;
-            this.classHours = classHours;
-            this.courseId = course.courseId;
+  public CourseComponent(CourseType type, int workUnits, int classHours,
+      Course course) throws DatabaseException {
+    // verify the type
+    if (DatabaseManager.getInstance().containsKey(CourseType.class,
+        type.courseType)) {
+      this.type = type.courseType;
+      this.workUnits = workUnits;
+      this.classHours = classHours;
+      this.courseId = course.courseId;
 
-        } else {
-            throw new DatabaseException("Not a valid course type");
-        }
+    } else {
+      throw new DatabaseException("Not a valid course type");
     }
-    public CourseComponent(String type, int workUnits, int studentUnits, int classHours) {
-        // verify the type
-        //if (DatabaseManager.getInstance().containsKey(CourseType.class, type)) {
-            this.type = type;
-            this.workUnits = workUnits;
-            this.classHours = classHours;
-            this.studentUnits = studentUnits;
+  }
 
-            //} else {
-            //    throw new DatabaseException("Not a valid course type");
-            //}
-    }
-    public void setCourseID(String id)
-    {
-    	courseId = id;
-    }
-    public int getCourseId()
-    {
-    	return Integer.parseInt(courseId);
-    }
+  public CourseComponent(String type, int workUnits, int studentUnits,
+      int classHours) {
+    // verify the type
+    // if (DatabaseManager.getInstance().containsKey(CourseType.class, type)) {
+    this.type = type;
+    this.workUnits = workUnits;
+    this.classHours = classHours;
+    this.studentUnits = studentUnits;
+
+    // } else {
+    // throw new DatabaseException("Not a valid course type");
+    // }
+  }
+
+  public void setCourseID(String id) {
+    courseId = id;
+  }
+
+  public String getCourseId() {
+    return courseId;
+  }
+
+  public String getCourseType() {
+    return type;
+  }
 }

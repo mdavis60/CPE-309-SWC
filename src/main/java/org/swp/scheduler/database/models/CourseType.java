@@ -11,13 +11,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CourseTypes")
 public class CourseType extends Model {
-    @Id
-    public String courseType;
+  @Id
+  public String courseType;
 
-    public CourseType() {
-    }
+  public CourseType() {
+  }
 
-    public CourseType(String courseType) {
-        this.courseType = courseType;
-    }
+  public CourseType(String courseType) {
+    this.courseType = courseType;
+  }
 }

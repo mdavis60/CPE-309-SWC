@@ -18,70 +18,73 @@ import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
 
-public class CreateRoomController extends WindowController implements Initializable {
+public class CreateRoomController extends WindowController implements
+    Initializable {
 
-    @FXML
-    private TextField buildNum;
+  @FXML
+  private TextField buildNum;
 
-    @FXML
-    private TextField roomNum;
+  @FXML
+  private TextField roomNum;
 
-    @FXML
-    private TextField attributes;
+  @FXML
+  private TextField attributes;
 
-    @FXML
-    private ComboBox<String> roomType;
+  @FXML
+  private ComboBox<String> roomType;
 
-    @FXML
-    private TextField maxCap;
+  @FXML
+  private TextField maxCap;
 
-    @FXML
-    private Button createButton;
-    
-    @FXML
-    private Button roomTypeButton;
-    
-    private List<Model> list;
-    private ObservableList<String> options;
+  @FXML
+  private Button createButton;
 
-    @SuppressWarnings({"restriction"})
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-        try {
-			list = DatabaseManager.getInstance().getAll(RoomType.class);
-	    	options = FXCollections.observableArrayList();
-	    	
-	    	for(Model type: list){
-	    		options.add(((RoomType)type).roomType);
-	    	}
-	    	
-	    	roomType.getItems().removeAll(roomType.getItems());
-	    	roomType.getItems().addAll(options);
+  @FXML
+  private Button roomTypeButton;
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-    
-    @FXML
-    void roomTypePressed() {
-    	System.out.println("RoomType Pressed!");
-    	initialize(null, null);
+  private List<Model> list;
+  private ObservableList<String> options;
+
+  @SuppressWarnings({ "restriction" })
+  @Override
+  public void initialize(URL arg0, ResourceBundle arg1) {
+    try {
+      list = DatabaseManager.getInstance().getAll(RoomType.class);
+      options = FXCollections.observableArrayList();
+
+      for (Model type : list) {
+        options.add(((RoomType) type).roomType);
+      }
+
+      roomType.getItems().removeAll(roomType.getItems());
+      roomType.getItems().addAll(options);
+
+    } catch (Exception e) {
+      e.printStackTrace();
     }
-    
-    @FXML
-    void roomTypeButtonPressed() {
-    	openWindow("AddRoomType");
-    }
-    
-    @FXML
-    void createRoom() {
-    	int roomNumber = Integer.parseInt(roomNum.getText());
-    	int buildingNumber = Integer.parseInt(buildNum.getText());
-    	int capacity = Integer.parseInt(maxCap.getText());
-    	
-    	MasterController.getInstance().addToRooms(new Room(roomNumber, roomNumber, buildingNumber, capacity, attributes.getText()));
-    	System.out.println("Room Created");
-    	closeWindow(createButton);
-    }
+  }
+
+  @FXML
+  void roomTypePressed() {
+    System.out.println("RoomType Pressed!");
+    initialize(null, null);
+  }
+
+  @FXML
+  void roomTypeButtonPressed() {
+    openWindow("AddRoomType");
+  }
+
+  @FXML
+  void createRoom() {
+    int roomNumber = Integer.parseInt(roomNum.getText());
+    int buildingNumber = Integer.parseInt(buildNum.getText());
+    int capacity = Integer.parseInt(maxCap.getText());
+
+    MasterController.getInstance().addToRooms(
+        new Room(roomNumber, roomNumber, buildingNumber, capacity, attributes
+            .getText()));
+    System.out.println("Room Created");
+    closeWindow(createButton);
+  }
 }

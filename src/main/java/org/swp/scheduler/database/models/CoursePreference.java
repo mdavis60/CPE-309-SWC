@@ -8,20 +8,20 @@ import javax.persistence.*;
 @Entity
 @Table(name = "CoursePreferences")
 public class CoursePreference extends Model {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    int coursePreferenceId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  int coursePreferenceId;
 
-    public String courseId;
-    public String teacherId;
-    public int preferenceLevel;
+  public String courseId;
+  public String teacherId;
+  public int preferenceLevel;
 
-    public CoursePreference() {
-    }
+  public CoursePreference() {
+  }
 
-    public CoursePreference(Teacher teacher, Course course, int preferenceLevel) {
-        this.preferenceLevel = preferenceLevel;
-        this.teacherId = teacher.teacherId;
-        this.courseId = course.courseId;
-    }
+  public CoursePreference(Teacher teacher, Course course, int preferenceLevel) {
+    this.preferenceLevel = preferenceLevel;
+    this.teacherId = teacher.teacherId;
+    this.courseId = course.courseId;
+  }
 }

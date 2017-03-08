@@ -5,17 +5,17 @@ package org.swp.scheduler;
  */
 
 public class Constants {
-    public static String getTerm(String quarter, int year) throws Exception {
-        if (year < 100)
-            year += 2000;
+  public static String getTerm(String quarter, int year) throws Exception {
+    if (year < 100)
+      year += 2000;
 
-        quarter = quarter.toUpperCase().trim();
+    quarter = quarter.toUpperCase().trim();
 
-        if (!quarter.equals("FALL") && !quarter.equals("SPRING") &&
-                !quarter.equals("WINTER") && !quarter.equals("SUMMER"))  {
-            throw new Exception("Not a valid quarter!");
-        }
-
-        return quarter.toUpperCase().trim() + year;
+    if (!quarter.equals("FALL") && !quarter.equals("SPRING")
+        && !quarter.equals("WINTER") && !quarter.equals("SUMMER")) {
+      throw new Exception("Not a valid quarter!");
     }
+
+    return quarter.toUpperCase().trim() + year;
+  }
 }

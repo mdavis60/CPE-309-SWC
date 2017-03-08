@@ -9,24 +9,25 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TimePreferences")
 public class TimePreference extends Model {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    int timePreferenceId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  int timePreferenceId;
 
-    public String teacherId;
-    public int preferenceLevel;
+  public String teacherId;
+  public int preferenceLevel;
 
-    public String days;
-    public int startTime;
-    public int endTime;
+  public String days;
+  public int startTime;
+  public int endTime;
 
-    public TimePreference() {
-    }
+  public TimePreference() {
+  }
 
-    public TimePreference(Teacher teacher, int preferenceLevel, int startTime, int endTime, String days) {
-        this.preferenceLevel = preferenceLevel;
-        this.teacherId = teacher.teacherId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
+  public TimePreference(Teacher teacher, int preferenceLevel, int startTime,
+      int endTime, String days) {
+    this.preferenceLevel = preferenceLevel;
+    this.teacherId = teacher.teacherId;
+    this.startTime = startTime;
+    this.endTime = endTime;
+  }
 }

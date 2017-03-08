@@ -11,22 +11,22 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "LoginData")
 public class LoginData extends Model {
-    public enum AuthType {
-        ADMIN, DSA, STUDENT;
-    }
+  public enum AuthType {
+    ADMIN, DSA, STUDENT;
+  }
 
-    @Id
-    public String username;
-    public String password;
-    public AuthType type;
+  @Id
+  public String username;
+  public String password;
+  public AuthType type;
 
-    public LoginData() {
+  public LoginData() {
 
-    }
+  }
 
-    public LoginData(String username, String password, AuthType type) {
-        this.username = username;
-        this.password = password;
-        this.type = type;
-    }
+  public LoginData(String username, String password, AuthType type) {
+    this.username = username;
+    this.password = password;
+    this.type = type;
+  }
 }

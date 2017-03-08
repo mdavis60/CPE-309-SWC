@@ -10,14 +10,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "RoomTypes")
 public class RoomType extends Model {
-    @Id
-    public String roomType;
+  @Id
+  public String roomType;
 
-    public RoomType() {
+  public RoomType() {
 
-    }
+  }
 
-    public RoomType(String type) {
-        this.roomType = type;
-    }
+  public RoomType(String type) {
+    this.roomType = type;
+  }
 }

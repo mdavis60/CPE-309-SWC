@@ -33,17 +33,17 @@
                         </Button>
                      </children>
                   </HBox>
-                  <ComboBox fx:id="sectionType" prefHeight="27.0" prefWidth="188.0" promptText="Section Type">
+                  <ComboBox fx:id="sectionType" onAction="#setType" prefHeight="27.0" prefWidth="188.0" promptText="Section Type">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ComboBox>
-                  <ComboBox fx:id="professor" prefHeight="27.0" prefWidth="188.0" promptText="Professor">
+                  <ComboBox fx:id="professor" onAction="#setTeacher" prefHeight="27.0" prefWidth="188.0" promptText="Professor">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </ComboBox>
-                  <ComboBox fx:id="room" prefHeight="27.0" prefWidth="188.0" promptText="Room">
+                  <ComboBox fx:id="room" onAction="#setRoom" prefHeight="27.0" prefWidth="188.0" promptText="Room">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -87,21 +87,21 @@
                   </HBox>
                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="202.0" spacing="22.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" />
-                        <RadioButton mnemonicParsing="false" />
-                        <RadioButton mnemonicParsing="false" />
-                        <RadioButton mnemonicParsing="false" />
-                        <RadioButton mnemonicParsing="false" />
+                        <RadioButton fx:id="mBut" mnemonicParsing="false" />
+                        <RadioButton fx:id="tBut" mnemonicParsing="false" />
+                        <RadioButton fx:id="wBut" mnemonicParsing="false" />
+                        <RadioButton fx:id="rBut" mnemonicParsing="false" />
+                        <RadioButton fx:id="fBut" mnemonicParsing="false" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="203.0">
                      <children>
-                        <ComboBox fx:id="startTime" prefHeight="27.0" prefWidth="90.0" promptText="Start">
+                        <ComboBox fx:id="startTime" onAction="#setStartTime" prefHeight="27.0" prefWidth="90.0" promptText="Start">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
                         </ComboBox>
-                        <ComboBox fx:id="endTime" prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
+                        <ComboBox fx:id="endTime" onAction="#setEndTime" prefHeight="27.0" prefWidth="90.0" promptText="Finish" />
                      </children>
                   </HBox>
                </children>

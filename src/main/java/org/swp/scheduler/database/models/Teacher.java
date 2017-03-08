@@ -11,43 +11,40 @@ import java.util.Set;
 @Entity
 @Table(name = "Teachers")
 public class Teacher extends Model {
-    @Id
-    public String teacherId;
-    public String teacherName;
-    public int targetWorkUnits;
-    public int currWorkUnits;
+  @Id
+  public String teacherId;
+  public String teacherName;
+  public int targetWorkUnits;
+  public int currWorkUnits;
 
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @JoinColumn(name = "teacherId")
+  public Set<TimePreference> timePreferences;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="teacherId")
-    public Set<TimePreference> timePreferences;
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @JoinColumn(name = "teacherId")
+  public Set<CoursePreference> coursePreferences;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="teacherId")
-    public Set<CoursePreference> coursePreferences;
+  public Teacher() {
+  }
 
+  public Teacher(String teacherId, String teacherName) {
+    this.teacherId = teacherId;
+    this.teacherName = teacherName;
+    this.targetWorkUnits = 16;
+    this.currWorkUnits = 0;
+  }
 
-    public Teacher() {
-    }
+  public String getTeacherName() {
+    return teacherName;
+  }
 
-    public Teacher(String teacherId, String teacherName) {
-        this.teacherId = teacherId;
-        this.teacherName = teacherName;
-        this.targetWorkUnits = 16;
-        this.currWorkUnits = 0;
-    }
-    public String getTeacherName()
-    {
-    	return teacherName;
-    }
+  public String getTeacherId() {
+    return teacherId;
+  }
 
-    public String getTeacherId()
-    {
-    	return teacherId;
-    }
-    
-    public String toString() {
-    	return getTeacherName();
-    }
-    
+  public String toString() {
+    return getTeacherName();
+  }
+
 }
