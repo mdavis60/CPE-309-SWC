@@ -35,7 +35,7 @@
                            <children>
                               <VBox prefHeight="98.0" prefWidth="205.0">
                                  <children>
-                                    <Label prefHeight="17.0" prefWidth="68.0" styleClass="label-light" text="Course Type" underline="true" />
+                                    <Label prefHeight="17.0" prefWidth="207.0" styleClass="label-light" text="Course Type" underline="true" />
                                     <ComboBox fx:id="courseType" onMouseClicked="#courseTypePressed" prefHeight="31.0" prefWidth="206.0" promptText="Course Type" />
                                     <Button fx:id="courseTypeButton" mnemonicParsing="false" onAction="#buttonPressed" text="New Course Type" translateX="40.0" translateY="10.0" />
                                  </children>
