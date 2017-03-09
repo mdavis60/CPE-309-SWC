@@ -47,7 +47,7 @@ public class CreateAccountController extends WindowController {
     if (password1.equals(password2)) {
       LoginData data = new LoginData(username, password1,
           LoginData.AuthType.ADMIN);
-      Teacher teacher = new Teacher(username, firstName + lastName);
+      Teacher teacher = new Teacher(username, firstName + " " + lastName);
       try {
         DatabaseManager.getInstance().storeSingle(data);
         MasterController.getInstance().addToTeachers(teacher);
