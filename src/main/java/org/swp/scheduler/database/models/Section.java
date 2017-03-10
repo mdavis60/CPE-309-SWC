@@ -13,6 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+/**
+ * Created by jackson on 2/17/17.
+ *
+ * Represents the main scheduling component thats used to create the schedule for a specified 
+ * quarter.
+ */ 
+
 @Entity
 @Table(name = "Section")
 public class Section extends Model {

@@ -6,6 +6,8 @@ import javax.persistence.Table;
 
 /**
  * Created by jackson on 2/15/17.
+ *
+ * CourseTypes is basically a persistent Enum that lives in a table called CourseTypes
  */
 
 @Entity

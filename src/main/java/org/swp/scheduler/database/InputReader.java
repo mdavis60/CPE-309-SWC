@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * Created by jackson on 2/2/2017.
+ * 
+ * Reads in PASS data and stores it in a table called StudentPlanData
  */
 public class InputReader {
 
