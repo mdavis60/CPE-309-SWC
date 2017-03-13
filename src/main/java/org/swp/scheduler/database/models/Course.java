@@ -11,6 +11,9 @@ import java.util.List;
 
 /**
  * Created by jackson on 2/3/17.
+ *
+ * Object representing a course e.g. CPE 309, courses contain 1 or more CourseComponents
+ * and are referenced in sections
  */
 @Entity
 @Table(name = "Courses")
@@ -21,9 +24,10 @@ public class Course extends Model implements Comparable<Course> {
   public String courseName;
   public int courseNumber;
   public String prerequisites;
+
   // https://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
   // @OneToMany(mappedBy="employee",cascade=CascadeType.ALL)
-
+  // connects CourseComponents to Courses with an inner join
   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "courseId")
   public List<CourseComponent> componentList;

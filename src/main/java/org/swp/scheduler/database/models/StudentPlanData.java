@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 /**
  * Created by jackson on 2/2/2017.
+ *
+ * Data from PASS loaded into a DB table
  */
 
 @Entity

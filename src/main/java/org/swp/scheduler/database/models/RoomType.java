@@ -6,6 +6,8 @@ import javax.persistence.Table;
 
 /**
  * Created by jackson on 2/17/17.
+ *
+ * RoomTypes is basically a persistent Enum that lives in a table called RoomTypes
  */
 @Entity
 @Table(name = "RoomTypes")

@@ -4,7 +4,10 @@ import javax.persistence.*;
 
 /**
  * Created by jackson on 2/13/17.
+ * 
+ * These objects compose Courses
  */
+
 @Entity
 @Table(name = "CoursePreferences")
 public class CoursePreference extends Model {

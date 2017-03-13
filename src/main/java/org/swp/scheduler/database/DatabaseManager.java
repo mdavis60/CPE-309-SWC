@@ -16,11 +16,12 @@ import java.util.List;
 
 public class DatabaseManager {
   private static DatabaseManager INSTANCE = new DatabaseManager();
+  // SessionFactory creates thread safe sessions that should be used to orchestrate transactions
   private SessionFactory factory;
 
   /**
-     *
-     */
+   * Creates a new DatabaseManager, this is called once the first time the INSTANCE property is accessed
+   */
   private DatabaseManager() {
     Configuration configuration = new Configuration().configure();
     StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
@@ -29,20 +30,22 @@ public class DatabaseManager {
   }
 
   /**
-   *
-   * @return
+   * @return Singleton object
    */
   public static DatabaseManager getInstance() {
     return INSTANCE;
   }
 
   /**
+   * This method is the heart of the database mananger, it allows any database
+   * operation to be passed in as a DatabaseTransaction which has been marked
+   * as a functional interface. This allows us to avoid repeating boilerplate
+   * object creation and exception handling for basic tasks.
    *
    * @param tx
    * @param <T>
    * @return
    * @throws DatabaseException
-   *           surfaces everything you need to interact with the database
    */
   @SuppressWarnings("unchecked")
   public <T> T executeTransaction(DatabaseTransaction tx)
@@ -78,10 +81,11 @@ public class DatabaseManager {
   }
 
   /**
-   *
+   * retrieves a single db object
+   * 
    * @param entityClass
    * @param id
-   * @return
+   * @return object from the database
    * @throws DatabaseException
    */
   public Object getSingle(Class entityClass, Serializable id)
@@ -93,7 +97,7 @@ public class DatabaseManager {
    *
    * @param entityClass
    * @param id
-   * @return
+   * @return true of the key exists in the database, false otherwise
    * @throws DatabaseException
    */
   public boolean containsKey(Class entityClass, Serializable id)
@@ -116,7 +120,7 @@ public class DatabaseManager {
   /**
    *
    * @param type
-   * @return
+   * @return all of the objects contained in a table
    * @throws DatabaseException
    */
   public List<Model> getAll(Class type) throws DatabaseException {
