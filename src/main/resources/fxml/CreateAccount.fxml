@@ -13,70 +13,88 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="498.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="425.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.CreateAccountController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+      <VBox alignment="TOP_CENTER" minWidth="-Infinity" prefHeight="400.0" prefWidth="225.0" spacing="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="20.0" top="50.0" />
+                  <Insets bottom="5.0" top="15.0" />
                </VBox.margin>
             </Text>
-            <HBox alignment="TOP_CENTER">
+            <Label prefHeight="17.0" prefWidth="225.0" text="Account Type">
+               <styleClass>
+                  <String fx:value="label-light" />
+                  <String fx:value="label-bold" />
+               </styleClass>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets bottom="-5.0" />
                </VBox.margin>
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Account Type:" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="label-light" />
-                        <String fx:value="label-bold" />
-                     </styleClass>
-                  </Label>
-                  <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="150.0">
-                   		<String fx:value="Administrator" /> 
-                   		<String fx:value="Faculty" />
-                   </ChoiceBox>
-               </children>
-            </HBox>
+            </Label>
+            <ChoiceBox fx:id="accountType" prefHeight="25.0" prefWidth="225.0" scaleShape="false">
+             		<String fx:value="Administrator" /> 
+             		<String fx:value="Faculty" />
+             </ChoiceBox>
             <HBox alignment="CENTER" spacing="25.0">
                <children>
                   <VBox>
                      <children>
                         <Label prefHeight="17.0" prefWidth="96.0" styleClass="label-light" text="First Name" />
-                        <TextField fx:id="firstNameField" maxWidth="131.0" prefHeight="27.0" prefWidth="131.0" promptText="First Name" />
+                        <TextField fx:id="firstNameField" maxWidth="149.0" minWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="First Name" />
                      </children>
                   </VBox>
                   <VBox prefHeight="53.0" prefWidth="141.0">
                      <children>
                         <Label styleClass="label-light" text="Last Name" />
-                        <TextField fx:id="lastNameField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="141.0" promptText="Last Name" />
+                        <TextField fx:id="lastNameField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="100.0" promptText="Last Name" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="261.0" promptText="Username">
+            <Label fx:id="workUnitLabel" minHeight="-Infinity" prefHeight="0.0" prefWidth="225.0" styleClass="label-light" text="Work Units">
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="-5.0" top="-10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="workUnitField" minHeight="-Infinity" prefHeight="0.0" promptText="Work Units">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </TextField>
-            <PasswordField fx:id="passwordField1" prefHeight="25.0" prefWidth="261.0" promptText="Password">
+            <Label prefHeight="17.0" prefWidth="225.0" styleClass="label-light" text="Username">
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="-5.0" top="-5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="usernameField" prefHeight="25.0" promptText="Username">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Label prefHeight="17.0" prefWidth="225.0" styleClass="label-light" text="Password">
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="passwordField1" prefHeight="25.0" promptText="Password">
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
                </VBox.margin>
             </PasswordField>
-            <PasswordField fx:id="passwordField2" prefHeight="25.0" prefWidth="261.0" promptText="Confirm Password">
+            <Label prefHeight="17.0" prefWidth="225.0" styleClass="label-light" text="Confirm Password">
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="passwordField2" prefHeight="25.0" promptText="Confirm Password">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </PasswordField>
-            <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#createAccount" prefHeight="32.0" prefWidth="133.0" text="Create Account" />
+            <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#createAccount" prefHeight="27.0" prefWidth="125.0" text="Create Account" />
          </children>
       </VBox>
    </children>

@@ -29,4 +29,18 @@ public class LoginData extends Model {
     this.password = password;
     this.type = type;
   }
+
+  public static AuthType getAuthType(String type) {
+    type.toLowerCase().trim();
+    switch (type) {
+      case "admin":
+        return AuthType.ADMIN;
+      case "dsa":
+        return AuthType.DSA;
+      case "student":
+        return AuthType.STUDENT;
+      default:
+        return AuthType.ADMIN;
+    }
+  }
 }

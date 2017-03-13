@@ -34,6 +34,13 @@ public class Teacher extends Model {
     this.targetWorkUnits = 16;
     this.currWorkUnits = 0;
   }
+  public Teacher(String teacherId, String teacherName, int targetUnits)
+  {
+    this.teacherId = teacherId;
+    this.teacherName = teacherName;
+    this.targetWorkUnits = targetUnits;
+    this.currWorkUnits = 0;
+  }
 
   public String getTeacherName() {
     return teacherName;

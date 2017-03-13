@@ -135,22 +135,4 @@ public class CreateSectionController extends WindowController {
     }
     return time;
   }
-
-  /*
-   * @FXML void CreateSection() { System.out.println("Section Created"); String
-   * course = courseType.getText(); String prof = professor.getText(); String
-   * roomNum = room.getText(); String start = startTime.getText(); String end =
-   * endTime.getText();
-   * 
-   * // TODO //MasterController.getInstance().addToData(new Section(course, prof
-   * , roomNum, "Lecture", getDaysOfWeek(), start, end));
-   * closeWindow(createButton); }
-   * 
-   * private String getDaysOfWeek() { String days = "";
-   * if(mondayToggle.isSelected()) { days += "M "; }
-   * if(tuesdayToggle.isSelected()) { days += "T "; }
-   * if(wednesdayToggle.isSelected()) { days += "W "; }
-   * if(thursdayToggle.isSelected()) { days += "R "; }
-   * if(fridayToggle.isSelected()) { days += "F "; } return days.trim(); }
-   */
 }

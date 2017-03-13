@@ -1,5 +1,7 @@
 package org.swp.scheduler;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
@@ -142,7 +144,6 @@ public class SectionComponentController extends AnchorPane {
             return cell;
           }
         });
-
     ObservableList<Room> rooms = MasterController.getInstance().getRoomData();
     room.getItems().addAll(rooms);
 

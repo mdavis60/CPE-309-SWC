@@ -64,4 +64,8 @@ public class CourseComponent extends Model {
   public String getCourseType() {
     return type;
   }
+  public String toString()
+  {
+    return type;
+  }
 }

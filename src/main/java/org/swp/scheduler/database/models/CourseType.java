@@ -20,4 +20,8 @@ public class CourseType extends Model {
   public CourseType(String courseType) {
     this.courseType = courseType;
   }
+
+  public String toString() {
+    return courseType;
+  }
 }
