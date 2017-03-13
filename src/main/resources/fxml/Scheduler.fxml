@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.Double?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
@@ -24,7 +31,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1200.0" styleClass="background-panel" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.swp.scheduler.SchedulerController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="1200.0" styleClass="menu">
         <menus>
@@ -217,7 +224,7 @@
       </Group>
       <Group fx:id="studentFeedback">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="611.0" layoutX="35.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="224.0" x="900.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b6180" height="634.0" layoutX="35.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="224.0" x="900.0" />
             <Text fill="#eeecec" layoutX="969.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Feedback">
                <font>
                   <Font name="Avenir Roman" size="19.0" />
@@ -226,10 +233,10 @@
             <Line endX="100.0" layoutX="1050.0" layoutY="150.0" startX="-100.0" stroke="#79879a" strokeWidth="2.0" />
          </children>
       </Group>
-      <Group layoutX="1039.0" layoutY="27.0">
+      <Group layoutX="1038.0" layoutY="27.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79879a" height="34.0" layoutX="-103.0" layoutY="9.0" onMouseClicked="#onExpandFeedback" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-103.0" layoutY="32.0" onMouseClicked="#onExpandFeedback" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
+            <Text fx:id="closeFeedback" fill="WHITE" layoutX="-99.0" layoutY="32.0" onMouseClicked="#onExpandFeedback" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Feedback" textAlignment="CENTER" wrappingWidth="145.21299743652344">
                <font>
                   <Font name="Avenir Roman" size="17.0" />
                </font>
