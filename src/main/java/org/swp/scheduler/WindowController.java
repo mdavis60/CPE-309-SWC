@@ -17,21 +17,21 @@ import javafx.scene.Node;
 
 public abstract class WindowController {
 
-  //Creates a new popup window
+  // Creates a new popup window
   public void openWindow(String window) {
-    try{
+    try {
       String fxmlFile = "/fxml/" + window + ".fxml";
       Pane myPane = FXMLLoader.load(getClass().getResource(fxmlFile));
-      
+
       Scene scene = new Scene(myPane);
       scene.getStylesheets().add("/styles/styles.css");
-      
+
       Stage stage = new Stage();
       stage.setTitle(window);
       stage.setScene(scene);
       stage.setResizable(false);
       stage.show();
-    } catch(Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
       System.out.println("Could not instantiate stage");
     }
@@ -40,13 +40,12 @@ public abstract class WindowController {
   public void closeWindow(Node node) {
     node.getScene().getWindow().hide();
   }
-  
-  
-  public void errorMessage(String header, String message){
-	  Alert alert = new Alert(AlertType.INFORMATION);
-      alert.setTitle("Error");
-      alert.setHeaderText(header);
-      alert.setContentText(message);
-      alert.show();
+
+  public void errorMessage(String header, String message) {
+    Alert alert = new Alert(AlertType.INFORMATION);
+    alert.setTitle("Error");
+    alert.setHeaderText(header);
+    alert.setContentText(message);
+    alert.show();
   }
 }

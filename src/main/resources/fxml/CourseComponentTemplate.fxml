@@ -14,26 +14,28 @@
 
 <fx:root minWidth="-Infinity" prefHeight="140.0" prefWidth="215.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="150.0" prefWidth="215.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="150.0" prefWidth="215.0" style="-fx-background-color: #79879a;" stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Group fx:id="blankComponent">
                <children>
                   <VBox alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="215.0" spacing="10.0">
                      <children>
-                        <Label maxWidth="-Infinity" prefHeight="17.0" prefWidth="70.0" text="Component">
-                           <styleClass>
-                              <String fx:value="label-light" />
-                              <String fx:value="label-bold" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="-10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label maxWidth="-Infinity" prefWidth="210.0" text="Component">
+                                 <styleClass>
+                                    <String fx:value="label-light" />
+                                    <String fx:value="label-bold" />
+                                 </styleClass>
+                              </Label>
+                              <Button fx:id="removeButton" mnemonicParsing="false" onAction="#onRemove" text="X" />
+                           </children>
+                        </HBox>
                         <HBox prefHeight="89.0" prefWidth="205.0">
                            <children>
                               <VBox prefHeight="98.0" prefWidth="205.0">
                                  <children>
-                                    <Label prefHeight="17.0" prefWidth="68.0" styleClass="label-light" text="Course Type" underline="true" />
+                                    <Label prefHeight="17.0" prefWidth="207.0" styleClass="label-light" text="Course Type" underline="true" />
                                     <ComboBox fx:id="courseType" onMouseClicked="#courseTypePressed" prefHeight="31.0" prefWidth="206.0" promptText="Course Type" />
                                     <Button fx:id="courseTypeButton" mnemonicParsing="false" onAction="#buttonPressed" text="New Course Type" translateX="40.0" translateY="10.0" />
                                  </children>

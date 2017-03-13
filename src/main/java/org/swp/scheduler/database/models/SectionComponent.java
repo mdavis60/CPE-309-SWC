@@ -17,10 +17,10 @@ public class SectionComponent extends Model {
   @Id
   public int sectionComponentId;
   public int profId;
-  public int roomId; 
-  public String dow; 
-  public int startTime; 
-  public int endTime; 
+  public int roomId;
+  public String dow;
+  public int startTime;
+  public int endTime;
 
   public SectionComponent() {
   }

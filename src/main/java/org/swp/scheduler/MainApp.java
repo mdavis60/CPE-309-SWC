@@ -14,29 +14,29 @@ import org.slf4j.LoggerFactory;
 
 public class MainApp extends Application {
 
-    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+  private static final Logger log = LoggerFactory.getLogger(MainApp.class);
 
-    public static void main(String[] args) throws Exception {
-        launch(args);
-    }
-    
-    public void start(Stage stage) throws Exception {
+  public static void main(String[] args) throws Exception {
+    launch(args);
+  }
 
+  public void start(Stage stage) throws Exception {
 
-        //initialize the application at the LogIn page
-        String fxmlFile = "/fxml/Scheduler.fxml";
-        log.debug("Loading FXML for main view from: {}", fxmlFile);
-        FXMLLoader loader = new FXMLLoader();
-        Parent parent = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-        
-        log.debug("Showing JFX scene");
-        Scene scene = new Scene(parent);
-        scene.getStylesheets().add("/styles/styles.css");
+    // initialize the application at the LogIn page
+    String fxmlFile = "/fxml/LogIn.fxml";
+    log.debug("Loading FXML for main view from: {}", fxmlFile);
+    FXMLLoader loader = new FXMLLoader();
+    Parent parent = (Parent) loader.load(getClass().getResourceAsStream(
+        fxmlFile));
 
-        stage.setTitle("Log-In Page");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-       
-    }
+    log.debug("Showing JFX scene");
+    Scene scene = new Scene(parent);
+    scene.getStylesheets().add("/styles/styles.css");
+
+    stage.setTitle("Log-In Page");
+    stage.setScene(scene);
+    stage.setResizable(false);
+    stage.show();
+
+  }
 }
