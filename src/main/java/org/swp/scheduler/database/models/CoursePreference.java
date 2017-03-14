@@ -5,7 +5,10 @@ import javax.persistence.*;
 /**
  * Created by jackson on 2/13/17.
  * 
- * These objects compose Courses
+ * One to Many relationship with Teacher
+ * One to One relationship with Course
+ *
+ * Represents their desire to teach certain courses.
  */
 
 @Entity

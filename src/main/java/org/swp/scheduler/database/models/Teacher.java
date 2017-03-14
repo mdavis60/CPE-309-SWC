@@ -6,6 +6,8 @@ import java.util.Set;
 
 /**
  * Created by jackson on 2/3/17.
+ *
+ * Represents a Professor or Instructor that can be scheduled into sections and have preferences
  */
 
 @Entity

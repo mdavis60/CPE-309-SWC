@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 /**
  * Created by jackson on 2/3/17.
+ *
+ * A room available as a resource.
  */
 
 @Entity

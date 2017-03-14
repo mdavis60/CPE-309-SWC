@@ -17,8 +17,9 @@ import javax.persistence.Transient;
  * Created by jackson on 2/17/17.
  *
  * Represents the main scheduling component thats used to create the schedule for a specified 
- * quarter.
- */ 
+ * quarter. Section is composed of exactly one CourseComponent, and contains references to a Room,
+ * Teacher, and time data.
+ */
 
 @Entity
 @Table(name = "Section")

@@ -9,8 +9,11 @@ import javax.persistence.Table;
 
 /**
  * Created by jackson on 2/3/17.
+ *
+ * Deprecated in favor of Section
  */
 
+@Deprecated
 @Entity
 @Table(name = "SectionComponent")
 public class SectionComponent extends Model {

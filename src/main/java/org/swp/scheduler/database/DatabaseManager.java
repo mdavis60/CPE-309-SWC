@@ -37,7 +37,7 @@ public class DatabaseManager {
   }
 
   /**
-   * This method is the heart of the database mananger, it allows any database
+   * This method is the heart of the database manager, it allows any database
    * operation to be passed in as a DatabaseTransaction which has been marked
    * as a functional interface. This allows us to avoid repeating boilerplate
    * object creation and exception handling for basic tasks.
@@ -106,6 +106,7 @@ public class DatabaseManager {
   }
 
   /**
+   * Removes a single row from a specified database table
    *
    * @param toDelete
    * @throws DatabaseException

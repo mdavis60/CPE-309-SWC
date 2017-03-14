@@ -8,8 +8,8 @@ import javax.persistence.*;
 /**
  * Created by jackson on 2/3/17.
  * 
- * CourseComponents are things like the Lab component of Course, or other catagories 
- * defined in CourseType. These are specificly tied to a Course and Sections are created
+ * CourseComponents are things like the Lab component of Course, or other categories
+ * defined in CourseType. These are specifically tied to a Course and Sections are created
  * from CourseComponents.
  */
 

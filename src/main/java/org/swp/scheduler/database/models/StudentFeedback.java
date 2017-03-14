@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * Created by jackson on 2/3/17.
- * 
+ *
  * When students write feedback it is stored anonymously and organized by section
  */
 

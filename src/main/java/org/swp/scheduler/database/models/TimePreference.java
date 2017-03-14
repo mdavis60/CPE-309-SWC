@@ -4,6 +4,10 @@ import javax.persistence.*;
 
 /**
  * Created by jackson on 2/13/17.
+ *
+ * One to Many relationship with Teacher
+ *
+ * The times along with preference levels the teachers would like to teach.
  */
 
 @Entity
