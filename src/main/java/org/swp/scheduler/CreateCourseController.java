@@ -1,28 +1,23 @@
 package org.swp.scheduler;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.hibernate.mapping.Component.StandardGenerationContextLocator;
-import org.swp.scheduler.database.DatabaseManager;
-import org.swp.scheduler.database.models.LoginData;
-import org.swp.scheduler.database.models.Course;
-import org.swp.scheduler.database.models.CourseComponent;
-import org.swp.scheduler.database.models.Section;
-import org.swp.scheduler.database.models.Teacher;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.Group;
 import javafx.util.Callback;
-import javafx.stage.Stage;
-import javafx.stage.Window;
+import org.swp.scheduler.database.models.Course;
+import org.swp.scheduler.database.models.CourseComponent;
 
+/**
+ * Controller that handles adding Courses
+ *
+ * SRS: Section 4.1.9
+ */
 @SuppressWarnings("restriction")
 public class CreateCourseController extends WindowController {
 
@@ -146,7 +141,7 @@ public class CreateCourseController extends WindowController {
     int cNumber = Integer.parseInt(courseNumber.getText());
     String cName = courseName.getText();
     String prereq = prereqField.getText();
-    
+
     try {
       Course theCourse = new Course(cNumber, cName, "PREREQZ", depart);
       for (javafx.scene.Node component : courseComponents.getChildren()) {

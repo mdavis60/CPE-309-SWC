@@ -13,6 +13,10 @@ import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.LoginData;
 import org.swp.scheduler.database.models.Teacher;
 
+/**
+ * Allows DSA Users to create different types of accounts on the system.
+ *
+ */
 @SuppressWarnings("restriction")
 public class CreateAccountController extends WindowController {
 

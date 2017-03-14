@@ -8,12 +8,18 @@ import javax.persistence.Table;
  * Created by jackson on 2/6/17.
  *
  * Data needed to check if a user is valid, if they are their privilege level is stored in type.
+ *
+ *
+ * SRS: Section 2.3
  */
 
 @Entity
 @Table(name = "LoginData")
 public class LoginData extends Model {
-    // different AuthTypes have different permissions in the system.
+  /**
+   *
+   * Different AuthTypes have different permissions in the system.
+   */
     public enum AuthType {
         ADMIN, DSA, STUDENT;
     }

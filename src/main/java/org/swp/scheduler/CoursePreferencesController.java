@@ -4,6 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
+/**
+ * Many to One relationship with Teachers that allows them to specify
+ * which courses they prefer, or prefer not to teach. This process involves
+ * adding only a single row to the database in the worst case.
+ *
+ *
+ * SRS: Section 4.2.1
+ */
 public class CoursePreferencesController extends WindowController {
 
   @FXML

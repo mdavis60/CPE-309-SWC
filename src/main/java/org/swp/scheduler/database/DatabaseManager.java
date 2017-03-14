@@ -12,6 +12,12 @@ import java.util.List;
 
 /**
  * Created by jackson on 2/2/2017.
+ *
+ * Surfaces basic database operations as Java function calls. More details
+ * on the design of the database can be found in the SDS
+ *
+ *
+ * SDS: Section 2.3
  */
 
 public class DatabaseManager {

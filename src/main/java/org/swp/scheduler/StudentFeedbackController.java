@@ -1,15 +1,18 @@
 package org.swp.scheduler;
 
-import org.swp.scheduler.database.DatabaseException;
-import org.swp.scheduler.database.DatabaseManager;
-import org.swp.scheduler.database.models.LoginData;
-import org.swp.scheduler.database.models.StudentFeedback;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import org.swp.scheduler.database.DatabaseManager;
+import org.swp.scheduler.database.models.StudentFeedback;
 
+/**
+ * Students can give feedback for each quarter that can be viewed by a scheduler
+ *
+ *
+ * SRS: Section 4.3.2
+ */
 public class StudentFeedbackController extends WindowController {
 
   @FXML

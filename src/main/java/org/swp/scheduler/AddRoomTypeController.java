@@ -12,6 +12,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+/**
+ * Creates a valid room type and saves it to the database.
+ *
+ *
+ * SRS: Section 4.1.1
+ */
 public class AddRoomTypeController extends WindowController {
 
   @FXML

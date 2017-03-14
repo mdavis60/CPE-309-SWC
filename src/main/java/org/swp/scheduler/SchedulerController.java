@@ -1,28 +1,34 @@
 package org.swp.scheduler;
 
-import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.stage.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.scene.text.*;
-import javafx.scene.shape.*;
-import javafx.application.*;
-import javafx.collections.*;
-import javafx.scene.input.*;
-
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import org.swp.scheduler.database.models.Course;
+import org.swp.scheduler.database.models.Room;
+import org.swp.scheduler.database.models.Section;
+import org.swp.scheduler.database.models.Teacher;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import org.slf4j.*;
-import org.swp.scheduler.database.DatabaseException;
-import org.swp.scheduler.database.models.*;
-
-import javafx.collections.transformation.*;
-import javafx.util.Callback;
+/**
+ * Controls the most used models and use cases in the program. The scheduler controller
+ * handles adding, removing, filtering, and sorting schedules for a given quarter.
+ *
+ *
+ * SRS: 4.2.2
+ */
 
 public class SchedulerController extends WindowController {
 
@@ -175,6 +181,12 @@ public class SchedulerController extends WindowController {
           .endTimeProperty());
     } catch (Exception e) {
     }
+
+
+    /**
+     * Initializes boilerplate that allows filtering and sorting by different attributes
+     *
+     */
 
     courseListView.setItems(MasterController.getInstance().getCourseData());
     roomsListView.setItems(MasterController.getInstance().getRoomData());

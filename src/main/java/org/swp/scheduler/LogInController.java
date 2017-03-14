@@ -1,19 +1,22 @@
 package org.swp.scheduler;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import org.swp.scheduler.database.DatabaseManager;
 import org.swp.scheduler.database.models.LoginData;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-
+/**
+ * Login controller authenticates users and saves their authentication level in
+ * the global state so that each action can be cross checked with their permissions
+ *
+ *
+ * SRS: Section 5.3, 4.4.1
+ * SDS: Section 2.2
+ */
 public class LogInController extends WindowController {
 
   @FXML

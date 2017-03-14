@@ -1,16 +1,26 @@
 package org.swp.scheduler;
 
-import javafx.fxml.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.scene.text.*;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.util.Callback;
-import javafx.collections.*;
+import org.swp.scheduler.database.models.Course;
+import org.swp.scheduler.database.models.Section;
 
 import java.util.List;
 
-import org.swp.scheduler.database.models.*;
-
+/**
+ * Controller that allows DSA users to add sections to a schedule
+ *
+ *
+ * SRS: Section 4.1.11
+ */
 @SuppressWarnings("restriction")
 public class CreateSectionController extends WindowController {
 

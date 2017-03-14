@@ -3,6 +3,13 @@ package org.swp.scheduler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+/**
+ * Many to One relationship with Teachers that allows them to specify
+ * which when they are available to teach courses. This process involves
+ * adding only a single row to the database in the worst case.
+ *
+ * SRS: Section 4.2.1
+ */
 public class TimePreferencesController extends WindowController {
 
   @FXML

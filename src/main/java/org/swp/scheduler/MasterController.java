@@ -17,6 +17,7 @@ import javafx.collections.ObservableList;
 @SuppressWarnings("restriction")
 public class MasterController {
 
+  // MasterController follows the Singleton pattern
   private static MasterController INSTANCE = new MasterController();
 
   private static ObservableList<Section> sections = FXCollections
@@ -49,6 +50,9 @@ public class MasterController {
     return INSTANCE;
   }
 
+  /**
+   * Static initialization
+   */
   public static void initializeLists() {
     Section[] sect = new Section[1];
     Course[] cour = new Course[1];
@@ -93,6 +97,10 @@ public class MasterController {
     }
   }
 
+  /**
+   *
+   * @param section
+   */
   public void addToData(Section section) {
     sections.add(section);
     sectionDelta.add(section);
@@ -143,6 +151,10 @@ public class MasterController {
     return null;
   }
 
+  /**
+   *
+   * @param room
+   */
   public void addToRooms(Room room) {
     rooms.add(room);
     roomDelta.add(room);
@@ -168,6 +180,10 @@ public class MasterController {
     return null;
   }
 
+  /**
+   *
+   * @param component
+   */
   public void addToComponents(CourseComponent component) {
     components.add(component);
     componentDelta.add(component);
@@ -257,6 +273,12 @@ public class MasterController {
 
   }
 
+  /**
+   * Retrieves section data from the database
+   *
+   * @param in
+   * @return
+   */
   private static Section setupSection(Section in) {
     try {
       CourseComponent component = (CourseComponent) (DatabaseManager
